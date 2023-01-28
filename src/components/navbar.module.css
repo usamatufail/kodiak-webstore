@@ -1,0 +1,13 @@
+.nav-link {
+  /* Nav */
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  /* Gredient */
+  background: linear-gradient(42.55deg, #1b1816 3.11%, #a7604f 109.05%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

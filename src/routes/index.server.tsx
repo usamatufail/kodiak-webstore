@@ -1,3 +1,9 @@
+import { Layout } from '../components/index.server';
+
 export default function Home() {
-  return <div>Hello World</div>;
+  return (
+    <Layout>
+      <header>Header Section</header>
+    </Layout>
+  );
 }
