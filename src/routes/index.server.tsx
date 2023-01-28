@@ -1,6 +1,5 @@
 import { Layout } from '../components/index.server';
-import { Available } from '../containers';
-import { Header } from '../containers/index.server';
+import { Header, Available, Why } from '../containers';
 
 export default function Home() {
   return (
@@ -8,6 +7,7 @@ export default function Home() {
       <div className="mb-[60px]">
         <Header />
         <Available />
+        <Why />
       </div>
     </Layout>
   );
