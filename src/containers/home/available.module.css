@@ -1,0 +1,5 @@
+.shop-card {
+  background: linear-gradient(0deg, rgba(90, 41, 17, 0.53), rgba(90, 41, 17, 0.53)), url(/images/available/available1.png);
+  border-radius: 30px;
+  min-height: 553px;
+}

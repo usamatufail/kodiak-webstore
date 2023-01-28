@@ -1,4 +1,4 @@
-import { Navbar } from './navbar.server';
+import { Navbar } from './navbar.client';
 
 interface LayoutProps {
   children: React.ReactNode;
