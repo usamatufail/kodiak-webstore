@@ -22,7 +22,7 @@ export const Header = () => {
 
   return (
     <header
-      className="min-h-[78vh] flex flex-col justify-center px-[290px]"
+      className="min-h-[78vh] flex flex-col justify-center px-[120px]"
       style={{ backgroundImage: 'url(/images/header/header.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       <motion.h1
@@ -35,16 +35,9 @@ export const Header = () => {
         Handmade Knives
       </motion.h1>
       <p className="font-bold text-white text-[36px]">
-        That embody the Alaskan spirit.
-        <br />
         <TypeAnimation
-          sequence={[
-            'Crafted with',
-            1000,
-            'Crafted with precision and ruggedness',
-            1000,
-            'Crafted with precision and ruggedness for those who seek adventure.',
-          ]}
+          sequence={['That embody the Alaskan spirit.', 2000, 'Crafted with precision and ruggedness for those who seek adventure.']}
+          speed={85}
           wrapper="span"
           cursor={true}
           repeat={0}

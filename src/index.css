@@ -13,6 +13,14 @@ body {
   font-family: 'Arial', serif;
 }
 
+.custom-gradient-text {
+  background: linear-gradient(42.55deg, #1b1816 3.11%, #a7604f 109.05%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
 /* Slick Slider */
 .custom-slick .slick-arrow {
   top: 40%;

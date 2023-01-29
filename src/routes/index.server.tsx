@@ -4,15 +4,13 @@ import { Header, Available, Why, Products, Knives, NewsLetter, Location } from '
 export default function Home() {
   return (
     <Layout>
-      <div className="mb-[60px]">
-        <Header />
-        <Available />
-        <Why />
-        <Products />
-        <Knives />
-        <NewsLetter />
-        <Location />
-      </div>
+      <Header />
+      <Available />
+      <Why />
+      <Products />
+      <Knives />
+      <NewsLetter />
+      <Location />
     </Layout>
   );
 }

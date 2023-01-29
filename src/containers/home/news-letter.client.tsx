@@ -12,7 +12,7 @@ export const NewsLetter = () => {
         <div className="items-center justify-center h-[48px] w-[500px] mx-auto grid grid-cols-[70%_auto] mt-[40px]">
           {/* Email Icon */}
           <div className="relative">
-            <img src="/public/svg/email.svg" className="left-[20px] absolute top-[50%] translate-y-[-50%]" />
+            <img src="/svg/email.svg" className="left-[20px] absolute top-[50%] translate-y-[-50%]" />
             <input
               className="h-[48px] border border-white border-solid rounded-[7px] bg-transparent w-[400px] pl-[60px] placeholder:text-whtie"
               placeholder="Your Email"
