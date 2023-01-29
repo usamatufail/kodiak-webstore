@@ -1,5 +1,5 @@
 import { Layout } from '../components/index.server';
-import { Header, Available, Why, Products, Knives } from '../containers';
+import { Header, Available, Why, Products, Knives, NewsLetter } from '../containers';
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
         <Why />
         <Products />
         <Knives />
+        <NewsLetter />
       </div>
     </Layout>
   );
