@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Link } from '@shopify/hydrogen';
 
 const quickLinks = {
   title: 'Quick Links',
@@ -56,9 +55,9 @@ const Links = ({ links }: { links: typeof quickLinks }) => {
       <div className="mt-[10px] md:mt-[20px] flex flex-col gap-[12px]">
         {links.links.map((link) => {
           return (
-            <Link key={link.title} to={link.url} className="font-[300] text-[18px] text-[#1F2227]">
+            <a key={link.title} href={link.url} className="font-[300] text-[18px] text-[#1F2227]">
               {link.title}
-            </Link>
+            </a>
           );
         })}
       </div>

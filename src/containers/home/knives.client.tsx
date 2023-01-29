@@ -23,7 +23,7 @@ const KniveBox = ({
         <div className="flex justify-center items-center relative min-h-[1px] w-full">
           <img src={image} alt="blade-1" className="w-[75%]" style={{ position: largeImage ? 'absolute' : 'static', right: '-9px' }} />
         </div>
-        <p className="pb-[20px] tracking-wider text-[36px] font-[700]" style={{ color: infoTextColor }}>
+        <p className="pb-[20px] tracking-wider text-[36px] font-[700]" style={{ color: infoTextColor ? infoTextColor : '#fff' }}>
           [INFO]
         </p>
       </div>
