@@ -24,7 +24,7 @@ export const Why = () => {
     <section
       ref={ref}
       className="mt-[64px] min-h-[700px] bg-cover bg-center flex flex-col items-center justify-center gap-[40px]"
-      style={{ background: 'url(/images/why/background.png)' }}
+      style={{ backgroundImage: 'url(/images/why/background.png)' }}
     >
       {visible ? (
         <h1 className="text-[77px] font-[900] text-white leadig-[1]">

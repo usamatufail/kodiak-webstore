@@ -12,3 +12,17 @@ html,
 body {
   font-family: 'Arial', serif;
 }
+
+/* Slick Slider */
+.custom-slick .slick-arrow {
+  top: 40%;
+}
+.custom-slick .slick-arrow.slick-prev {
+  left: -35px;
+}
+.custom-slick .slick-arrow.slick-next {
+  right: -40px;
+}
+.custom-slick .slick-arrow::before {
+  content: '';
+}
