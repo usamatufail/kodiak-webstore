@@ -29,8 +29,8 @@ const ShopCard = ({ images, background }: { images: string[]; background: string
       animate={controls}
       initial="hidden"
       variants={getVariant(0.5)}
-      className={`py-[56px] px-[25px] flex flex-col justify-between min-h-[553px] rounded-[30px]`}
-      style={{ background: `linear-gradient(0deg, rgba(90, 41, 17, 0.53), rgba(90, 41, 17, 0.53)), url(${background})` }}
+      className={`py-[56px] px-[25px] flex flex-col justify-between min-h-[553px] rounded-[30px] bg-center bg-no-repeat bg-cover`}
+      style={{ background: `linear-gradient(0deg, rgba(90, 41, 17, 0), rgba(90, 41, 17, 0)), url(${background})` }}
     >
       <div />
       <div className="flex items-center justify-center">

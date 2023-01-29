@@ -45,6 +45,7 @@ export const Why = () => {
             wrapper="span"
             cursor={true}
             repeat={0}
+            speed={75}
           />
         </p>
       ) : (
