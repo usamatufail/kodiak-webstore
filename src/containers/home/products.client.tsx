@@ -17,32 +17,12 @@ const mainVariant = (duration: number) => ({
   hidden: { scale: 0, opacity: 0, transition: { duration } },
 });
 
-// Slider Components
-function CustomNextArrow(props: any) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={className} style={{ ...style, display: 'block', height: '40px', width: '40px' }} onClick={onClick}>
-      <img src="/svg/right.svg" alt="back-arrow" />
-    </div>
-  );
-}
-
-function CustomPreviousArrow(props: any) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={className} style={{ ...style, display: 'block', height: '40px', width: '40px' }} onClick={onClick}>
-      <img src="/svg/left.svg" alt="back-arrow" />
-    </div>
-  );
-}
 const settings = {
   dots: false,
   infinite: true,
   speed: 500,
-  slidesToShow: 5,
-  slidesToScroll: 5,
-  nextArrow: <CustomNextArrow />,
-  prevArrow: <CustomPreviousArrow />,
+  slidesToShow: 4,
+  slidesToScroll: 4,
   responsive: [
     {
       breakpoint: 480,
@@ -92,17 +72,17 @@ export const Products = () => {
 
   return (
     <div className="overflow-hidden py-[70px] mt-[18px] mb-[18px] border-t-4 border-b-4 border-b-solid border-b-black border-t-solid border-t-black flex items-end justify-between">
-      <motion.div ref={ref} animate={controls} initial="hidden" variants={leftVariant(0.5)} className="max-w-[300px]">
+      <motion.div animate={controls} initial="hidden" variants={leftVariant(0.5)} className="max-w-[300px] min-w-[300px]">
         <img src="/images/products/left-bg.png" alt="background" />
       </motion.div>
-      <motion.div ref={ref} animate={controls} initial="hidden" variants={mainVariant(1)} className="custom-slick container">
+      <motion.div ref={ref} animate={controls} initial="hidden" variants={mainVariant(1)} className="custom-slick max-w-[1200px]">
         <Slider {...settings}>
           {productsData?.map((product: any) => {
             return <ProductCard key={product?.id} {...product} />;
           })}
         </Slider>
       </motion.div>
-      <motion.div ref={ref} animate={controls} initial="hidden" variants={rightVariant(0.5)} className="max-w-[300px]">
+      <motion.div animate={controls} initial="hidden" variants={rightVariant(0.5)} className="max-w-[300px] min-w-[300px]">
         <img src="/images/products/right-bg.png" alt="background" />
       </motion.div>
     </div>

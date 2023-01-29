@@ -31,6 +31,9 @@ body {
 .custom-slick .slick-arrow.slick-next {
   right: -40px;
 }
-.custom-slick .slick-arrow::before {
-  content: '';
+.custom-slick .slick-arrow.slick-next::before {
+  content: url(/svg/right.svg);
+}
+.custom-slick .slick-arrow.slick-prev::before {
+  content: url(/svg/left.svg);
 }
