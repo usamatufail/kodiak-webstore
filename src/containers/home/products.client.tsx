@@ -1,4 +1,21 @@
 import Slider from '@ant-design/react-slick';
+import { useAnimation, motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+
+const leftVariant = (duration: number) => ({
+  visible: { x: 0, opacity: 1, transition: { duration } },
+  hidden: { x: -200, opacity: 0, transition: { duration } },
+});
+const rightVariant = (duration: number) => ({
+  visible: { x: 0, opacity: 1, transition: { duration } },
+  hidden: { x: 200, opacity: 0, transition: { duration } },
+});
+
+const mainVariant = (duration: number) => ({
+  visible: { scale: 1, opacity: 1, transition: { duration } },
+  hidden: { scale: 0, opacity: 0, transition: { duration } },
+});
 
 // Slider Components
 function CustomNextArrow(props: any) {
@@ -64,21 +81,30 @@ const ProductCard = ({ name = '', image = '', price = '' }) => {
 };
 
 export const Products = () => {
+  const [ref, inView] = useInView();
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   return (
-    <div className="py-[70px] mt-[18px] mb-[18px] border-t-4 border-b-4 border-b-solid border-b-black border-t-solid border-t-black flex items-end justify-between">
-      <div className="max-w-[300px]">
+    <div className="overflow-hidden py-[70px] mt-[18px] mb-[18px] border-t-4 border-b-4 border-b-solid border-b-black border-t-solid border-t-black flex items-end justify-between">
+      <motion.div ref={ref} animate={controls} initial="hidden" variants={leftVariant(0.5)} className="max-w-[300px]">
         <img src="/images/products/left-bg.png" alt="background" />
-      </div>
-      <div className="custom-slick container">
+      </motion.div>
+      <motion.div ref={ref} animate={controls} initial="hidden" variants={mainVariant(1)} className="custom-slick container">
         <Slider {...settings}>
           {productsData?.map((product: any) => {
             return <ProductCard key={product?.id} {...product} />;
           })}
         </Slider>
-      </div>
-      <div className="max-w-[300px]">
+      </motion.div>
+      <motion.div ref={ref} animate={controls} initial="hidden" variants={rightVariant(0.5)} className="max-w-[300px]">
         <img src="/images/products/right-bg.png" alt="background" />
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -19,8 +19,6 @@ const ShopCard = ({ images, background }: { images: string[]; background: string
   useEffect(() => {
     if (inView) {
       controls.start('visible');
-    } else {
-      controls.start('hidden');
     }
   }, [controls, inView]);
   return (
