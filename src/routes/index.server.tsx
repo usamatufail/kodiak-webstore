@@ -4,11 +4,10 @@ import { Header, Available, Why, Products, Knives, NewsLetter, Location } from '
 export default function Home() {
   return (
     <Layout>
-      {/* TODO: Un-comment */}
       <Header />
       <Available />
       <Why />
-      {/* <Products /> */}
+      <Products />
       <Knives />
       <NewsLetter />
       <Location />
