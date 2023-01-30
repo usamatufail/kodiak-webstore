@@ -10,7 +10,8 @@ export const Layout = ({ children }: LayoutProps) => {
     <main>
       <Navbar />
       {children}
-      <Footer />
+      {/* TODO: Un-comment */}
+      {/* <Footer /> */}
     </main>
   );
 };
