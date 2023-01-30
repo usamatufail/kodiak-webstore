@@ -3,14 +3,14 @@ import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
-const leftVariant = (duration: number) => ({
-  visible: { x: 0, opacity: 1, transition: { duration } },
-  hidden: { x: -200, opacity: 0, transition: { duration } },
-});
-const rightVariant = (duration: number) => ({
-  visible: { x: 0, opacity: 1, transition: { duration } },
-  hidden: { x: 200, opacity: 0, transition: { duration } },
-});
+// const leftVariant = (duration: number) => ({
+//   visible: { x: 0, opacity: 1, transition: { duration } },
+//   hidden: { x: -200, opacity: 0, transition: { duration } },
+// });
+// const rightVariant = (duration: number) => ({
+//   visible: { x: 0, opacity: 1, transition: { duration } },
+//   hidden: { x: 200, opacity: 0, transition: { duration } },
+// });
 
 const mainVariant = (duration: number) => ({
   visible: { scale: 1, opacity: 1, transition: { duration } },
@@ -25,10 +25,12 @@ const settings = {
   slidesToScroll: 4,
   responsive: [
     {
-      breakpoint: 480,
+      breakpoint: 1024,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
+        dots: true,
+        arrows: false,
       },
     },
   ],
@@ -71,19 +73,27 @@ export const Products = () => {
   }, [controls, inView]);
 
   return (
-    <div className="overflow-hidden py-[70px] mt-[18px] mb-[18px] border-t-4 border-b-4 border-b-solid border-b-black border-t-solid border-t-black flex items-end justify-between">
-      <motion.div animate={controls} initial="hidden" variants={leftVariant(0.5)} className="max-w-[300px] min-w-[300px]">
-        <img src="/images/products/left-bg.png" alt="background" />
-      </motion.div>
-      <motion.div ref={ref} animate={controls} initial="hidden" variants={mainVariant(1)} className="custom-slick max-w-[1200px]">
+    <div
+      className="overflow-hidden py-[30px] mt-[18px] mb-[18px] border-t-4 border-b-4 border-b-solid border-b-black border-t-solid border-t-black flex items-center justify-center lg:py-[70px] lg:gap-[unset]"
+      style={{
+        backgroundImage: 'url(/images/products/right-bg.png), url(/images/products/left-bg.png)',
+        backgroundPosition: 'right bottom, left bottom',
+        backgroundRepeat: 'no-repeat, no-repeat',
+        backgroundSize: '20%',
+      }}
+    >
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={mainVariant(1)}
+        className="custom-slick max-w-[calc(100vw)] lg:max-w-[1200px] relative"
+      >
         <Slider {...settings}>
           {productsData?.map((product: any) => {
             return <ProductCard key={product?.id} {...product} />;
           })}
         </Slider>
-      </motion.div>
-      <motion.div animate={controls} initial="hidden" variants={rightVariant(0.5)} className="max-w-[300px] min-w-[300px]">
-        <img src="/images/products/right-bg.png" alt="background" />
       </motion.div>
     </div>
   );

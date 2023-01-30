@@ -26,10 +26,16 @@ body {
   top: 40%;
 }
 .custom-slick .slick-arrow.slick-prev {
-  left: -35px;
+  left: 25px;
+  @media (min-width: 1024px) {
+    left: -35px;
+  }
 }
 .custom-slick .slick-arrow.slick-next {
-  right: -40px;
+  right: 60px;
+  @media (min-width: 1024px) {
+    right: -40px;
+  }
 }
 .custom-slick .slick-arrow.slick-next::before {
   content: url(/svg/right.svg);
