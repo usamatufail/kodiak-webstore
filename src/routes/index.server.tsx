@@ -9,7 +9,7 @@ export default function Home() {
       <Available />
       <Why />
       {/* <Products /> */}
-      {/* <Knives /> */}
+      <Knives />
       {/* <NewsLetter /> */}
       {/* <Location />  */}
     </Layout>

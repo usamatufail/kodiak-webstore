@@ -1,6 +1,7 @@
 import { useAnimation, motion, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 const parentVariant: Variants = {
   initial: { opacity: 0 },
@@ -41,13 +42,13 @@ const KniveBox = ({
   return (
     <motion.div
       ref={ref}
-      className="w-[375px] h-[285px] bg-gray-400 skew-x-12 overflow-hidden relative"
+      className="w-[full] h-[285px] bg-gray-400 skew-x-6  overflow-hidden relative md:w-[full] md:skew-x-12"
       initial="initial"
       animate={controls}
       variants={parentVariant}
     >
       {/* Background */}
-      <div className="-skew-x-12 w-[120%] absolute left-[-35px]">
+      <div className=" w-[120%] absolute left-[-35px] -skew-x-6 md:-skew-x-12">
         <img src={background} alt="blade-bg" className="h-[285px] w-[445px] block object-cover relative opacity-75" />
       </div>
 
@@ -61,7 +62,7 @@ const KniveBox = ({
       </motion.div>
 
       {/* Blade Name and Info */}
-      <div className="-skew-x-12 flex flex-col items-center justify-between min-h-[285px]">
+      <div className="-skew-x-6 flex flex-col items-center justify-between min-h-[285px] md:-skew-x-12">
         <div />
         <motion.div
           variants={bladeVariant}
@@ -92,24 +93,56 @@ const KniveBox = ({
 };
 
 export const Knives = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 768px)',
+  });
   return (
     <div
-      className="min-h-[639px] px-[90px] text-white grid grid-cols-4 items-center"
+      className="min-h-[639px] px-[50px] text-white grid grid-cols-1 gap-[40px] items-center md:grid-cols-4  md:px-[90px] md:gap-[20px]"
       style={{ backgroundImage: 'url(/images/knives/background.png)' }}
     >
-      <KniveBox background="/images/knives/blade-1-bg.png" infoTextColor="black" image="/images/knives/blade-1.png" />
+      <KniveBox
+        background="/images/knives/blade-1-bg.png"
+        infoTextColor="black"
+        image="/images/knives/blade-1.png"
+        lineProps={
+          isDesktopOrLaptop
+            ? { width: '35%', rotate: '45deg', bottom: '110px', left: '65px' }
+            : // Mobile Styles
+              { width: '35%', rotate: '45deg', bottom: '130px', left: '50px' }
+        }
+      />
       <KniveBox
         background="/images/knives/blade-2-bg.png"
         infoTextColor="black"
         image="/images/knives/blade-2.png"
         largeImage
-        lineProps={{ width: '51%', rotate: '136deg', bottom: '133px', left: '164px' }}
+        lineProps={
+          isDesktopOrLaptop
+            ? { width: '51%', rotate: '136deg', bottom: '133px', left: '164px' }
+            : // Mobile Styles
+              { width: '51%', rotate: '136deg', bottom: '145px', left: '118px' }
+        }
       />
-      <KniveBox background="/images/knives/blade-3-bg.png" image="/images/knives/blade-3.png" />
+      <KniveBox
+        background="/images/knives/blade-3-bg.png"
+        image="/images/knives/blade-3.png"
+        lineProps={
+          isDesktopOrLaptop
+            ? { width: '35%', rotate: '45deg', bottom: '110px', left: '65px' }
+            : // Mobile Styles
+              { width: '35%', rotate: '45deg', bottom: '130px', left: '50px' }
+        }
+      />
       <KniveBox
         background="/images/knives/blade-4-bg.png"
         image="/images/knives/blade-4.png"
-        lineProps={{ width: '41%', rotate: '124deg', bottom: '130px', left: '123px' }}
+        lineProps={
+          isDesktopOrLaptop
+            ? { width: '41%', rotate: '124deg', bottom: '130px', left: '123px' }
+            : // Modile Styles
+              { width: '41%', rotate: '124deg', bottom: '140px', left: '85px' }
+        }
       />
     </div>
   );
