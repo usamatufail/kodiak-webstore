@@ -48,8 +48,8 @@ const KniveBox = ({
       variants={parentVariant}
     >
       {/* Background */}
-      <div className=" w-[120%] absolute left-[-35px] -skew-x-6 md:-skew-x-12">
-        <img src={background} alt="blade-bg" className="h-[285px] w-[445px] block object-cover relative opacity-75" />
+      <div className="w-[120%] 2xl:w-[150%] absolute left-[-35px] -skew-x-6 md:-skew-x-12">
+        <img src={background} alt="blade-bg" className="h-[285px] w-full block object-cover relative opacity-75" />
       </div>
 
       {/* Top Left */}
