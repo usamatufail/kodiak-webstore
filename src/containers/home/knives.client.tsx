@@ -8,14 +8,24 @@ const parentVariant: Variants = {
   animate: { opacity: 1, transition: { staggerChildren: 0.75 } },
 };
 
-const childVariant: Variants = {
-  initial: { opacity: 0, scale: 0 },
-  animate: { opacity: 1, scale: 1 },
-};
-
 const bladeVariant: Variants = {
   initial: { opacity: 0, x: 100 },
   animate: { opacity: 1, x: 0 },
+};
+
+const topLeft: Variants = {
+  initial: { opacity: 1, x: 0 },
+  animate: { opacity: 0, x: -100 },
+};
+
+const bottomRight: Variants = {
+  initial: { opacity: 1, x: 0 },
+  animate: { opacity: 0, x: 100 },
+};
+
+const infoText: Variants = {
+  initial: { opacity: 0, scale: 0, transition: { duration: 0.2 } },
+  animate: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
 };
 
 const KniveBox = ({
@@ -30,14 +40,24 @@ const KniveBox = ({
     left: '65px',
   },
 }) => {
+  const [hovered, setHovered] = useState(false);
   const [ref, inView] = useInView();
   const controls = useAnimation();
+  const hoverControls = useAnimation();
 
   useEffect(() => {
     if (inView) {
       controls.start('animate');
     }
   }, [controls, inView]);
+
+  useEffect(() => {
+    if (hovered) {
+      hoverControls.start('animate');
+    } else {
+      hoverControls.start('initial');
+    }
+  }, [hovered]);
 
   return (
     <motion.div
@@ -53,32 +73,44 @@ const KniveBox = ({
       </div>
 
       {/* Top Left */}
-      <motion.div variants={bladeVariant} transition={{ duration: 0.3 }} className="absolute top-[4px] left-[4px] h-[45px] w-[45px]">
+      <motion.div
+        animate={hoverControls}
+        variants={topLeft}
+        transition={{ duration: 0.3 }}
+        className="absolute top-[4px] left-[4px] h-[45px] w-[45px]"
+      >
         <img src="/images/knives/top-left.png" />
       </motion.div>
       {/* Bottom Right */}
-      <motion.div variants={bladeVariant} transition={{ duration: 0.3 }} className="absolute bottom-[-1px] right-[4px] h-[45px] w-[45px]">
+      <motion.div
+        animate={hoverControls}
+        variants={bottomRight}
+        transition={{ duration: 0.3 }}
+        className="absolute bottom-[-1px] right-[4px] h-[45px] w-[45px]"
+      >
         <img src="/images/knives/bottom-right.png" />
       </motion.div>
 
-      {/* Blade Name and Info */}
+      {/* Blade Image and Info */}
       <div className="-skew-x-6 flex flex-col items-center justify-between min-h-[285px] md:-skew-x-12">
         <div />
         <motion.div
           variants={bladeVariant}
-          transition={{ duration: 1 }}
-          className="flex justify-center items-center relative min-h-[1px] w-full"
+          className="flex justify-center items-center relative min-h-[1px] w-full cursor-pointer"
+          onMouseOver={() => setHovered(true)}
+          onMouseOut={() => setHovered(false)}
         >
           <img
             src={image}
             alt="blade-1"
-            className="w-[75%] max-w-[279.43px]"
-            style={{ position: largeImage ? 'absolute' : 'static', right: '-9px' }}
+            className="w-[75%] max-w-[279.43px] transition-all"
+            style={{ position: largeImage ? 'absolute' : 'static', right: '-25px', scale: hovered ? '1.25' : '0.75' }}
           />
         </motion.div>
         <motion.p
-          variants={bladeVariant}
-          transition={{ duration: 1 }}
+          variants={infoText}
+          animate={hoverControls}
+          initial="initial"
           className="pb-[20px] tracking-wider text-[36px] font-[700]"
           style={{ color: infoTextColor ? infoTextColor : '#fff' }}
         >
@@ -88,8 +120,10 @@ const KniveBox = ({
 
       {/* Line */}
       <motion.div
-        variants={childVariant}
+        variants={infoText}
+        animate={hoverControls}
         transition={{ duration: 1 }}
+        initial="initial"
         className="w-[70%] h-[3px] bg-black absolute"
         style={{ width: lineProps.width, rotate: lineProps.rotate, bottom: lineProps.bottom, left: lineProps.left }}
       ></motion.div>
