@@ -1,6 +1,6 @@
 import { useAnimation, motion, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 const parentVariant: Variants = {
@@ -93,9 +93,15 @@ const KniveBox = ({
 };
 
 export const Knives = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 768px)',
   });
+
+  useEffect(() => {
+    setIsDesktop(isDesktopOrLaptop);
+  }, [isDesktopOrLaptop]);
+
   return (
     <div
       className="min-h-[639px] px-[50px] text-white grid grid-cols-1 gap-[40px] items-center md:grid-cols-4  md:px-[90px] md:gap-[20px]"
@@ -106,7 +112,7 @@ export const Knives = () => {
         infoTextColor="black"
         image="/images/knives/blade-1.png"
         lineProps={
-          isDesktopOrLaptop
+          isDesktop
             ? { width: '35%', rotate: '45deg', bottom: '110px', left: '65px' }
             : // Mobile Styles
               { width: '35%', rotate: '45deg', bottom: '130px', left: '50px' }
@@ -118,7 +124,7 @@ export const Knives = () => {
         image="/images/knives/blade-2.png"
         largeImage
         lineProps={
-          isDesktopOrLaptop
+          isDesktop
             ? { width: '51%', rotate: '136deg', bottom: '133px', left: '164px' }
             : // Mobile Styles
               { width: '51%', rotate: '136deg', bottom: '145px', left: '118px' }
@@ -128,7 +134,7 @@ export const Knives = () => {
         background="/images/knives/blade-3-bg.png"
         image="/images/knives/blade-3.png"
         lineProps={
-          isDesktopOrLaptop
+          isDesktop
             ? { width: '35%', rotate: '45deg', bottom: '110px', left: '65px' }
             : // Mobile Styles
               { width: '35%', rotate: '45deg', bottom: '130px', left: '50px' }
@@ -138,7 +144,7 @@ export const Knives = () => {
         background="/images/knives/blade-4-bg.png"
         image="/images/knives/blade-4.png"
         lineProps={
-          isDesktopOrLaptop
+          isDesktop
             ? { width: '41%', rotate: '124deg', bottom: '130px', left: '123px' }
             : // Modile Styles
               { width: '41%', rotate: '124deg', bottom: '140px', left: '85px' }
