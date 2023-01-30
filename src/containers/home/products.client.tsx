@@ -2,6 +2,8 @@ import Slider from '@ant-design/react-slick';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import animationData from '../../assets/brids.json';
+import lottie from 'lottie-web/build/player/lottie_light';
 
 const leftVariant = (duration: number) => ({
   visible: { x: 0, opacity: 1, transition: { duration } },
@@ -72,17 +74,47 @@ export const Products = () => {
     }
   }, [controls, inView]);
 
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector('#lottie-left') as Element,
+      animationData: animationData,
+      renderer: 'svg', // "canvas", "html"
+      loop: true, // boolean
+      autoplay: true, // boolean
+    });
+  }, []);
+
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector('#lottie-right') as Element,
+      animationData: animationData,
+      renderer: 'svg', // "canvas", "html"
+      loop: true, // boolean
+      autoplay: true, // boolean
+    });
+  }, []);
+
   return (
     <div className="overflow-hidden py-[30px] mt-[18px] mb-[18px] flex items-center justify-center lg:py-[70px] lg:gap-[unset] relative">
-      <motion.div animate={controls} initial="hidden" variants={leftVariant(0.5)} className="max-w-[15%] absolute left-[0px] bottom-[20%]">
+      {/* Left Mountains */}
+      <motion.div
+        animate={controls}
+        initial="hidden"
+        variants={leftVariant(0.5)}
+        className="max-w-[35%] xl:max-w-[15%] absolute left-[0px] bottom-[20%]"
+        style={{ zIndex: 1 }}
+      >
+        <div id="lottie-left" style={{ width: 200, height: 200 }} />
         <img src="/images/products/left-bg.png" alt="background" />
       </motion.div>
+      {/* Products */}
       <motion.div
         ref={ref}
         animate={controls}
         initial="hidden"
         variants={mainVariant(1)}
         className="custom-slick max-w-[calc(100vw)] lg:max-w-[1200px] relative"
+        style={{ zIndex: 2 }}
       >
         <Slider {...settings}>
           {productsData?.map((product: any) => {
@@ -90,12 +122,15 @@ export const Products = () => {
           })}
         </Slider>
       </motion.div>
+      {/* Right Mountains */}
       <motion.div
         animate={controls}
         initial="hidden"
         variants={rightVariant(0.5)}
-        className="max-w-[15%] absolute right-[0px] bottom-[20%]"
+        className="max-w-[35%] xl:max-w-[15%] absolute right-[0px] bottom-[20%]"
+        style={{ zIndex: 1 }}
       >
+        <div id="lottie-right" style={{ width: 200, height: 200 }} />
         <img src="/images/products/right-bg.png" alt="background" />
       </motion.div>
     </div>
