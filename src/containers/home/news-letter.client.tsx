@@ -1,20 +1,20 @@
 export const NewsLetter = () => {
   return (
     <div
-      className="mt-[8px] mb-[8px] min-h-[450px] bg-center bg-no-repeat bg-cover text-white flex items-center justify-center"
+      className="mt-[8px] mb-[8px] min-h-[400px] bg-center bg-no-repeat bg-cover text-white flex items-center md:justify-center md:min-h-[450px]"
       style={{ backgroundImage: 'url(/images/news-letter/background.png)' }}
     >
       <div className="text-center">
-        <h2 className="text-[62px] tracking-[0.01em] capitalize font-[900]">Stay in the Loop</h2>
+        <h2 className="text-[42px] tracking-[0.01em] capitalize font-bold md:text-[62px] md:font-[900]">Stay in the Loop</h2>
         <p className="mt-[15px] text-[20px]">Stay up to date with the latest discounts, promotions, & new releases</p>
 
         {/* Input */}
-        <div className="items-center justify-center h-[48px] w-[500px] mx-auto grid grid-cols-[70%_auto] mt-[40px]">
+        <div className="items-center justify-center h-[48px] w-[350px] mx-auto grid grid-cols-[70%_auto] mt-[40px] md:w-[500px]">
           {/* Email Icon */}
           <div className="relative">
-            <img src="/svg/email.svg" className="left-[20px] absolute top-[50%] translate-y-[-50%]" />
+            <img src="/svg/email.svg" className="left-[10px] absolute top-[50%] translate-y-[-50%] md:left-[20px]" />
             <input
-              className="h-[48px] border border-white border-solid rounded-[7px] bg-transparent w-[400px] pl-[60px] placeholder:text-whtie"
+              className="h-[48px] border border-white border-solid rounded-[7px] bg-transparent w-[300px] pl-[45px] pr-[60px] placeholder:text-whtie md:w-[400px] md:pl-[60px] md:pr-[unset]"
               placeholder="Your Email"
             />
           </div>

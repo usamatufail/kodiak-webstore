@@ -23,18 +23,18 @@ export const Why = () => {
   return (
     <section
       ref={ref}
-      className="mt-[64px] min-h-[700px] bg-cover bg-center flex flex-col items-center justify-center gap-[40px]"
+      className="mt-[45px] min-h-[650px] bg-cover bg-center flex flex-col items-center justify-center gap-[25px] px-[20px] md:min-h-[700px] md:gap-[40px] md:mt-[64px]"
       style={{ backgroundImage: 'url(/images/why/background.png)' }}
     >
       {visible ? (
-        <h1 className="text-[77px] font-[900] text-white leadig-[1]">
+        <h1 className="text-[68px] font-[900] text-white leading-[1.25] md:leadig-[1] md:text-[77px]">
           <TypeAnimation sequence={['Why Kodiak']} wrapper="span" cursor={false} repeat={0} />
         </h1>
       ) : (
         <></>
       )}
       {visible ? (
-        <p className="max-w-[1180px] text-white text-center text-[19px] font-[400]">
+        <p className="max-w-[1180px] text-white text-left md:text-center  text-[19px] font-[400]">
           <TypeAnimation
             sequence={[
               1000,

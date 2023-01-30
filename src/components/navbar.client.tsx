@@ -18,16 +18,15 @@ export const Navbar = () => {
     }
   }, [controls, inView]);
   return (
-    <nav className="flex items-center justify-between pl-[120px] pr-[40px] py-[14px]">
+    <nav className="flex items-center justify-between  py-[14px] px-[20px] md:pl-[120px] md:pr-[40px]">
       {/* Logo */}
-      <motion.div ref={ref} animate={controls} initial="hidden" variants={getVariant(0.5)}>
+      <motion.div ref={ref} animate={controls} initial="hidden" variants={getVariant(0.5)} className="w-[275px] md:w-[unset]">
         <img src="/images/navbar/logo.png" alt="logo" />
       </motion.div>
 
       {/* Links */}
-      <div className="flex items-center gap-[45px]">
+      <div className="items-center gap-[45px] hidden md:flex">
         <motion.div
-          ref={ref}
           animate={controls}
           initial="hidden"
           variants={getVariant(0.1)}
@@ -36,7 +35,6 @@ export const Navbar = () => {
           home
         </motion.div>
         <motion.div
-          ref={ref}
           animate={controls}
           initial="hidden"
           variants={getVariant(0.3)}
@@ -45,7 +43,6 @@ export const Navbar = () => {
           blade
         </motion.div>
         <motion.div
-          ref={ref}
           animate={controls}
           initial="hidden"
           variants={getVariant(0.5)}
@@ -54,7 +51,6 @@ export const Navbar = () => {
           gear
         </motion.div>
         <motion.div
-          ref={ref}
           animate={controls}
           initial="hidden"
           variants={getVariant(0.7)}
@@ -63,7 +59,6 @@ export const Navbar = () => {
           all blades gear
         </motion.div>
         <motion.div
-          ref={ref}
           animate={controls}
           initial="hidden"
           variants={getVariant(0.9)}
@@ -75,14 +70,13 @@ export const Navbar = () => {
 
       {/* Icons */}
       <motion.div
-        ref={ref}
         animate={controls}
         initial="hidden"
         variants={{
           visible: { x: 0, opacity: 1, transition: { duration: 0.4 } },
           hidden: { x: -50, opacity: 0, transition: { duration: 0.4 } },
         }}
-        className="flex items-center gap-[30px]"
+        className=" items-center gap-[30px] hidden md:flex"
       >
         <div>
           <img src="/images/navbar/search.svg" alt="search here" />
