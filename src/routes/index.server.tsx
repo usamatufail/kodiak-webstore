@@ -11,7 +11,7 @@ export default function Home() {
       {/* <Products /> */}
       <Knives />
       <NewsLetter />
-      {/* <Location />  */}
+      <Location />
     </Layout>
   );
 }
