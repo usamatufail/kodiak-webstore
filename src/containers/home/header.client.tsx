@@ -20,7 +20,7 @@ export const Header = () => {
 
   return (
     <header
-      className="min-h-[65vh] flex flex-col justify-center px-[20px] md:min-h-[78vh] md:px-[120px]"
+      className="min-h-[60vh] flex flex-col justify-center px-[20px] md:min-h-[78vh] md:px-[120px]"
       style={{ backgroundImage: 'url(/images/header/header.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       <motion.h1

@@ -34,7 +34,7 @@ const ShopCard = ({ images, background }: { images: string[]; background: string
       <div className="flex items-center justify-center">
         <button className="bg-white text-black rounded-[7px] py-[24px] px-[45px] text-[18px]">Shop Now</button>
       </div>
-      <div className="grid grid-cols-5 gap-[35px]">
+      <div className="grid grid-cols-2 mt-[50px] gap-[20px] md:grid-cols-5 md:gap-[35px]">
         {images.map((image) => {
           return (
             <div key={image} className="cursor-pointer">
@@ -49,9 +49,11 @@ const ShopCard = ({ images, background }: { images: string[]; background: string
 
 export const Available = () => {
   return (
-    <section className="mt-[55px]">
-      <h1 className="text-[#126149] text-[77px] font-[900] text-center">Available Blades</h1>
-      <div className="grid grid-cols-2 gap-[34px] px-[70px] mt-[96px]">
+    <section className="mt-[35px] md:mt-[unset]">
+      <h1 className="text-[#126149] text-[52px] font-bold leading-[1.12] text-center md:text-[77px] md:font-[900] md:leading-[unset]">
+        Available Blades
+      </h1>
+      <div className=" flex flex-col gap-[20px] px-[12px] mt-[25px] md:grid md:grid-cols-2 md:gap-[34px] md:px-[70px] md:mt-[96px]">
         <ShopCard images={card1} background="/images/available/available1.png" />
         <ShopCard images={card2} background="/images/available/available2.png" />
       </div>
