@@ -10,7 +10,7 @@ export default function Home() {
       <Why />
       {/* <Products /> */}
       <Knives />
-      {/* <NewsLetter /> */}
+      <NewsLetter />
       {/* <Location />  */}
     </Layout>
   );
