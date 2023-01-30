@@ -7,7 +7,7 @@ export default function Home() {
       {/* TODO: Un-comment */}
       <Header />
       <Available />
-      {/* <Why /> */}
+      <Why />
       {/* <Products /> */}
       {/* <Knives /> */}
       {/* <NewsLetter /> */}
