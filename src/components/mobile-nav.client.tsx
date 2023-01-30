@@ -7,20 +7,18 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { Icons } from './nav-icons.client';
 
 export const Menu = ({ isOpen, setIsOpen }: any) => {
-  console.log(isOpen);
   const [collections, setCollections] = useState<any>([]);
   useEffect(() => {
     (async () => {
       // Generating Custom Links
-      const firstLinks = [
+      const links = [
         { name: 'Home', handle: '/', variantValue: 0 },
         { name: 'Blades', handle: '/shop', variantValue: 0.2 },
-        { name: 'Gear', handle: '/shop', variantValue: 0.2 },
-        { name: 'All Blades Gear', handle: '/shop', variantValue: 0.2 },
-        { name: 'About', handle: '/shop', variantValue: 0.2 },
+        { name: 'Gear', handle: '/gear', variantValue: 0.2 },
+        { name: 'All Blades Gear', handle: '/all-blades', variantValue: 0.2 },
+        { name: 'About', handle: '/about', variantValue: 0.2 },
       ];
-      const lastLink = [{ name: 'About Us', handle: '/about-us', variantValue: 0.3 }];
-      setCollections([...firstLinks, ...lastLink]);
+      setCollections(links);
     })();
   }, []);
 
