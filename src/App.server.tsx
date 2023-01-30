@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './custom-font.css';
 import './index.css';
+import 'react-modern-drawer/dist/index.css';
 
 function App() {
   return (

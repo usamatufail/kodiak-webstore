@@ -69,7 +69,12 @@ const KniveBox = ({
           transition={{ duration: 1 }}
           className="flex justify-center items-center relative min-h-[1px] w-full"
         >
-          <img src={image} alt="blade-1" className="w-[75%]" style={{ position: largeImage ? 'absolute' : 'static', right: '-9px' }} />
+          <img
+            src={image}
+            alt="blade-1"
+            className="w-[75%] max-w-[279.43px]"
+            style={{ position: largeImage ? 'absolute' : 'static', right: '-9px' }}
+          />
         </motion.div>
         <motion.p
           variants={bladeVariant}
@@ -104,7 +109,7 @@ export const Knives = () => {
 
   return (
     <div
-      className="min-h-[639px] px-[50px] text-white grid grid-cols-1 gap-[40px] items-center md:grid-cols-4  md:px-[90px] md:gap-[20px]"
+      className="min-h-[639px] px-[50px] py-[40px] text-white grid grid-cols-1 gap-[40px] items-center md:grid-cols-4 md:py-[unset] md:px-[90px] md:gap-[20px]"
       style={{ backgroundImage: 'url(/images/knives/background.png)' }}
     >
       <KniveBox
