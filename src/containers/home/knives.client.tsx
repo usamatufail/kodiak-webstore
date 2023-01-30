@@ -104,7 +104,12 @@ const KniveBox = ({
             src={image}
             alt="blade-1"
             className="w-[75%] max-w-[279.43px] transition-all"
-            style={{ position: largeImage ? 'absolute' : 'static', right: '-25px', scale: hovered ? '1.25' : '0.75' }}
+            style={{
+              position: largeImage ? 'absolute' : 'static',
+              right: '-25px',
+              scale: hovered ? '1.25' : '0.75',
+              filter: 'drop-shadow(2px 4px 6px black)',
+            }}
           />
         </motion.div>
         <motion.p
