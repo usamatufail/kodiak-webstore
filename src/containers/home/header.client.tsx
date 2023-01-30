@@ -33,8 +33,10 @@ export const Header = () => {
         Handmade Knives
       </motion.h1>
       <p className="font-bold text-white text-[22px] md:text-[36px]">
+        <TypeAnimation sequence={['That embody the Alaskan spirit.']} speed={85} wrapper="span" cursor={false} repeat={0} />
+        <br />
         <TypeAnimation
-          sequence={['That embody the Alaskan spirit.', 2000, 'Crafted with precision and ruggedness for those who seek adventure.']}
+          sequence={[' ', 1000, 'Crafted with precision and ruggedness for those who seek adventure.']}
           speed={85}
           wrapper="span"
           cursor={true}
