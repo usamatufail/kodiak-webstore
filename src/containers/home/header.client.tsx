@@ -20,7 +20,7 @@ export const Header = () => {
 
   return (
     <header
-      className="min-h-[60vh] flex flex-col justify-center px-[20px] md:min-h-[78vh] md:px-[120px]"
+      className="min-h-[60vh] flex flex-col justify-center px-[20px] md:min-h-[78vh] md:px-[160px]"
       style={{ backgroundImage: 'url(/images/header/header.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       <motion.h1
@@ -33,8 +33,10 @@ export const Header = () => {
         Handmade Knives
       </motion.h1>
       <p className="font-bold text-white text-[22px] md:text-[36px]">
+        <TypeAnimation sequence={['That embody the Alaskan spirit.']} speed={85} wrapper="span" cursor={false} repeat={0} />
+        <br />
         <TypeAnimation
-          sequence={['That embody the Alaskan spirit.', 2000, 'Crafted with precision and ruggedness for those who seek adventure.']}
+          sequence={[' ', 1000, 'Crafted with precision and ruggedness for those who seek adventure.']}
           speed={85}
           wrapper="span"
           cursor={true}

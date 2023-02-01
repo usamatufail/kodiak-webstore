@@ -1,7 +1,8 @@
 import styles from './navbar.module.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAnimation, motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { Menu } from './mobile-nav.client';
+import { Icons } from './nav-icons.client';
 
 const getVariant = (duration: number) => ({
   visible: { x: 0, opacity: 1, transition: { duration } },
@@ -9,19 +10,22 @@ const getVariant = (duration: number) => ({
 });
 
 export const Navbar = () => {
-  const [ref, inView] = useInView();
+  const [isOpen, setIsOpen] = useState(false);
   const controls = useAnimation();
 
   useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
+    controls.start('visible');
+  }, []);
+
   return (
-    <nav className="flex items-center justify-between  py-[14px] px-[20px] md:pl-[120px] md:pr-[40px]">
+    <nav className="flex items-center justify-between overflow-hidden py-[14px] px-[20px] md:pl-[120px] md:pr-[40px] relative z-10">
       {/* Logo */}
-      <motion.div ref={ref} animate={controls} initial="hidden" variants={getVariant(0.5)} className="w-[275px] md:w-[unset]">
+      <motion.div animate={controls} initial="hidden" variants={getVariant(0.5)} className="w-[250px] md:w-[unset]">
         <img src="/images/navbar/logo.png" alt="logo" />
+      </motion.div>
+      {/* Mobile Menu (Links) */}
+      <motion.div animate={controls} initial="hidden" variants={getVariant(0.5)} className="block md:hidden">
+        <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
       </motion.div>
 
       {/* Links */}
@@ -78,21 +82,7 @@ export const Navbar = () => {
         }}
         className=" items-center gap-[30px] hidden md:flex"
       >
-        <div>
-          <img src="/images/navbar/search.svg" alt="search here" />
-        </div>
-        <div className="relative">
-          <div
-            style={{ background: 'url(/images/navbar/cart-bubble.png)', backgroundPosition: 'center', backgroundSize: 'cover' }}
-            className={`absolute -right-[10px] -top-[10px] rounded-[50%] h-[17px] w-[17px] text-white flex items-center justify-center text-[11px]`}
-          >
-            3
-          </div>
-          <img src="/images/navbar/cart.svg" alt="open the cart" />
-        </div>
-        <div>
-          <img src="/images/navbar/user.svg" alt="user icon here" />
-        </div>
+        <Icons />
       </motion.div>
     </nav>
   );

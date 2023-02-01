@@ -76,18 +76,18 @@ export const Footer = () => {
   }, [controls, inView]);
 
   return (
-    <div className="py-[60px] px-[100px] grid grid-cols-[350px_auto] gap-[100px]">
+    <div className="py-[60px] px-[20px] grid grid-cols-1 gap-[30px] xl:gap-[100px] xl:grid-cols-[350px_auto] xl:px-[100px]">
       {/* Logo */}
       <motion.div ref={ref} animate={controls} initial="hidden" variants={getVariant(0.5)}>
-        <img src="/images/navbar/logo.png" alt="logo" />
+        <img src="/images/navbar/logo.png" alt="logo" className="m-auto xl:m-[unset]" />
       </motion.div>
-      <div className="grid grid-cols-4 gap-[45px]">
+      <div className="grid gap-[45px] grid-cols-1 xl:grid-cols-4">
         <Links links={quickLinks} />
         <Links links={connectLinks} />
         {/* Social Links */}
         <div className="text-center md:text-left">
           <h5 className="font-[600] text-[22px] uppercase custom-gradient-text">FOLLOW US</h5>
-          <div className="mt-[10px] md:mt-[20px] flex gap-[8px]">
+          <div className="mt-[10px] md:mt-[20px] flex gap-[8px] justify-center xl:justify-start">
             {socialLinks.links.map((link) => (
               <a key={link.icon} href={link.url} className="font-[300] text-[18px]">
                 <img src={link.icon} alt={link.title} />

@@ -1,7 +1,7 @@
 export const NewsLetter = () => {
   return (
     <div
-      className="mt-[8px] mb-[8px] min-h-[400px] bg-center bg-no-repeat bg-cover text-white flex items-center md:justify-center md:min-h-[450px]"
+      className="min-h-[400px] bg-center bg-no-repeat bg-cover text-white flex items-center md:justify-center md:min-h-[450px]"
       style={{ backgroundImage: 'url(/images/news-letter/background.png)' }}
     >
       <div className="text-center">
