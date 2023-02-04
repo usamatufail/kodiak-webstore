@@ -9,11 +9,11 @@ const getVariant = (duration: number) => ({
 });
 
 const images = [
-  'https://res.cloudinary.com/samtufail726/image/upload/f_auto/v1675465118/kodiak/1_n9rg3y.webp',
-  'https://res.cloudinary.com/samtufail726/image/upload/f_auto/v1675465116/kodiak/DSC03088-Edit_vwzexh.webp',
-  'https://res.cloudinary.com/samtufail726/image/upload/f_auto/v1675465741/kodiak/DSC02328_ik8rcy.jpg',
-  'https://res.cloudinary.com/samtufail726/image/upload/f_auto/v1675465743/kodiak/DSC02452_ggxiqy.jpg',
-  'https://res.cloudinary.com/samtufail726/image/upload/f_auto/v1675465742/kodiak/DSC02277_y6krg4.jpg',
+  'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465118/kodiak/1_n9rg3y.webp',
+  'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465116/kodiak/DSC03088-Edit_vwzexh.webp',
+  'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465741/kodiak/DSC02328_ik8rcy.jpg',
+  'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465743/kodiak/DSC02452_ggxiqy.jpg',
+  'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465742/kodiak/DSC02277_y6krg4.jpg',
 ];
 
 export const Header = () => {
