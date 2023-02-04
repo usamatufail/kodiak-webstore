@@ -10,7 +10,7 @@ export const ShopCard = ({
       <h1 className="text-[26px] font-[700] text-black mt-[25px]">{title}</h1>
       <p className="text-[19px] font-[400] text-black">{txt}</p>
       <div className="flex">
-        <button className="h-[75px] px-[20px] text-[24px] font-[900] text-white bg-black">${price}</button>
+        <button className="h-[75px] px-[20px] text-[24px] font-[900] text-white bg-black rounded-[6px]">${price}</button>
       </div>
     </div>
   );
