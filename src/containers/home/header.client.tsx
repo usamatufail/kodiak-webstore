@@ -16,11 +16,11 @@ const images = [
   'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465742/kodiak/DSC02277_y6krg4.jpg',
 ];
 
+const random = Math.floor(Math.random() * images.length);
+
 export const Header = () => {
   const [ref, inView] = useInView();
   const controls = useAnimation();
-
-  const random = Math.floor(Math.random() * images.length);
 
   useEffect(() => {
     if (inView) {

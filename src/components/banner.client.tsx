@@ -1,4 +1,6 @@
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants, useAnimation } from 'framer-motion';
+import { useUrl } from '@shopify/hydrogen';
+import { useEffect } from 'react';
 
 const parentVariant: Variants = {
   initial: { opacity: 0 },
@@ -21,18 +23,27 @@ export const Banner = ({
   height = '420px',
   imageStyles = {},
 }) => {
+  const url = useUrl();
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start('animate');
+  }, [url]);
+
   return (
     <motion.div
       className="w-full flex items-center justify-center relative overflow-hidden"
       initial="initial"
-      animate="animate"
+      key={backgroundImg}
+      animate={controls}
       variants={parentVariant}
       style={{ height }}
     >
       <motion.img
         initial="initial"
-        animate="animate"
+        animate={controls}
         variants={imageVariant}
+        key={backgroundImg}
         transition={{ type: 'tween', delay: 0, duration: 1 }}
         style={imageStyles}
         src={backgroundImg}
@@ -42,7 +53,8 @@ export const Banner = ({
       <motion.h2
         variants={textVariant}
         initial="initial"
-        animate="animate"
+        animate={controls}
+        key={backgroundImg}
         transition={{ type: 'tween', delay: 0.2, duration: 0.5 }}
         className="relative z-30 leading-[1.12] text-white text-[58px] font-bold text-center md:text-[77px] md:font-[900]"
       >

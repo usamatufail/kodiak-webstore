@@ -1,7 +1,7 @@
 export const Location = () => {
   return (
     <div
-      className="mb-[8px] min-h-[450px] bg-center bg-no-repeat bg-cover text-white flex items-center justify-center relative"
+      className="mb-[8px] min-h-[450px] bg-center bg-no-repeat bg-cover text-white flex items-center justify-center relative mt-[4px]"
       style={{ backgroundImage: 'url(/images/location/background.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       <div

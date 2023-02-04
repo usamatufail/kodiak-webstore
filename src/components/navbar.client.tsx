@@ -14,6 +14,7 @@ const getVariant = (duration: number) => ({
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const controls = useAnimation();
 
   useEffect(() => {
@@ -56,21 +57,21 @@ export const Navbar = () => {
           </motion.div>
         </Link>
         <Dropdown
-          trigger={['click']}
+          open={open}
           overlayStyle={{ backgroundColor: '#dedede' }}
           dropdownRender={() => (
             // Shop Sub Pages
             <div className="flex flex-col">
-              <Link to="/shop/all" className="hover:bg-gray-300 transition-all">
+              <Link to="/shop/all" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
                 <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>all</div>
               </Link>
-              <Link to="/shop/all" className="hover:bg-gray-300 transition-all">
+              <Link to="/shop/blades" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
                 <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>blades</div>
               </Link>
-              <Link to="/shop/all" className="hover:bg-gray-300 transition-all">
+              <Link to="/shop/equipment" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
                 <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>equipment</div>
               </Link>
-              <Link to="/shop/all" className="hover:bg-gray-300 transition-all">
+              <Link to="/shop/gear" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
                 <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>gear</div>
               </Link>
             </div>
@@ -79,6 +80,7 @@ export const Navbar = () => {
           {/* Shop Heading */}
           <motion.div
             animate={controls}
+            onClick={() => setOpen(true)}
             initial="hidden"
             variants={getVariant(0.5)}
             className={`${styles['nav-link']} cursor-pointer select-none flex items-center gap-[5px]`}

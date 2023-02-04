@@ -23,7 +23,7 @@ export const Why = () => {
   return (
     <section
       ref={ref}
-      className="mt-[45px] min-h-[650px] bg-cover bg-center flex flex-col items-center justify-center gap-[25px] px-[20px] md:min-h-[700px] md:gap-[40px] md:mt-[64px]"
+      className="mt-[4px] min-h-[650px] bg-cover bg-center flex flex-col items-center justify-center gap-[25px] px-[20px] md:min-h-[700px] md:gap-[40px] md:mt-[4px]"
       style={{ backgroundImage: 'url(/images/why/background.png)' }}
     >
       {visible ? (
