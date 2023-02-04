@@ -39,7 +39,11 @@ export const Form = () => {
             name="agree-on-updates"
             className="col-span-2"
           />
-          <button className="h-[54px] flex items-center justify-center font-[900] uppercase text-[20px] bg-[rgba(255,255,255,0.6)] focus:bg-[rgba(255,255,255,0.8)] hover:bg-[rgba(255,255,255,0.8)] transition-all rounded-[8px] mt-[40px] col-span-2">
+          <button
+            className={`h-[54px] flex items-center justify-center font-[900] uppercase
+          text-[20px] bg-[rgba(255,255,255,0.6)] focus:bg-[rgba(255,255,255,0.8)]
+          hover:bg-[rgba(255,255,255,0.8)] transition-all rounded-[8px] mt-[20px] col-span-2`}
+          >
             SUBMIT
           </button>
         </motion.form>
