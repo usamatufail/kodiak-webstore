@@ -67,14 +67,16 @@ export const Navbar = () => {
         >
           all blades gear
         </motion.div>
-        <motion.div
-          animate={controls}
-          initial="hidden"
-          variants={getVariant(0.9)}
-          className={`${styles['nav-link']} cursor-pointer select-none`}
-        >
-          About
-        </motion.div>
+        <Link to="/about">
+          <motion.div
+            animate={controls}
+            initial="hidden"
+            variants={getVariant(0.9)}
+            className={`${styles['nav-link']} cursor-pointer select-none`}
+          >
+            About
+          </motion.div>
+        </Link>
         <Link to="/contact">
           <motion.div
             animate={controls}

@@ -14,3 +14,7 @@ export { HandmadeKnives } from './blades/handmade-knives.client';
 
 // Contact
 export { Form } from './contact/form.client';
+
+// About Us
+export { AboutUs } from './about/about-us.client';
+export { Social } from './about/social.client';

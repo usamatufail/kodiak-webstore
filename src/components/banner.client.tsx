@@ -15,7 +15,12 @@ const textVariant: Variants = {
   animate: { opacity: 1, scale: 1 },
 };
 
-export const Banner = ({ backgroundImg = '/images/banner/hunting-knives.png', heading = 'Heading Knive', height = '420px' }) => {
+export const Banner = ({
+  backgroundImg = '/images/banner/hunting-knives.png',
+  heading = 'Heading Knive',
+  height = '420px',
+  imageStyles = {},
+}) => {
   return (
     <motion.div
       className="w-full flex items-center justify-center relative overflow-hidden"
@@ -29,6 +34,7 @@ export const Banner = ({ backgroundImg = '/images/banner/hunting-knives.png', he
         animate="animate"
         variants={imageVariant}
         transition={{ type: 'tween', delay: 0, duration: 1 }}
+        style={imageStyles}
         src={backgroundImg}
         className="z-10 absolute top-0 left-0 object-cover w-full h-full"
       />
