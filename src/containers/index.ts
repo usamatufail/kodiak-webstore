@@ -18,3 +18,6 @@ export { Form } from './contact/form.client';
 // About Us
 export { AboutUs } from './about/about-us.client';
 export { Social } from './about/social.client';
+
+// Policies
+export { PoliciesContainer } from './policies/policies.client';
