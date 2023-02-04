@@ -1,6 +1,6 @@
 .nav-link {
   /* Nav */
-  font-weight: bold;
+  font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -10,4 +10,15 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  transition: all 0.2s ease-in;
+}
+
+.nav-link:hover {
+  font-weight: 800;
+  scale: 1.1;
+}
+
+.nav-link:active {
+  font-weight: 800;
+  scale: 1.1;
 }
