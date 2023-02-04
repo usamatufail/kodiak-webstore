@@ -17,7 +17,7 @@ const rightVariant = (duration: number) => ({
 export const HuntingKnives = ({
   link = 'hunting-knives',
   heading = 'Hunting Knives',
-  image = 'https://res.cloudinary.com/samtufail726/image/upload/f_auto/v1675478484/kodiak/Blades/DSC02397_t8wssi.webp',
+  image = 'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675478484/kodiak/Blades/DSC02397_t8wssi.webp',
   description = `Hunting knives are essential pieces of equipment for any serious hunter. They are multi-purpose tools that can help you with
 everything from skinning and cleaning game to cutting rope and fabricating shelter. In this article, we will explore the benefits
 of owning a hunting knife and what you need to know before making your purchase.`,

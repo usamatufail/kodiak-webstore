@@ -59,7 +59,7 @@ export const HandmadeKnives = ({
       {/* Image */}
       <DetailsBanner
         heading={heading}
-        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/f_auto/v1675484446/kodiak/Blades/DSC02473_wdpygj.jpg"
+        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675484446/kodiak/Blades/DSC02473_wdpygj.jpg"
         description={description}
       />
       {/* Text with Mountains */}
