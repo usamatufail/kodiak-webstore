@@ -17,12 +17,13 @@ export const Types = () => {
             skinning animals or performing other tasks. Folding knives are also popular, as they offer convenience and portability but may
             not be as strong as fixed blades. Finally, some hunters prefer specialized knives such as gut hooks or caping knives for
             specific tasks.
-            <br /> <br /> When shopping for a hunting knife, consider its size, shape, weight, blade length, handle material, and sheath
-            design. The size and shape should be comfortable in your hand so that you can easily grip the knife while you work. The weight
-            should be heavy enough to feel solid but light enough that it won't tire out your arm quickly. The blade should be long enough
-            to perform all necessary tasks without being unwieldy or difficult to maneuver. Handle materials vary greatly; some hunters
-            prefer leather while others opt for synthetic materials like G10 or Micarta which offer improved grip in wet conditions.
-            Finally, make sure the sheath design is secure yet easy to access when needed.
+            <br />
+            When shopping for a hunting knife, consider its size, shape, weight, blade length, handle material, and sheath design. The size
+            and shape should be comfortable in your hand so that you can easily grip the knife while you work. The weight should be heavy
+            enough to feel solid but light enough that it won't tire out your arm quickly. The blade should be long enough to perform all
+            necessary tasks without being unwieldy or difficult to maneuver. Handle materials vary greatly; some hunters prefer leather
+            while others opt for synthetic materials like G10 or Micarta which offer improved grip in wet conditions. Finally, make sure the
+            sheath design is secure yet easy to access when needed.
           </p>
         </div>
         <img src="/images/hunting-knives/types.png" />
