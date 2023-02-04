@@ -1,11 +1,12 @@
 import styles from './navbar.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useAnimation, motion } from 'framer-motion';
 import { AiOutlineDown } from 'react-icons/ai';
 import { Menu } from './mobile-nav.client';
 import { Icons } from './nav-icons.client';
 import { Link } from '@shopify/hydrogen';
 import { Dropdown } from 'antd';
+import { useOutsideClick } from '../hooks';
 
 const getVariant = (duration: number) => ({
   visible: { x: 0, opacity: 1, transition: { duration } },
@@ -16,6 +17,12 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const controls = useAnimation();
+
+  const ref: any = useRef();
+
+  useOutsideClick(ref, () => {
+    setOpen(false);
+  });
 
   useEffect(() => {
     controls.start('visible');
@@ -61,7 +68,7 @@ export const Navbar = () => {
           overlayStyle={{ backgroundColor: '#dedede' }}
           dropdownRender={() => (
             // Shop Sub Pages
-            <div className="flex flex-col">
+            <div className="flex flex-col" ref={ref}>
               <Link to="/shop/all" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
                 <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>all</div>
               </Link>
@@ -80,7 +87,8 @@ export const Navbar = () => {
           {/* Shop Heading */}
           <motion.div
             animate={controls}
-            onClick={() => setOpen(true)}
+            ref={ref}
+            onClick={() => setOpen((prev) => !prev)}
             initial="hidden"
             variants={getVariant(0.5)}
             className={`${styles['nav-link']} cursor-pointer select-none flex items-center gap-[5px]`}
