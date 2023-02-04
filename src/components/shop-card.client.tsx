@@ -5,12 +5,16 @@ export const ShopCard = ({
   price = '12.00',
 }) => {
   return (
-    <div className="flex flex-col gap-[25px]">
-      <img src={img} alt={title} />
-      <h1 className="text-[26px] font-[700] text-white mt-[25px]">{title}</h1>
-      <p className="text-[19px] font-[400] text-white">{txt}</p>
-      <div className="flex">
-        <button className="h-[75px] px-[20px] text-[24px] font-[900] text-black bg-white rounded-[6px]">${price}</button>
+    <div className="flex flex-col ">
+      <div className="bg-[#DCDCDC] rounded-[40px] max-h-[600px]">
+        <img src={img} alt={title} className="w-[110%] h-[110%] object-cover" />
+      </div>
+      <div className="flex flex-col gap-[18px]">
+        <h1 className="text-[26px] font-[700] text-white mt-[35px]">{title}</h1>
+        <p className="text-[19px] font-[400] text-white">{txt}</p>
+        <div className="flex">
+          <button className="h-[75px] px-[45px] text-[24px] font-[900] text-black bg-white rounded-[6px]">${price}</button>
+        </div>
       </div>
     </div>
   );
