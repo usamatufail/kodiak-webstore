@@ -21,9 +21,11 @@ export const Navbar = () => {
   return (
     <nav className="flex items-center justify-between overflow-hidden py-[14px] px-[20px] md:pl-[120px] md:pr-[40px] relative z-10">
       {/* Logo */}
-      <motion.div animate={controls} initial="hidden" variants={getVariant(0.5)} className="w-[250px] md:w-[unset]">
-        <img src="/images/navbar/logo.png" alt="logo" className="w-[125px]" />
-      </motion.div>
+      <Link to="/">
+        <motion.div animate={controls} initial="hidden" variants={getVariant(0.5)} className="w-[250px] md:w-[unset]">
+          <img src="/images/navbar/logo.png" alt="logo" className="w-[125px]" />
+        </motion.div>
+      </Link>
       {/* Mobile Menu (Links) */}
       <motion.div animate={controls} initial="hidden" variants={getVariant(0.5)} className="block md:hidden">
         <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
