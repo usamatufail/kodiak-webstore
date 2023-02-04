@@ -5,7 +5,10 @@ import { ShopCards } from '../../containers';
 export default function SHopAll() {
   return (
     <Layout>
-      <Banner backgroundImg="/images/shop-all/shop-banner.png" heading="Blades And Gears" />
+      <Banner
+        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/v1675500694/kodiak/Shop/All/DSC02256_x8g256.webp"
+        heading="Shop All"
+      />
       <ShopCards />
       <NewsLetter />
     </Layout>
