@@ -75,6 +75,16 @@ export const Navbar = () => {
         >
           About
         </motion.div>
+        <Link to="/contact">
+          <motion.div
+            animate={controls}
+            initial="hidden"
+            variants={getVariant(1.2)}
+            className={`${styles['nav-link']} cursor-pointer select-none`}
+          >
+            Contact
+          </motion.div>
+        </Link>
       </div>
 
       {/* Icons */}

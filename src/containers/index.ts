@@ -11,3 +11,6 @@ export { Navigation } from './blades/navigation.client';
 export { Details } from './blades/details.client';
 export { HuntingKnives } from './blades/hunting-knives.client';
 export { HandmadeKnives } from './blades/handmade-knives.client';
+
+// Contact
+export { Form } from './contact/form.client';
