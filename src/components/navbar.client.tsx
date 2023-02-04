@@ -1,9 +1,11 @@
 import styles from './navbar.module.css';
 import { useEffect, useState } from 'react';
 import { useAnimation, motion } from 'framer-motion';
+import { AiOutlineDown } from 'react-icons/ai';
 import { Menu } from './mobile-nav.client';
 import { Icons } from './nav-icons.client';
 import { Link } from '@shopify/hydrogen';
+import { Dropdown } from 'antd';
 
 const getVariant = (duration: number) => ({
   visible: { x: 0, opacity: 1, transition: { duration } },
@@ -21,9 +23,11 @@ export const Navbar = () => {
   return (
     <nav className="flex items-center justify-between overflow-hidden py-[14px] px-[20px] md:pl-[120px] md:pr-[40px] relative z-10">
       {/* Logo */}
-      <motion.div animate={controls} initial="hidden" variants={getVariant(0.5)} className="w-[250px] md:w-[unset]">
-        <img src="/images/navbar/logo.png" alt="logo" className="w-[125px]" />
-      </motion.div>
+      <Link to="/">
+        <motion.div animate={controls} initial="hidden" variants={getVariant(0.5)} className="w-[250px] md:w-[unset]">
+          <img src="/images/navbar/logo.png" alt="logo" className="w-[125px]" />
+        </motion.div>
+      </Link>
       {/* Mobile Menu (Links) */}
       <motion.div animate={controls} initial="hidden" variants={getVariant(0.5)} className="block md:hidden">
         <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -51,29 +55,65 @@ export const Navbar = () => {
             blades
           </motion.div>
         </Link>
-        <motion.div
-          animate={controls}
-          initial="hidden"
-          variants={getVariant(0.5)}
-          className={`${styles['nav-link']} cursor-pointer select-none`}
+        <Dropdown
+          trigger={['click']}
+          overlayStyle={{ backgroundColor: '#dedede' }}
+          dropdownRender={() => (
+            // Shop Sub Pages
+            <div className="flex flex-col">
+              <Link to="/shop/all" className="hover:bg-gray-300 transition-all">
+                <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>all</div>
+              </Link>
+              <Link to="/shop/all" className="hover:bg-gray-300 transition-all">
+                <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>blades</div>
+              </Link>
+              <Link to="/shop/all" className="hover:bg-gray-300 transition-all">
+                <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>equipment</div>
+              </Link>
+              <Link to="/shop/all" className="hover:bg-gray-300 transition-all">
+                <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>gear</div>
+              </Link>
+            </div>
+          )}
         >
-          gear
-        </motion.div>
+          {/* Shop Heading */}
+          <motion.div
+            animate={controls}
+            initial="hidden"
+            variants={getVariant(0.5)}
+            className={`${styles['nav-link']} cursor-pointer select-none flex items-center gap-[5px]`}
+          >
+            <span>shop</span>
+            <AiOutlineDown />
+          </motion.div>
+        </Dropdown>
+        <Link to="/about">
+          <motion.div
+            animate={controls}
+            initial="hidden"
+            variants={getVariant(0.9)}
+            className={`${styles['nav-link']} cursor-pointer select-none`}
+          >
+            About
+          </motion.div>
+        </Link>
+        <Link to="/contact">
+          <motion.div
+            animate={controls}
+            initial="hidden"
+            variants={getVariant(1.2)}
+            className={`${styles['nav-link']} cursor-pointer select-none`}
+          >
+            Contact
+          </motion.div>
+        </Link>
         <motion.div
           animate={controls}
           initial="hidden"
           variants={getVariant(0.7)}
           className={`${styles['nav-link']} cursor-pointer select-none`}
         >
-          all blades gear
-        </motion.div>
-        <motion.div
-          animate={controls}
-          initial="hidden"
-          variants={getVariant(0.9)}
-          className={`${styles['nav-link']} cursor-pointer select-none`}
-        >
-          About
+          Gallery
         </motion.div>
       </div>
 
