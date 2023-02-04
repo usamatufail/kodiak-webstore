@@ -21,3 +21,6 @@ export { Social } from './about/social.client';
 
 // Policies
 export { PoliciesContainer } from './policies/policies.client';
+//Shop-All
+
+export { ShopCards } from './shop-all/shop-cards.client';
