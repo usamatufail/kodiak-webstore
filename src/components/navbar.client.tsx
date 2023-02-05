@@ -27,7 +27,7 @@ const links = [
   },
   { name: 'about', to: '/about' },
   { name: 'contact', to: '/contact' },
-  { name: 'gallery', to: '/gallery' },
+  // { name: 'gallery', to: '/gallery' },
 ];
 
 const CustomDropdown = ({ animate, initial, variants }: any) => {

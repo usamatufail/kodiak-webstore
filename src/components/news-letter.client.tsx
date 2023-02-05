@@ -1,14 +1,45 @@
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import { useAnimation, motion } from 'framer-motion';
+
+const getVariant = () => ({
+  visible: { scale: 1, opacity: 1 },
+  hidden: { scale: 0.5, opacity: 0 },
+});
+
 export const NewsLetter = ({
   image = 'https://res.cloudinary.com/samtufail726/image/upload/q_auto,f_auto/v1675500468/kodiak/Shop/All/DSC02478_qcdfmd.jpg',
 }) => {
+  const [ref, inView] = useInView();
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   return (
     <div
       className="min-h-[400px] bg-center bg-no-repeat bg-cover text-white flex items-center md:justify-center md:min-h-[450px] relative after:h-full after:w-full after:absolute after:bg-black after:opacity-[0.65] after:z-10"
       style={{ backgroundImage: `url(${image})` }}
+      ref={ref}
     >
       <div className="text-center relative z-20">
         <h2 className="text-[42px] tracking-[0.01em] capitalize font-bold md:text-[62px] md:font-[900]">Stay in the Loop</h2>
-        <p className="mt-[15px] text-[20px]">Stay up to date with the latest discounts, promotions, & new releases</p>
+        <motion.p
+          initial="hidden"
+          animate={controls}
+          variants={getVariant()}
+          transition={{ duration: 0.5 }}
+          className="mt-[15px] text-[20px] max-w-[1515px] px-[20px]"
+        >
+          Embark on a never-ending journey of discovery and excitement. Join us on a quest to unlock the full potential of your outdoor
+          adventures. Our weekly newsletters are designed to be your ultimate guide, filled with valuable insights and expert advice on
+          optimizing your gear, mastering the great outdoors, and elevating your experience. As a member of our community, you'll gain
+          access to a wealth of information that will inspire and empower you to tackle new challenges and reach new heights. Sign up now
+          and take the first step towards a journey that is never-ending and always full of excitement.
+        </motion.p>
 
         {/* Input */}
         <div className="items-center justify-center h-[48px] w-[350px] mx-auto grid grid-cols-[70%_auto] mt-[40px] md:w-[500px]">

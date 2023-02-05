@@ -3,9 +3,9 @@ import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
 import { useAnimation, motion } from 'framer-motion';
 
-const getVariant = (duration: number) => ({
-  visible: { scale: 1, opacity: 1, transition: { duration } },
-  hidden: { scale: 0.5, opacity: 0, transition: { duration } },
+const getVariant = () => ({
+  visible: { scale: 1, opacity: 1 },
+  hidden: { scale: 0.5, opacity: 0 },
 });
 
 export const Why = () => {
@@ -33,25 +33,23 @@ export const Why = () => {
       ) : (
         <></>
       )}
-      {visible ? (
-        <p className="max-w-[1180px] text-white text-left md:text-center  text-[19px] font-[400]">
-          <TypeAnimation
-            sequence={[
-              1000,
-              `We started Kodiak Knife Company with one goal in mind: providing a high-quality, smart, and reliable knife. Our passion for
-        excellence has driven us from the beginning, and continues to drive us into the future. We know that every product counts, and we
-        aim to make the entire shopping experience as rewarding as possible.`,
-            ]}
-            wrapper="span"
-            cursor={true}
-            repeat={0}
-            speed={75}
-          />
-        </p>
-      ) : (
-        <></>
-      )}
-      <motion.div ref={ref} animate={controls} initial="hidden" variants={getVariant(0.5)}>
+
+      <motion.div
+        animate={controls}
+        initial="hidden"
+        variants={getVariant()}
+        transition={{ delay: 0.5, duration: 0.5 }}
+        className="max-w-[1180px] text-white text-left md:text-center  text-[19px] font-[400] leading-normal"
+      >
+        At Kodiak Knife Company, we aim to craft handmade Alaskan knives that inspire adventure and exceed expectations. As outdoor
+        enthusiasts, we understand the importance of having a durable, reliable, and functional knife.
+        <br />
+        <br />
+        Our passion for excellence is evident in every knife we create. We're committed to providing an unparalleled customer experience
+        from when you visit our website to when you take your knife out on your next adventure.
+      </motion.div>
+
+      <motion.div animate={controls} initial="hidden" variants={getVariant()} transition={{ delay: 1 }}>
         <button className="py-[24px] px-[40px] text-[#126149] tracking-[0.1em] text-[18px] bg-white rounded-md">Read More</button>
       </motion.div>
     </section>

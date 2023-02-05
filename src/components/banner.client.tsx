@@ -1,6 +1,7 @@
 import { motion, Variants, useAnimation } from 'framer-motion';
 import { useUrl } from '@shopify/hydrogen';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 const parentVariant: Variants = {
   initial: { opacity: 0 },
@@ -23,12 +24,20 @@ export const Banner = ({
   height = '420px',
   imageStyles = {},
 }) => {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 768px)',
+  });
   const url = useUrl();
   const controls = useAnimation();
 
   useEffect(() => {
     controls.start('animate');
   }, [url]);
+
+  useEffect(() => {
+    setIsDesktop(isDesktopOrLaptop);
+  }, [isDesktopOrLaptop]);
 
   return (
     <motion.div
@@ -37,7 +46,7 @@ export const Banner = ({
       key={backgroundImg}
       animate={controls}
       variants={parentVariant}
-      style={{ height }}
+      style={{ height: isDesktop ? height : 150 }}
     >
       <motion.img
         initial="initial"
