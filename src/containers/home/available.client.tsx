@@ -61,7 +61,7 @@ export const Available = () => {
     <section className="mt-[4px] h-[600px] relative flex items-center justify-center">
       <video autoPlay muted loop id="myVideo" className="absolute h-full w-full object-cover z-10">
         <source
-          src="https://res.cloudinary.com/samtufail726/video/upload/q_auto/v1675517765/kodiak/Videos/videoblocks-plasma-cutting-cnc-machine_r6bnr045q_1080__D_pvgnzx.mp4"
+          src="https://res.cloudinary.com/samtufail726/video/upload/q_auto/v1675559276/kodiak/Videos/Untitled_wml6iz.mp4"
           type="video/mp4"
         />
       </video>
