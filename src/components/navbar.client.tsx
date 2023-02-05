@@ -41,10 +41,10 @@ const CustomDropdown = ({ animate, initial, variants }: any) => {
   return (
     <Dropdown
       open={open}
-      overlayStyle={{ backgroundColor: '#dedede' }}
+      // overlayStyle={{ backgroundColor: '' }}
       dropdownRender={() => (
         // Shop Sub Pages
-        <div className="flex flex-col" ref={ref}>
+        <div className="flex flex-col w-[170px] mt-[10px] bg-[#dedede]" ref={ref}>
           <Link to="/shop/all" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
             <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>all</div>
           </Link>

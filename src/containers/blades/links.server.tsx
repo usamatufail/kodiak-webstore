@@ -1,10 +1,3 @@
-// const arr = [1, 2, 3, 4, 5];
-
-// const card1 = arr?.map((arr) => `/images/available/available1-${arr}.png`);
-// const card2 = arr?.map((arr) => `/images/available/available2-${arr}.png`);
-
-// const images = [...card1, ...card2];
-
 let images: string[] = [];
 for (let i = 2; i < 15; i++) {
   images?.push(`/images/blades/icons/1 (${i}).png`);

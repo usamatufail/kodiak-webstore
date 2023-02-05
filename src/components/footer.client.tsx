@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from '@shopify/hydrogen';
@@ -7,9 +7,9 @@ const quickLinks = {
   title: 'Quick Links',
   links: [
     { title: 'HOME', url: '/' },
-    { title: 'ABOUT', url: '/' },
-    { title: 'SHOP', url: '/' },
-    { title: 'SUPPORT', url: '/' },
+    { title: 'ABOUT', url: '/about' },
+    { title: 'SHOP', url: '/shop/all' },
+    { title: 'SUPPORT', url: '/contact' },
     { title: 'POLICIES', url: '/policies' },
   ],
 };
@@ -17,9 +17,9 @@ const quickLinks = {
 const connectLinks = {
   title: 'Connect',
   links: [
-    { title: 'GET IN TOUCH', url: '/' },
-    { title: '@KODIAK_KNIFE_CO', url: '/' },
-    { title: 'KODIAKKNIFECO@GMAIL.COM', url: '/' },
+    { title: 'GET IN TOUCH', url: '/contact' },
+    { title: '@KODIAK_KNIFE_CO', url: 'https://instagram.com/kodiak_knife_co', isOutside: true },
+    { title: 'KODIAKKNIFECO@GMAIL.COM', url: 'mailto:kodiakknifeco@gmail.com', isOutside: true },
   ],
 };
 
@@ -34,7 +34,7 @@ const socialLinks = {
     {
       title: 'Instagram',
       icon: '/svg/insta.svg',
-      url: '/',
+      url: 'https://instagram.com/kodiak_knife_co',
     },
     {
       title: 'Twitter',
@@ -49,16 +49,24 @@ const getVariant = (duration: number) => ({
   hidden: { x: 10, opacity: 0, transition: { duration } },
 });
 
-const Links = ({ links }: { links: typeof quickLinks }) => {
+const Links = ({ links }: { links: typeof connectLinks }) => {
   return (
     <div className="text-center md:text-left">
       <h5 className="font-[600] text-[22px] uppercase custom-gradient-text">{links.title}</h5>
       <div className="mt-[10px] md:mt-[20px] flex flex-col gap-[12px]">
         {links.links.map((link) => {
           return (
-            <Link key={link.title} to={link.url} className="font-[300] text-[18px] text-[#1F2227]">
-              {link.title}
-            </Link>
+            <Fragment key={link.url}>
+              {link?.isOutside ? (
+                <a key={link.url} href={link.url} className="font-[300] text-[18px] text-[#1F2227]">
+                  {link.title}
+                </a>
+              ) : (
+                <Link key={link.title} to={link.url} className="font-[300] text-[18px] text-[#1F2227]">
+                  {link.title}
+                </Link>
+              )}
+            </Fragment>
           );
         })}
       </div>
