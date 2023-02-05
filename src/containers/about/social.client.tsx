@@ -37,7 +37,13 @@ export const Social = () => {
       }}
     >
       <motion.div initial="initial" animate={controls} variants={leftVariant} className="flex flex-col items-start">
-        <h2 className="text-white text-[52px] mb-[30px]">Follow us on social</h2>
+        <h2 className="text-white text-[44px] font-bold leading-[1.11] text-left mb-[4px]">
+          Join the adventure and stay in the know by following us on social media!
+        </h2>
+        <p className="text-white text-[18px] text-left mb-[30px]">
+          Stay ahead of the curve and get exclusive access to updates and content from Kodiak Knife Company, your trusted source for
+          high-quality, rugged knives.
+        </p>
         <a href="https://www.instagram.com/kodiak_knife_co/" target="_blank">
           <button className="text-[18px] text-black bg-[rgba(255,255,255,0.7)] px-[40px] py-[16px] rounded-[8px] titlecase font-semibold transition-all hover:bg-[rgba(255,255,255,0.9)]">
             Go to Insta Profile

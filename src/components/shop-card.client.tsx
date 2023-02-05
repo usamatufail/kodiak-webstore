@@ -32,11 +32,11 @@ export const ShopCard = ({
   }, [controls, inView]);
   return (
     <motion.div className="flex flex-col" initial="initial" animate={controls} ref={ref} variants={parentVariant}>
-      <div className="bg-[#DCDCDC] rounded-[40px] max-h-[600px]">
+      <div className="bg-[#DCDCDC] rounded-[40px] w-full h-[650px]">
         <motion.img
           src={img}
           alt={title}
-          className="w-[110%] h-[110%] object-cover"
+          className="w-[100%] h-[100%] rounded-[35px] object-cover"
           initial="initial"
           animate={controls}
           variants={imageVariant}

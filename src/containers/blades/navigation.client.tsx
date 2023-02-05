@@ -11,7 +11,7 @@ const CustomLink = ({ link = '', img = '', text = '', objectPosition = '' }) => 
 
 export const Navigation = () => {
   return (
-    <div className="grid grid-cols-2 h-[150px] gap-[4px] mt-[45px]">
+    <div className="grid grid-cols-2 mt-[4px] h-[150px] gap-[4px]">
       <CustomLink
         link="#hunting-knives"
         img="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675474860/kodiak/Blades/DSC02380_aprq6x.jpg"

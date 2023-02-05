@@ -20,7 +20,11 @@ export const Form = () => {
       <div className="text-center relative z-20 pt-[45px]">
         <motion.div variants={textVariants} initial="initial" animate="animate" transition={{ type: 'tween', duration: 0.5 }}>
           <h1 className="text-[45px] font-[900] uppercase text-white">Get in Touch</h1>
-          <p className="text-white text-[22px]">Stay up to date with the latest discounts, promotions, and new releases.</p>
+          <p className="text-white text-[22px] whitespace-pre-wrap leading-relaxed -mt-[40px]">{`
+          YOU are at the heart of everything we do, and we are committed to ensuring that your experience with us is exceptional.
+          Our unmatched customer experience is our top priority, and we are committed to going above and beyond to exceed your expectations.
+          We take pride in our commitment to sustainability and always strive to find ways to enhance the user experience.
+          `}</p>
         </motion.div>
         {/* Form */}
         <motion.form
