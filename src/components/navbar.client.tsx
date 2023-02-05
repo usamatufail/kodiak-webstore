@@ -4,7 +4,7 @@ import { useAnimation, motion } from 'framer-motion';
 import { AiOutlineDown } from 'react-icons/ai';
 import { Menu } from './mobile-nav.client';
 import { Icons } from './nav-icons.client';
-import { Link } from '@shopify/hydrogen';
+import { Link, useUrl } from '@shopify/hydrogen';
 import { Dropdown } from 'antd';
 import { useOutsideClick } from '../hooks';
 
@@ -13,16 +13,74 @@ const getVariant = (duration: number) => ({
   hidden: { x: 10, opacity: 0, transition: { duration } },
 });
 
-export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const links = [
+  { name: 'home', to: '/' },
+  { name: 'blades', to: '/blades' },
+  {
+    name: 'shop',
+    links: [
+      { name: 'All', link: '/shop/all' },
+      { name: 'Blades', link: '/shop/all' },
+      { name: 'Equipment', link: '/shop/all' },
+      { name: 'Gear', link: '/shop/all' },
+    ],
+  },
+  { name: 'about', to: '/about' },
+  { name: 'contact', to: '/contact' },
+  { name: 'gallery', to: '/gallery' },
+];
+
+const CustomDropdown = ({ animate, initial, variants }: any) => {
   const [open, setOpen] = useState(false);
-  const controls = useAnimation();
 
   const ref: any = useRef();
 
   useOutsideClick(ref, () => {
     setOpen(false);
   });
+  return (
+    <Dropdown
+      open={open}
+      overlayStyle={{ backgroundColor: '#dedede' }}
+      dropdownRender={() => (
+        // Shop Sub Pages
+        <div className="flex flex-col" ref={ref}>
+          <Link to="/shop/all" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
+            <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>all</div>
+          </Link>
+          <Link to="/shop/blades" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
+            <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>blades</div>
+          </Link>
+          <Link to="/shop/equipment" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
+            <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>equipment</div>
+          </Link>
+          <Link to="/shop/gear" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
+            <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>gear</div>
+          </Link>
+        </div>
+      )}
+    >
+      {/* Shop Heading */}
+      <motion.div
+        animate={animate}
+        ref={ref}
+        onClick={() => setOpen((prev) => !prev)}
+        initial={initial}
+        variants={variants}
+        className={`${styles['nav-link']} cursor-pointer select-none flex items-center gap-[5px]`}
+      >
+        <span>shop</span>
+        <AiOutlineDown />
+      </motion.div>
+    </Dropdown>
+  );
+};
+
+export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const controls = useAnimation();
+
+  const url = useUrl();
 
   useEffect(() => {
     controls.start('visible');
@@ -43,88 +101,25 @@ export const Navbar = () => {
 
       {/* Links */}
       <div className="items-center gap-[45px] hidden md:flex">
-        <Link to="/">
-          <motion.div
-            animate={controls}
-            initial="hidden"
-            variants={getVariant(0.1)}
-            className={`${styles['nav-link']} cursor-pointer select-none`}
-          >
-            home
-          </motion.div>
-        </Link>
-        <Link to="/blades">
-          <motion.div
-            animate={controls}
-            initial="hidden"
-            variants={getVariant(0.3)}
-            className={`${styles['nav-link']} cursor-pointer select-none`}
-          >
-            blades
-          </motion.div>
-        </Link>
-        <Dropdown
-          open={open}
-          overlayStyle={{ backgroundColor: '#dedede' }}
-          dropdownRender={() => (
-            // Shop Sub Pages
-            <div className="flex flex-col" ref={ref}>
-              <Link to="/shop/all" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
-                <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>all</div>
+        {links?.map((link) => {
+          if (!link?.links) {
+            return (
+              <Link to={link.to} key={link.name}>
+                <motion.div
+                  animate={controls}
+                  initial="hidden"
+                  variants={getVariant(0.5)}
+                  className={`${styles['nav-link']} ${
+                    url.pathname === link.to ? styles['nav-link-active'] : ''
+                  } cursor-pointer select-none`}
+                >
+                  {link.name}
+                </motion.div>
               </Link>
-              <Link to="/shop/blades" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
-                <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>blades</div>
-              </Link>
-              <Link to="/shop/equipment" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
-                <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>equipment</div>
-              </Link>
-              <Link to="/shop/gear" className="hover:bg-gray-300 transition-all" onClick={() => setOpen(false)}>
-                <div className={`${styles['nav-link']} cursor-pointer select-none px-[20px] py-[13px]`}>gear</div>
-              </Link>
-            </div>
-          )}
-        >
-          {/* Shop Heading */}
-          <motion.div
-            animate={controls}
-            ref={ref}
-            onClick={() => setOpen((prev) => !prev)}
-            initial="hidden"
-            variants={getVariant(0.5)}
-            className={`${styles['nav-link']} cursor-pointer select-none flex items-center gap-[5px]`}
-          >
-            <span>shop</span>
-            <AiOutlineDown />
-          </motion.div>
-        </Dropdown>
-        <Link to="/about">
-          <motion.div
-            animate={controls}
-            initial="hidden"
-            variants={getVariant(0.9)}
-            className={`${styles['nav-link']} cursor-pointer select-none`}
-          >
-            About
-          </motion.div>
-        </Link>
-        <Link to="/contact">
-          <motion.div
-            animate={controls}
-            initial="hidden"
-            variants={getVariant(1.2)}
-            className={`${styles['nav-link']} cursor-pointer select-none`}
-          >
-            Contact
-          </motion.div>
-        </Link>
-        <motion.div
-          animate={controls}
-          initial="hidden"
-          variants={getVariant(0.7)}
-          className={`${styles['nav-link']} cursor-pointer select-none`}
-        >
-          Gallery
-        </motion.div>
+            );
+          } else
+            return <CustomDropdown key={link.name} animate={controls} initial="hidden" variants={getVariant(0.5)} links={link.links} />;
+        })}
       </div>
 
       {/* Icons */}

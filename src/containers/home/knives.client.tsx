@@ -46,7 +46,7 @@ const KniveBox = ({ background = '', image = '' }) => {
   return (
     <motion.div
       ref={ref}
-      className="w-[full] h-[285px] bg-gray-400 skew-x-6  overflow-hidden relative md:w-[full] md:skew-x-12 flex items-center justify-center"
+      className="w-[full] h-[285px] bg-transparent skew-x-6  overflow-hidden relative md:w-[full] md:skew-x-12 flex items-center justify-center"
       initial="initial"
       animate={controls}
       variants={parentVariant}
@@ -54,8 +54,8 @@ const KniveBox = ({ background = '', image = '' }) => {
       onMouseOut={() => setHovered(false)}
     >
       {/* Background */}
-      <div className="w-[120%] 2xl:w-[150%] absolute left-[-35px] -skew-x-6 md:-skew-x-12">
-        <img src={background} alt="blade-bg" className="h-[285px] w-full block object-cover relative opacity-75" />
+      <div className="bg-[#5c5c5c] w-[120%] 2xl:w-[150%] absolute left-[-35px] -skew-x-6 md:-skew-x-12">
+        <img src={background} alt="blade-bg" className="opacity-90 h-[285px] w-full block object-cover relative" />
       </div>
 
       {/* Top Left */}
@@ -84,7 +84,7 @@ const KniveBox = ({ background = '', image = '' }) => {
             src={image}
             alt="blade-1"
             className="max-w-[279.43px] transition-all duration-300"
-            style={{ scale: hovered ? '1.125' : '0.75' }}
+            style={{ scale: hovered ? '1.125' : '0.75', filter: 'drop-shadow(2px 4px 6px black)' }}
           />
         </motion.div>
       </div>
@@ -104,18 +104,27 @@ export const Knives = () => {
 
   return (
     <div
-      className="min-h-[639px] px-[50px] py-[40px] text-white grid grid-cols-1 gap-[40px] items-center md:grid-cols-4 md:py-[unset] md:px-[90px] md:gap-[20px]"
+      className="min-h-[639px] px-[50px] py-[40px] text-white grid grid-cols-1 gap-[12px] items-center md:grid-cols-4 md:py-[unset] md:px-[90px] md:gap-[20px]"
       style={{ backgroundImage: 'url(/images/knives/background.png)' }}
     >
-      <KniveBox background="/images/knives/blade-1-bg.png" image="/images/knives/1st.png" />
       {isDesktop ? (
         <>
+          <KniveBox background="/images/knives/blade-1-bg.png" image="/images/knives/1st.png" />
           <KniveBox background="/images/knives/blade-3-bg.png" image="/images/knives/3rd.png" />
           <KniveBox background="/images/knives/blade-2-bg.png" image="/images/knives/2nd.png" />
           <KniveBox background="/images/knives/blade-4-bg.png" image="/images/knives/4th.png" />
         </>
       ) : (
-        <></>
+        <>
+          <KniveBox background="/images/knives/blade-4-bg.png" image="/images/knives/4th.png" />
+          <button
+            className={`h-[54px] flex items-center justify-center font-[900] uppercase text-black
+      text-[20px] bg-[rgba(255,255,255,0.6)] focus:bg-[rgba(255,255,255,0.8)]
+      hover:bg-[rgba(255,255,255,0.8)] transition-all rounded-[8px] mt-[-145px] col-span-2`}
+          >
+            SHOP NOW
+          </button>
+        </>
       )}
     </div>
   );
