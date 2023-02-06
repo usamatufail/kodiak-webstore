@@ -33,7 +33,7 @@ export const DetailsBanner = ({
 
   return (
     <motion.div
-      className="w-full flex flex-col items-center justify-center relative overflow-hidden"
+      className={`w-full flex flex-col items-center justify-center relative overflow-hidden py-[15px]`}
       key={backgroundImg}
       style={{ minHeight }}
       initial="initial"
@@ -57,7 +57,7 @@ export const DetailsBanner = ({
         initial="initial"
         animate={controls}
         transition={{ type: 'keyframes', delay: 0.2, duration: 0.5 }}
-        className="relative z-30 leading-[1.12] text-white text-[58px] font-bold text-center md:text-[77px] md:font-[900]"
+        className="relative z-30 leading-[1.12] text-white text-[58px] mb-0 md:mb-[29px] font-bold text-center md:text-[77px] md:font-[900]"
       >
         {heading}
       </motion.h2>
@@ -67,7 +67,7 @@ export const DetailsBanner = ({
         initial="initial"
         animate={controls}
         transition={{ type: 'keyframes', delay: 0.2, duration: 0.5 }}
-        className="relative z-30 text-white text-[20px] text-center mt-[10px] px-[300px]"
+        className="relative z-30 text-white text-[20px] text-center mt-[10px] px-[20px] md:px-[300px]"
       >
         {description}
       </motion.p>

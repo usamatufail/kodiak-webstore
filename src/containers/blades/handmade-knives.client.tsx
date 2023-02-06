@@ -90,7 +90,7 @@ export const HandmadeKnives = ({
           <div id={`handmade-knives-right`} style={{ width: 200, height: 200 }} />
           <img src="/images/products/right-bg.png" alt="background" className="opacity-40 z-10" />
         </motion.div>
-        <div className="text-center relative z-20 px-[250px] flex flex-col gap-[20px] mt-[4px] pt-[40px]">
+        <div className="text-center relative z-20 px-[15px] md:px-[250px] flex flex-col gap-[20px] mt-[4px] pt-[40px]">
           <h2 className="text-[40px] font-bold">{texts.h1}</h2>
           <p className="text-[19px] whitespace-pre-wrap">{texts.h1p}</p>
           {texts.h2 ? <hr /> : <></>}

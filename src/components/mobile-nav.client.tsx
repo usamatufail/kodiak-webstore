@@ -60,7 +60,7 @@ export const Menu = ({ isOpen, setIsOpen }: any) => {
         <Icons />
       </motion.div>
 
-      <Drawer open={isOpen} onClose={toggleDrawer} direction="left" size="100vw" duration={300}>
+      <Drawer open={isOpen} lockBackgroundScroll onClose={toggleDrawer} direction="left" size="100vw" duration={300}>
         <div className="text-black">
           {/* Logo */}
           <div className="flex items-center justify-center relative">
