@@ -1,8 +1,8 @@
-import {Fragment, useState} from 'react';
+import { Fragment, useState } from 'react';
 // @ts-expect-error @headlessui/react incompatibility with node16 resolution
-import {Dialog, Transition} from '@headlessui/react';
+import { Dialog, Transition } from '@headlessui/react';
 
-import {Heading, IconClose} from '~/components';
+import { Heading, IconClose } from '~/components';
 
 /**
  * Drawer component that opens on user click.
@@ -32,7 +32,7 @@ function Drawer({
 
   return (
     <Transition appear show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-50" onClose={onClose}>
+      <Dialog as="div" className="relative z-50 text-white" onClose={onClose}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -47,11 +47,7 @@ function Drawer({
 
         <div className="fixed inset-0">
           <div className="absolute inset-0 overflow-hidden">
-            <div
-              className={`fixed inset-y-0 flex max-w-full ${
-                openFrom === 'right' ? 'right-0' : ''
-              }`}
-            >
+            <div className={`fixed inset-y-0 flex max-w-full ${openFrom === 'right' ? 'right-0' : ''}`}>
               <Transition.Child
                 as={Fragment}
                 enter="transform transition ease-in-out duration-300"
@@ -61,9 +57,9 @@ function Drawer({
                 leaveFrom="translate-x-0"
                 leaveTo={offScreen[openFrom]}
               >
-                <Dialog.Panel className="w-screen max-w-lg text-left align-middle transition-all transform shadow-xl h-screen-dynamic bg-contrast">
+                <Dialog.Panel className="w-screen max-w-lg text-left align-middle transition-all transform shadow-xl h-screen-dynamic bg-[rgba(0,0,0,0.9)]">
                   <header
-                    className={`sticky top-0 flex items-center px-6 h-nav sm:px-8 md:px-12 ${
+                    className={`sticky top-0 flex items-center px-6 h-nav sm:px-8 md:px-12 mt-[15px] mb-[45px] ${
                       heading ? 'justify-between' : 'justify-end'
                     }`}
                   >
@@ -74,11 +70,7 @@ function Drawer({
                         </Heading>
                       </Dialog.Title>
                     )}
-                    <button
-                      type="button"
-                      className="p-4 -m-4 transition text-primary hover:text-primary/50"
-                      onClick={onClose}
-                    >
+                    <button type="button" className="p-4 -m-4 transition text-primary hover:text-primary/50" onClick={onClose}>
                       <IconClose aria-label="Close panel" />
                     </button>
                   </header>
@@ -96,7 +88,7 @@ function Drawer({
 /* Use for associating arialabelledby with the title*/
 Drawer.Title = Dialog.Title;
 
-export {Drawer};
+export { Drawer };
 
 export function useDrawer(openDefault = false) {
   const [isOpen, setIsOpen] = useState(openDefault);
