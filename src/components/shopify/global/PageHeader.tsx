@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import {Heading} from '~/components';
+import { Heading } from '~/components';
 
 export function PageHeader({
   children,
@@ -16,11 +16,9 @@ export function PageHeader({
   [key: string]: any;
 }) {
   const variants: Record<string, string> = {
-    default: 'grid w-full gap-8 p-6 py-8 md:p-8 lg:p-12 justify-items-start',
-    blogPost:
-      'grid md:text-center w-full gap-4 p-6 py-8 md:p-8 lg:p-12 md:justify-items-center',
-    allCollections:
-      'flex justify-between items-baseline gap-8 p-6 md:p-8 lg:p-12',
+    default: 'grid w-full gap-4 p-6 pb-0 py-8 md:p-8 md:pb-0 lg:p-12 lg:pb-0 justify-items-end',
+    blogPost: 'grid md:text-center w-full gap-4 p-6 py-8 md:p-8 lg:p-12 md:justify-items-center',
+    allCollections: 'flex justify-between items-baseline gap-8 p-6 md:p-8 lg:p-12',
   };
 
   const styles = clsx(variants[variant], className);

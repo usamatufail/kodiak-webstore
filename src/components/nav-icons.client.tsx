@@ -1,3 +1,5 @@
+import { Link } from '@shopify/hydrogen';
+
 export const Icons = () => {
   return (
     <>
@@ -13,9 +15,11 @@ export const Icons = () => {
         </div>
         <img src="/images/navbar/cart.svg" alt="open the cart" />
       </div>
-      <div>
-        <img src="/images/navbar/user.svg" alt="user icon here" />
-      </div>
+      <Link to={'/account/login'}>
+        <div>
+          <img src="/images/navbar/user.svg" alt="user icon here" />
+        </div>
+      </Link>
     </>
   );
 };

@@ -68,10 +68,10 @@ export function AccountLoginForm({ shopName }: { shopName: string }) {
 
   return (
     <div
-      className="flex justify-center items-center py-[20px] px-4 min-h-[calc(100vh_-_470px)] text-white"
+      className="flex justify-center items-center py-[20px] px-4 min-h-[calc(100vh_-_470px)] text-white bg-no-repeat bg-cover"
       style={{
         backgroundImage:
-          'url(https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto,b_black,o_50/v1675642627/kodiak/DSC02548_iwundp.webp)',
+          'url(https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto,b_black,o_25/v1675642627/kodiak/DSC02548_iwundp.webp)',
       }}
     >
       <div className="max-w-md w-full">
@@ -148,7 +148,7 @@ function EmailField({
         {!emailError ? '' : <p className={`text-red-500 text-xs`}>{emailError} &nbsp;</p>}
       </div>
       <div className="flex items-center justify-between">
-        <button className="bg-primary rounded text-contrast py-3 px-4 focus:shadow-outline block w-full" type="submit">
+        <button className="bg-[#fff] rounded text-contrast py-[10px] px-4 focus:shadow-outline block w-full" type="submit">
           Next
         </button>
       </div>
@@ -212,7 +212,7 @@ function PasswordField({
         {!passwordError ? '' : <p className={`text-red-500 text-xs`}> {passwordError} &nbsp;</p>}
       </div>
       <div className="flex items-center justify-between">
-        <button className="bg-primary rounded text-contrast py-3 px-4 focus:shadow-outline block w-full" type="submit">
+        <button className="bg-[#fff] rounded text-contrast py-[10px] px-4 focus:shadow-outline block w-full" type="submit">
           Sign in
         </button>
       </div>

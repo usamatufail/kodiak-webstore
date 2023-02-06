@@ -17,6 +17,13 @@ import {
 import { HeaderFallback, EventsListener } from '~/components';
 import type { CountryCode } from '@shopify/hydrogen/storefront-api-types';
 import { NotFound } from '~/components/index.server';
+import 'antd/dist/reset.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import 'react-modern-drawer/dist/index.css';
+// import './custom-font.css';
+import './index.css';
 
 function App({ request }: HydrogenRouteProps) {
   const pathname = new URL(request.normalizedUrl).pathname;
