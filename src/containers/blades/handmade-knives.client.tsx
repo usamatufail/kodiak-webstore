@@ -63,7 +63,13 @@ export const HandmadeKnives = ({
         description={description}
       />
       {/* Text with Mountains */}
-      <div className="relative" ref={ref}>
+      <div
+        className="relative bg-cover bg-no-repeat"
+        ref={ref}
+        style={{
+          backgroundImage: `url(https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto,b_white,o_50/v1675465743/kodiak/DSC02239_xrvqnk_6b09b01.webp)`,
+        }}
+      >
         {/* Top Left Mountains */}
         <motion.div
           animate={controls}
@@ -84,7 +90,7 @@ export const HandmadeKnives = ({
           <div id={`handmade-knives-right`} style={{ width: 200, height: 200 }} />
           <img src="/images/products/right-bg.png" alt="background" className="opacity-40 z-10" />
         </motion.div>
-        <div className="text-center relative z-20 px-[250px] flex flex-col gap-[20px] mt-[40px]">
+        <div className="text-center relative z-20 px-[250px] flex flex-col gap-[20px] mt-[4px] pt-[40px]">
           <h2 className="text-[40px] font-bold">{texts.h1}</h2>
           <p className="text-[19px] whitespace-pre-wrap">{texts.h1p}</p>
           {texts.h2 ? <hr /> : <></>}
