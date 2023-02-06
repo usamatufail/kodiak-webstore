@@ -37,8 +37,6 @@ export const Links = () => {
     setImages(imgHolder);
   }, []);
 
-  console.log(images);
-
   return (
     <div className="flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.95)' }}>
       <div className="pt-[45px] pb-[45px] custom-slick w-[calc(100vw)] lg:w-[1200px] relative">

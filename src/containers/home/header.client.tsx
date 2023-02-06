@@ -29,7 +29,6 @@ export const Header = () => {
 
   useEffect(() => {
     const random = Math.floor(Math.random() * images.length);
-    console.log(images[random]);
     setImg(images[random]);
   }, []);
 
