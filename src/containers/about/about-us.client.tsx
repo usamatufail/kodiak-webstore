@@ -3,7 +3,7 @@ import { Link } from '@shopify/hydrogen';
 export const AboutUs = () => {
   return (
     <div
-      className="w-full mt-[4px] text-center pb-[40px]"
+      className="w-full mt-[4px] text-center pb-[45px] md:pb-[40px] px-[20px]"
       style={{
         backgroundImage:
           'url(https://res.cloudinary.com/samtufail726/image/upload/b_black,o_40/v1675505545/kodiak/About/DSC02558_z7tmka.png)',
@@ -18,7 +18,7 @@ export const AboutUs = () => {
         transition={{ delay: 0.1, duration: 0.5 }}
         initial="initial"
         animate="animate"
-        className="text-[24px] max-w-[950px] mx-auto text-white py-[45px] whitespace-pre-wrap"
+        className="text-[16px] md:text-[24px] max-w-[950px] mx-auto text-white py-[45px] whitespace-pre-wrap"
       >
         {`At Kodiak Knife Company, we strive to provide top-notch, functional knives to outdoor enthusiasts and those who appreciate rugged, adventurous style. With our focus on quality and customer satisfaction, we aim to make your shopping experience a memorable one.
 
@@ -39,7 +39,7 @@ We hope to exceed your expectations by delivering a high-quality website that sh
           transition={{ delay: 0.6, duration: 0.5 }}
           initial="initial"
           animate="animate"
-          className="text-[24px] mx-auto text-black bg-[rgba(255,255,255,0.7)] px-[40px] py-[20px] rounded-[8px] titlecase font-[900] transition-all hover:bg-[rgba(255,255,255,0.9)]"
+          className="text-[16px] md:text-[24px] mx-auto text-black bg-[rgba(255,255,255,0.7)] px-[25px] md:px-[40px] py-[15px] md:py-[20px] rounded-[8px] titlecase font-[900] transition-all hover:bg-[rgba(255,255,255,0.9)]"
         >
           Contact Support
         </motion.button>

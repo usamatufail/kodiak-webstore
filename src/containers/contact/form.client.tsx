@@ -8,22 +8,17 @@ const textVariants = {
 
 export const Form = () => {
   return (
-    <div className="w-full min-h-[450px] relative mt-[4px]">
-      {/* Background */}
-      <img
-        src="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675492607/kodiak/Contact/DSC02251_oxr8rs.png"
-        className="w-full h-full object-cover absolute top-0 left-0 z-0"
-      />
-      {/* Overlay */}
-      <div className="absolute w-full h-full bg-black opacity-70 top-0 left-0" />
+    <div
+      className="w-full min-h-[450px] relative mt-[4px] bg-cover bg-no-repeat"
+      style={{
+        backgroundImage: `url(https://res.cloudinary.com/samtufail726/image/upload/b_black,o_45,q_auto/v1675492607/kodiak/Contact/DSC02251_oxr8rs.jpg)`,
+      }}
+    >
       {/* Form Container */}
-      <div className="text-center relative z-20 pt-[45px]">
+      <div className="text-center relative pt-[45px]">
         <motion.div variants={textVariants} initial="initial" animate="animate" transition={{ type: 'tween', duration: 0.5 }}>
           <h1 className="text-[45px] font-[900] uppercase text-white">Get in Touch</h1>
-          <p className="text-white text-[22px] whitespace-pre-wrap leading-relaxed -mt-[40px]">{`
-          YOU are at the heart of everything we do, and we are committed to ensuring that your experience with us is exceptional.
-          Our unmatched customer experience is our top priority, and we are committed to going above and beyond to exceed your expectations.
-          We take pride in our commitment to sustainability and always strive to find ways to enhance the user experience.
+          <p className="text-white text-[16px] md:text-[22px] tracking-wider md:tracking-[unset] px-[20px] whitespace-pre-wrap leading-relaxed md:-mt-[40px]">{`YOU are at the heart of everything we do, and we are committed to ensuring that your experience with us is exceptional.\n\nOur unmatched customer experience is our top priority, and we are committed to going above and beyond to exceed your expectations.\n\nWe take pride in our commitment to sustainability and always strive to find ways to enhance the user experience.
           `}</p>
         </motion.div>
         {/* Form */}
@@ -32,10 +27,10 @@ export const Form = () => {
           animate="animate"
           variants={{ initial: { scale: 0, opacity: 0 }, animate: { scale: 1, opacity: 1 } }}
           transition={{ type: 'tween', duration: 0.85, delay: 0.6 }}
-          className="grid grid-cols-2 gap-[18px] max-w-[700px] mx-auto mt-[35px] pb-[50px]"
+          className="grid grid-cols-2 gap-[18px] max-w-[700px] mx-auto mt-[35px] pb-[50px] px-[20px]"
         >
-          <Input placeholder="Name" icon="/svg/contact/name.svg" />
-          <Input placeholder="Email" icon="/svg/contact/email.svg" />
+          <Input placeholder="Name" icon="/svg/contact/name.svg" className="col-span-2 md:col-span-1" />
+          <Input placeholder="Email" icon="/svg/contact/email.svg" className="col-span-2 md:col-span-1" />
           <Input placeholder="Phone" icon="/svg/contact/phone.svg" className="col-span-2" />
           <TextArea placeholder="Write a text" icon="/svg/contact/message.svg" className="col-span-2" />
           <Checkbox
@@ -56,7 +51,7 @@ export const Form = () => {
           animate="animate"
           variants={{ initial: { y: 200, opacity: 0 }, animate: { y: 0, opacity: 1 } }}
           transition={{ type: 'tween', duration: 0.85, delay: 0.6 }}
-          className="grid grid-cols-2 gap-[18px] max-w-[700px] mx-auto mt-[35px] pb-[50px] overflow-hidden"
+          className="grid grid-cols-1 md:grid-cols-2 gap-[18px] max-w-[700px] mx-auto md:mt-[35px] px-[20px] pb-[50px] overflow-hidden"
         >
           {/* Instagram */}
           <a href="https://instagram.com/kodiak_knife_co" target="_blank">
