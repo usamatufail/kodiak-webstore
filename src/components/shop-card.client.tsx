@@ -1,9 +1,17 @@
 import { useAnimation, motion, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useEffect, useState, useRef } from 'react';
-import { AddToCartButton, BuyNowButton, useCart } from '@shopify/hydrogen';
+import {
+  useEffect,
+  // useState,
+  useRef,
+} from 'react';
+import {
+  AddToCartButton,
+  BuyNowButton,
+  // useCart
+} from '@shopify/hydrogen';
 import { message } from 'antd';
-import { useDrawer } from './shopify/global/Drawer.client';
+// import { useDrawer } from './shopify/global/Drawer.client';
 
 const parentVariant: Variants = {
   initial: { opacity: 0 },
@@ -59,7 +67,7 @@ export const ShopCard = ({
     <>
       {contextHolder}
       <motion.div className="flex flex-col" initial="initial" animate={controls} ref={ref} variants={parentVariant}>
-        <div className="bg-[#DCDCDC] rounded-[40px] w-full h-[650px]">
+        <div className="bg-[#DCDCDC] rounded-[40px] w-full h-[250px] md:h-[650px]">
           <motion.img
             src={img}
             alt={title}
@@ -76,7 +84,7 @@ export const ShopCard = ({
             initial="initial"
             animate={controls}
             transition={{ type: 'keyframes', delay: 0.2, duration: 0.5 }}
-            className="text-[26px] font-[700] text-white mt-[35px] uppercase"
+            className="text-[26px] font-[700] text-white mt-[10px] mb-[0px] md:mb-[29px] md:mt-[35px] uppercase"
           >
             {title}
           </motion.h1>
@@ -106,9 +114,6 @@ export const ShopCard = ({
               </span>
             </AddToCartButton>
           </div>
-          {/* <div className="flex">
-          <button className="h-[75px] px-[45px] text-[24px] font-[900] text-black bg-white rounded-[6px]">${price}</button>
-        </div> */}
         </div>
       </motion.div>
     </>
