@@ -3,23 +3,31 @@ import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from '@shopify/hydrogen';
 
+const payments = [
+  '/svg/payment/visa.svg',
+  '/svg/payment/master-card.svg',
+  '/svg/payment/amex.svg',
+  '/svg/payment/discover.svg',
+  '/svg/payment/paypal.svg',
+];
+
 const quickLinks = {
   title: 'Quick Links',
   links: [
-    { title: 'HOME', url: '/' },
-    { title: 'ABOUT', url: '/about' },
-    { title: 'SHOP', url: '/shop/all' },
-    { title: 'SUPPORT', url: '/contact' },
-    { title: 'POLICIES', url: '/policies' },
+    { title: 'Home', url: '/' },
+    { title: 'About', url: '/about' },
+    { title: 'Shop', url: '/shop/all' },
+    { title: 'Support', url: '/contact' },
+    { title: 'Policies', url: '/policies' },
   ],
 };
 
 const connectLinks = {
   title: 'Connect',
   links: [
-    { title: 'GET IN TOUCH', url: '/contact' },
-    { title: '@KODIAK_KNIFE_CO', url: 'https://instagram.com/kodiak_knife_co', isOutside: true },
-    { title: 'KODIAKKNIFECO@GMAIL.COM', url: 'mailto:kodiakknifeco@gmail.com', isOutside: true },
+    { title: 'Get in touch', url: '/contact' },
+    { title: 'kodiak_knife_co', url: 'https://instagram.com/kodiak_knife_co', isOutside: true },
+    { title: 'kiakknifeco@gmail.com', url: 'mailto:kodiakknifeco@gmail.com', isOutside: true },
   ],
 };
 
@@ -58,11 +66,11 @@ const Links = ({ links }: { links: typeof connectLinks }) => {
           return (
             <Fragment key={link.url}>
               {link?.isOutside ? (
-                <a key={link.url} href={link.url} className="font-[300] text-[18px] text-[#1F2227]">
+                <a key={link.url} href={link.url} target="_blank" className="font-bold text-[18px] text-[#1F2227]">
                   {link.title}
                 </a>
               ) : (
-                <Link key={link.title} to={link.url} className="font-[300] text-[18px] text-[#1F2227]">
+                <Link key={link.title} to={link.url} className="font-bold text-[18px] text-[#1F2227] capitalize">
                   {link.title}
                 </Link>
               )}
@@ -85,10 +93,10 @@ export const Footer = () => {
   }, [controls, inView]);
 
   return (
-    <div className="py-[60px] px-[20px] grid grid-cols-1 gap-[30px] xl:gap-[100px] xl:grid-cols-[350px_auto] xl:px-[100px]">
+    <div className="py-[60px] px-[20px] grid grid-cols-1 gap-[30px] xl:gap-[100px] xl:grid-cols-[350px_auto] xl:px-[100px] bg-[#ededed]">
       {/* Logo */}
       <motion.div ref={ref} animate={controls} initial="hidden" variants={getVariant(0.5)}>
-        <img src="/images/navbar/logo.png" alt="logo" className="m-auto xl:m-[unset]" />
+        <img src="/images/navbar/logo.png" alt="logo" className="max-w-[180px] mx-auto " />
       </motion.div>
       <div className="grid gap-[45px] grid-cols-1 xl:grid-cols-4">
         <Links links={quickLinks} />
@@ -98,7 +106,7 @@ export const Footer = () => {
           <h5 className="font-[600] text-[22px] uppercase custom-gradient-text">FOLLOW US</h5>
           <div className="mt-[10px] md:mt-[20px] flex gap-[8px] justify-center xl:justify-start">
             {socialLinks.links.map((link) => (
-              <a key={link.icon} href={link.url} className="font-[300] text-[18px]">
+              <a key={link.icon} href={link.url} target="_blank" className="font-bold text-[18px]">
                 <img src={link.icon} alt={link.title} />
               </a>
             ))}
@@ -126,6 +134,14 @@ export const Footer = () => {
             </button>
           </div>
         </div>
+      </div>
+      <div className="col-span-2 -mt-[75px] gap-[15px] flex flex-col">
+        <div className="flex items-center justify-center gap-[5px]">
+          {payments?.map((payment) => (
+            <img src={payment} alt="payment-icon" key={payment} />
+          ))}
+        </div>
+        <div className="flex items-center justify-center">© 2023 Toor Knives Inc.</div>
       </div>
     </div>
   );
