@@ -1,28 +1,20 @@
-import {useState} from 'react';
-import {useNavigate} from '@shopify/hydrogen/client';
-import {getInputStyleClasses} from '../../../lib/styleUtils';
+import { useState } from 'react';
+import { useNavigate } from '@shopify/hydrogen/client';
+import { getInputStyleClasses } from '../../../lib/styleUtils';
 
 interface FormElements {
   password: HTMLInputElement;
   passwordConfirm: HTMLInputElement;
 }
 
-export function AccountPasswordResetForm({
-  id,
-  resetToken,
-}: {
-  id: string;
-  resetToken: string;
-}) {
+export function AccountPasswordResetForm({ id, resetToken }: { id: string; resetToken: string }) {
   const navigate = useNavigate();
 
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState<string | null>(null);
   const [passwordConfirm, setPasswordConfirm] = useState('');
-  const [passwordConfirmError, setPasswordConfirmError] = useState<
-    string | null
-  >(null);
+  const [passwordConfirmError, setPasswordConfirmError] = useState<string | null>(null);
 
   function passwordValidation(form: HTMLFormElement & FormElements) {
     setPasswordError(null);
@@ -32,19 +24,13 @@ export function AccountPasswordResetForm({
 
     if (!form.password.validity.valid) {
       hasError = true;
-      setPasswordError(
-        form.password.validity.valueMissing
-          ? 'Please enter a password'
-          : 'Passwords must be at least 6 characters',
-      );
+      setPasswordError(form.password.validity.valueMissing ? 'Please enter a password' : 'Passwords must be at least 6 characters');
     }
 
     if (!form.passwordConfirm.validity.valid) {
       hasError = true;
       setPasswordConfirmError(
-        form.password.validity.valueMissing
-          ? 'Please re-enter a password'
-          : 'Passwords must be at least 6 characters',
+        form.password.validity.valueMissing ? 'Please re-enter a password' : 'Passwords must be at least 6 characters'
       );
     }
 
@@ -56,9 +42,7 @@ export function AccountPasswordResetForm({
     return hasError;
   }
 
-  async function onSubmit(
-    event: React.FormEvent<HTMLFormElement & FormElements>,
-  ) {
+  async function onSubmit(event: React.FormEvent<HTMLFormElement & FormElements>) {
     event.preventDefault();
 
     if (passwordValidation(event.currentTarget)) {
@@ -80,7 +64,13 @@ export function AccountPasswordResetForm({
   }
 
   return (
-    <div className="flex justify-center my-24 px-4">
+    <div
+      className="flex justify-center items-center py-[20px] px-4 min-h-[calc(100vh_-_470px)] text-white bg-no-repeat bg-cover"
+      style={{
+        backgroundImage:
+          'url(https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto,b_black,o_25/v1675642627/kodiak/DSC02548_iwundp.webp)',
+      }}
+    >
       <div className="max-w-md w-full">
         <h1 className="text-4xl">Reset Password.</h1>
         <p className="mt-4">Enter a new password for your account.</p>
@@ -108,13 +98,7 @@ export function AccountPasswordResetForm({
                 setPassword(event.target.value);
               }}
             />
-            <p
-              className={`text-red-500 text-xs ${
-                !passwordError ? 'invisible' : ''
-              }`}
-            >
-              {passwordError} &nbsp;
-            </p>
+            <p className={`text-red-500 text-xs ${!passwordError ? 'invisible' : ''}`}>{passwordError} &nbsp;</p>
           </div>
           <div className="mb-3">
             <input
@@ -132,19 +116,10 @@ export function AccountPasswordResetForm({
                 setPasswordConfirm(event.target.value);
               }}
             />
-            <p
-              className={`text-red-500 text-xs ${
-                !passwordConfirmError ? 'invisible' : ''
-              }`}
-            >
-              {passwordConfirmError} &nbsp;
-            </p>
+            <p className={`text-red-500 text-xs ${!passwordConfirmError ? 'invisible' : ''}`}>{passwordConfirmError} &nbsp;</p>
           </div>
           <div className="flex items-center justify-between">
-            <button
-              className="bg-primary text-contrast rounded py-2 px-4 focus:shadow-outline block w-full"
-              type="submit"
-            >
+            <button className="bg-[#fff] text-contrast rounded-[12px] py-4 px-4 focus:shadow-outline block w-full" type="submit">
               Save
             </button>
           </div>
@@ -154,15 +129,7 @@ export function AccountPasswordResetForm({
   );
 }
 
-export async function callPasswordResetApi({
-  id,
-  resetToken,
-  password,
-}: {
-  id: string;
-  resetToken: string;
-  password: string;
-}) {
+export async function callPasswordResetApi({ id, resetToken, password }: { id: string; resetToken: string; password: string }) {
   try {
     const res = await fetch(`/account/reset`, {
       method: 'POST',
@@ -170,7 +137,7 @@ export async function callPasswordResetApi({
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({id, resetToken, password}),
+      body: JSON.stringify({ id, resetToken, password }),
     });
 
     if (res.ok) {

@@ -61,7 +61,13 @@ export function AccountCreateForm() {
   }
 
   return (
-    <div className="flex justify-center my-24 px-4">
+    <div
+      className="flex justify-center items-center py-[20px] px-4 min-h-[calc(100vh_-_470px)] text-white bg-no-repeat bg-cover"
+      style={{
+        backgroundImage:
+          'url(https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto,b_black,o_25/v1675642627/kodiak/DSC02548_iwundp.webp)',
+      }}
+    >
       <div className="max-w-md w-full">
         <h1 className="text-4xl">Create an Account.</h1>
         <form noValidate className="pt-6 pb-8 mt-4 mb-4" onSubmit={onSubmit}>
@@ -108,7 +114,7 @@ export function AccountCreateForm() {
             {!passwordError ? '' : <p className={`text-red-500 text-xs`}>{passwordError} &nbsp;</p>}
           </div>
           <div className="flex items-center justify-between">
-            <button className="bg-primary text-contrast rounded py-2 px-4 focus:shadow-outline block w-full" type="submit">
+            <button className="bg-[#fff] text-contrast rounded-[12px] py-4 px-4 focus:shadow-outline block w-full" type="submit">
               Create Account
             </button>
           </div>

@@ -1,21 +1,21 @@
-import {useState} from 'react';
+import { useState } from 'react';
 
-import {Text, Button} from '~/components';
+import { Text, Button } from '~/components';
 import {
   emailValidation,
-  passwordValidation,
+  // passwordValidation,
   useRenderServerComponents,
 } from '~/lib/utils';
-import {getInputStyleClasses} from '../../../lib/styleUtils';
+import { getInputStyleClasses } from '../../../lib/styleUtils';
 
 interface FormElements {
   firstName: HTMLInputElement;
   lastName: HTMLInputElement;
   phone: HTMLInputElement;
   email: HTMLInputElement;
-  currentPassword: HTMLInputElement;
-  newPassword: HTMLInputElement;
-  newPassword2: HTMLInputElement;
+  // currentPassword: HTMLInputElement;
+  // newPassword: HTMLInputElement;
+  // newPassword2: HTMLInputElement;
 }
 
 export function AccountDetailsEdit({
@@ -37,25 +37,21 @@ export function AccountDetailsEdit({
   const [phone, setPhone] = useState(_phone);
   const [email, setEmail] = useState(_email);
   const [emailError, setEmailError] = useState<null | string>(null);
-  const [currentPasswordError, setCurrentPasswordError] = useState<
-    null | string
-  >(null);
+  // const [currentPasswordError, setCurrentPasswordError] = useState<
+  //   null | string
+  // >(null);
   const [newPasswordError, setNewPasswordError] = useState<null | string>(null);
-  const [newPassword2Error, setNewPassword2Error] = useState<null | string>(
-    null,
-  );
+  const [newPassword2Error, setNewPassword2Error] = useState<null | string>(null);
   const [submitError, setSubmitError] = useState<null | string>(null);
 
   // Necessary for edits to show up on the main page
   const renderServerComponents = useRenderServerComponents();
 
-  async function onSubmit(
-    event: React.FormEvent<HTMLFormElement & FormElements>,
-  ) {
+  async function onSubmit(event: React.FormEvent<HTMLFormElement & FormElements>) {
     event.preventDefault();
 
     setEmailError(null);
-    setCurrentPasswordError(null);
+    // setCurrentPasswordError(null);
     setNewPasswordError(null);
     setNewPassword2Error(null);
 
@@ -64,35 +60,35 @@ export function AccountDetailsEdit({
       setEmailError(emailError);
     }
 
-    let currentPasswordError, newPasswordError, newPassword2Error;
+    // let currentPasswordError, newPasswordError, newPassword2Error;
 
     // Only validate the password fields if the current password has a value
-    if (event.currentTarget.currentPassword.value) {
-      currentPasswordError = passwordValidation(
-        event.currentTarget.currentPassword,
-      );
-      if (currentPasswordError) {
-        setCurrentPasswordError(currentPasswordError);
-      }
+    // if (event.currentTarget.currentPassword.value) {
+    //   currentPasswordError = passwordValidation(
+    //     event.currentTarget.currentPassword,
+    //   );
+    //   if (currentPasswordError) {
+    //     setCurrentPasswordError(currentPasswordError);
+    //   }
 
-      newPasswordError = passwordValidation(event.currentTarget.newPassword);
-      if (newPasswordError) {
-        setNewPasswordError(newPasswordError);
-      }
+    //   newPasswordError = passwordValidation(event.currentTarget.newPassword);
+    //   if (newPasswordError) {
+    //     setNewPasswordError(newPasswordError);
+    //   }
 
-      newPassword2Error =
-        event.currentTarget.newPassword.value !==
-        event.currentTarget.newPassword2.value
-          ? 'The two passwords entered did not match'
-          : null;
-      if (newPassword2Error) {
-        setNewPassword2Error(newPassword2Error);
-      }
-    }
+    //   newPassword2Error =
+    //     event.currentTarget.newPassword.value !==
+    //     event.currentTarget.newPassword2.value
+    //       ? 'The two passwords entered did not match'
+    //       : null;
+    //   if (newPassword2Error) {
+    //     setNewPassword2Error(newPassword2Error);
+    //   }
+    // }
 
     if (
       emailError ||
-      currentPasswordError ||
+      // currentPasswordError ||
       newPasswordError ||
       newPassword2Error
     ) {
@@ -103,8 +99,8 @@ export function AccountDetailsEdit({
 
     const accountUpdateResponse = await callAccountUpdateApi({
       email,
-      newPassword: event.currentTarget.newPassword.value,
-      currentPassword: event.currentTarget.currentPassword.value,
+      // newPassword: event.currentTarget.newPassword.value,
+      // currentPassword: event.currentTarget.currentPassword.value,
       phone,
       firstName,
       lastName,
@@ -192,13 +188,9 @@ export function AccountDetailsEdit({
               setEmail(event.target.value);
             }}
           />
-          <p
-            className={`text-red-500 text-xs ${!emailError ? 'invisible' : ''}`}
-          >
-            {emailError} &nbsp;
-          </p>
+          <p className={`text-red-500 text-xs ${!emailError ? 'invisible' : ''}`}>{emailError} &nbsp;</p>
         </div>
-        <Text className="mb-6 mt-6" as="h3" size="lead">
+        {/* <Text className="mb-6 mt-6" as="h3" size="lead">
           Change your password
         </Text>
         <Password
@@ -233,26 +225,14 @@ export function AccountDetailsEdit({
           }`}
         >
           {newPassword2Error} &nbsp;
-        </Text>
+        </Text> */}
         <div className="mt-6">
-          <Button
-            className="text-sm mb-2"
-            variant="primary"
-            width="full"
-            type="submit"
-            disabled={saving}
-          >
+          <Button className="text-sm mb-2" variant="primary" width="full" type="submit" disabled={saving}>
             Save
           </Button>
         </div>
         <div className="mb-4">
-          <Button
-            type="button"
-            className="text-sm"
-            variant="secondary"
-            width="full"
-            onClick={close}
-          >
+          <Button type="button" className="text-sm" variant="secondary" width="full" onClick={close}>
             Cancel
           </Button>
         </div>
@@ -261,54 +241,54 @@ export function AccountDetailsEdit({
   );
 }
 
-function Password({
-  name,
-  passwordError,
-  label,
-}: {
-  name: string;
-  passwordError: string | null;
-  label: string;
-}) {
-  const [password, setPassword] = useState('');
+// function Password({
+//   name,
+//   passwordError,
+//   label,
+// }: {
+//   name: string;
+//   passwordError: string | null;
+//   label: string;
+// }) {
+//   const [password, setPassword] = useState('');
 
-  return (
-    <div className="mt-3">
-      <input
-        className={getInputStyleClasses(passwordError)}
-        id={name}
-        name={name}
-        type="password"
-        autoComplete={
-          name === 'currentPassword' ? 'current-password' : undefined
-        }
-        placeholder={label}
-        aria-label={label}
-        value={password}
-        minLength={8}
-        required
-        onChange={(event) => {
-          setPassword(event.target.value);
-        }}
-      />
-    </div>
-  );
-}
+//   return (
+//     <div className="mt-3">
+//       <input
+//         className={getInputStyleClasses(passwordError)}
+//         id={name}
+//         name={name}
+//         type="password"
+//         autoComplete={
+//           name === 'currentPassword' ? 'current-password' : undefined
+//         }
+//         placeholder={label}
+//         aria-label={label}
+//         value={password}
+//         minLength={8}
+//         required
+//         onChange={(event) => {
+//           setPassword(event.target.value);
+//         }}
+//       />
+//     </div>
+//   );
+// }
 
 export async function callAccountUpdateApi({
   email,
   phone,
   firstName,
   lastName,
-  currentPassword,
-  newPassword,
-}: {
+}: // currentPassword,
+// newPassword,
+{
   email: string;
   phone: string;
   firstName: string;
   lastName: string;
-  currentPassword: string;
-  newPassword: string;
+  // currentPassword: string;
+  // newPassword: string;
 }) {
   try {
     const res = await fetch(`/account`, {
@@ -322,8 +302,8 @@ export async function callAccountUpdateApi({
         phone,
         firstName,
         lastName,
-        currentPassword,
-        newPassword,
+        // currentPassword,
+        // newPassword,
       }),
     });
     if (res.ok) {
