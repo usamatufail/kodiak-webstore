@@ -12,7 +12,7 @@ const Text = ({ heading = '', text = '' }) => {
 
 export const PoliciesContainer = () => {
   return (
-    <div className="max-w-[850px] w-full px-[80px] py-[50px] rounded-[30px] bg-slate-700 bg-opacity-[.85] text-white border-solid border-white border-8">
+    <div className="max-w-[850px] w-full px-[10px] md:px-[80px] py-[25px] md:py-[50px] rounded-[30px] bg-slate-700 bg-opacity-[.85] text-white md:border-solid md:border-white md:border-8">
       <div className="text-center mb-[20px] relative">
         <h1 className="text-[32px] uppercase tracking-wider font-[900]">Policies</h1>
         <Link to="/" className="flex items-center justify-end absolute top-0 right-[15px]">
