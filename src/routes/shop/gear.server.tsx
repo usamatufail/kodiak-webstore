@@ -6,7 +6,7 @@ export default function Gear() {
   return (
     <Layout>
       <Banner
-        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675508249/kodiak/Shop/Gear/Group_991_ddc9np.webp"
+        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675651521/kodiak/Shop/Gear/Group_1001_c2mhp9.png"
         heading="Shop Gear"
       />
       <ShopCards />
