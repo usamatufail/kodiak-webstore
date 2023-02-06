@@ -8,7 +8,7 @@ const getVariant = () => ({
 });
 
 export const NewsLetter = ({
-  image = 'https://res.cloudinary.com/samtufail726/image/upload/q_auto,f_auto/v1675500468/kodiak/Shop/All/DSC02478_qcdfmd.jpg',
+  image = 'https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675500468/kodiak/Shop/All/DSC02478_qcdfmd.jpg',
 }) => {
   const [ref, inView] = useInView();
   const controls = useAnimation();

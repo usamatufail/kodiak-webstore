@@ -16,11 +16,11 @@ export default function Blades() {
   return (
     <Layout>
       <Banner
-        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/v1675502599/kodiak/Shop/Blades/DSC02107_j3kigv.webp"
+        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/v1675502599/kodiak/Shop/Blades/DSC02107_j3kigv.png"
         heading={`Shop ${collection?.title}`}
       />
       <ShopCards data={collection?.products} />
-      <NewsLetter image="https://res.cloudinary.com/samtufail726/image/upload/v1675502514/kodiak/Shop/Blades/DSC02049_su22rn.webp" />
+      <NewsLetter image="https://res.cloudinary.com/samtufail726/image/upload/v1675502514/kodiak/Shop/Blades/DSC02049_su22rn.png" />
     </Layout>
   );
 }

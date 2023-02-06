@@ -16,11 +16,11 @@ export default function Equipment() {
   return (
     <Layout>
       <Banner
-        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675500934/kodiak/Shop/Equipment/DSC03130-Edit-2_y3yhec.webp"
+        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675500934/kodiak/Shop/Equipment/DSC03130-Edit-2_y3yhec.png"
         heading={`Shop ${collection?.title}"`}
       />
       <ShopCards data={collection?.products} />
-      <NewsLetter image="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675501120/kodiak/Shop/Equipment/DSC03145_ytnmdd.webp" />
+      <NewsLetter image="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675501120/kodiak/Shop/Equipment/DSC03145_ytnmdd.png" />
     </Layout>
   );
 }

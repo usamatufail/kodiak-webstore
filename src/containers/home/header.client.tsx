@@ -1,7 +1,7 @@
 import { TypeAnimation } from 'react-type-animation';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const getVariant = (duration: number) => ({
   visible: { scale: 1, opacity: 1, transition: { duration } },
@@ -9,16 +9,15 @@ const getVariant = (duration: number) => ({
 });
 
 const images = [
-  'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465118/kodiak/1_n9rg3y.webp',
-  'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465116/kodiak/DSC03088-Edit_vwzexh.webp',
-  'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465741/kodiak/DSC02328_ik8rcy.jpg',
-  'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465743/kodiak/DSC02452_ggxiqy.jpg',
-  'https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465742/kodiak/DSC02277_y6krg4.jpg',
+  // 'https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_50/v1675465118/kodiak/1_n9rg3y.png',
+  // 'https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_50/v1675465116/kodiak/DSC03088-Edit_vwzexh.png',
+  'https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_40/v1675465741/kodiak/DSC02328_ik8rcy.jpg',
+  'https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_40/v1675465743/kodiak/DSC02452_ggxiqy.jpg',
+  'https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_40/v1675465742/kodiak/DSC02277_y6krg4.jpg',
 ];
 
-const random = Math.floor(Math.random() * images.length);
-
 export const Header = () => {
+  const [img, setImg] = useState(images[0]);
   const [ref, inView] = useInView();
   const controls = useAnimation();
 
@@ -28,24 +27,28 @@ export const Header = () => {
     }
   }, [controls, inView]);
 
+  useEffect(() => {
+    const random = Math.floor(Math.random() * images.length);
+    console.log(images[random]);
+    setImg(images[random]);
+  });
+
   return (
     <header
       className="min-h-[60vh] flex flex-col justify-center px-[20px] md:min-h-[78vh] md:px-[160px] relative"
-      style={{ backgroundImage: `url(${images[random]})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      ref={ref}
+      style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
-      {/* Overlay */}
-      <div className="absolute top-0 left-0 h-full w-full bg-black opacity-40" />
-      <div className="relative z-20">
+      <div className="relative" style={{ zIndex: 1 }}>
         <motion.h1
-          ref={ref}
           animate={controls}
           initial="hidden"
           variants={getVariant(0.5)}
-          className="text-[70px] text-white leading-[1] font-bold md:text-[168px] md:max-w-[895px]"
+          className="text-[55px] text-white leading-[1] font-bold md:text-[168px] md:max-w-[895px]"
         >
           Handmade Knives
         </motion.h1>
-        <p className="font-bold text-white text-[22px] md:text-[36px]">
+        <p className="font-bold text-white text-[18px] md:text-[36px]">
           <TypeAnimation sequence={['That embody the Alaskan spirit.']} speed={85} wrapper="span" cursor={false} repeat={0} />
           <br />
           <TypeAnimation

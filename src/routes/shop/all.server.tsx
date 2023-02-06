@@ -17,7 +17,7 @@ export default function ShopAll() {
   return (
     <Layout>
       <Banner
-        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/v1675500694/kodiak/Shop/All/DSC02256_x8g256.webp"
+        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/v1675500694/kodiak/Shop/All/DSC02256_x8g256.png"
         heading={`Shop ${collection?.title}`}
       />
       <ShopCards data={collection?.products} />

@@ -110,7 +110,7 @@ function AuthenticatedAccount({
         className="text-white bg-cover bg-no-repeat"
         style={{
           backgroundImage:
-            'url(https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto,b_black,o_15/v1675643643/kodiak/DSC02444_bwir7e.webp)',
+            'url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_15/v1675643643/kodiak/DSC02444_bwir7e.png)',
         }}
       >
         <PageHeader heading={heading}>

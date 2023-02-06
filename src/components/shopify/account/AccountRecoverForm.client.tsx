@@ -39,7 +39,7 @@ export function AccountRecoverForm() {
       className="flex justify-center items-center py-[20px] px-4 min-h-[calc(100vh_-_470px)] text-white bg-no-repeat bg-cover"
       style={{
         backgroundImage:
-          'url(https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto,b_black,o_25/v1675642627/kodiak/DSC02548_iwundp.webp)',
+          'url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_25/v1675642627/kodiak/DSC02548_iwundp.png)',
       }}
     >
       <div className="max-w-md w-full">

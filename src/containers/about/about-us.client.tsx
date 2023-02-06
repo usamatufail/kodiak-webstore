@@ -6,7 +6,7 @@ export const AboutUs = () => {
       className="w-full mt-[4px] text-center pb-[40px]"
       style={{
         backgroundImage:
-          'url(https://res.cloudinary.com/samtufail726/image/upload/b_black,o_40/v1675505545/kodiak/About/DSC02558_z7tmka.webp)',
+          'url(https://res.cloudinary.com/samtufail726/image/upload/b_black,o_40/v1675505545/kodiak/About/DSC02558_z7tmka.png)',
         backgroundPosition: '-200px -100px',
         backgroundRepeat: 'no-repeat',
         minHeight: '701px',

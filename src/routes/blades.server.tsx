@@ -50,7 +50,7 @@ export default function Blades() {
       <Layout>
         <Banner
           heading="Blades"
-          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675473938/kodiak/Blades/DSC02336_cqwwxz.jpg"
+          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675473938/kodiak/Blades/DSC02336_cqwwxz.jpg"
         />
         <Links />
         <Navigation />
@@ -67,19 +67,19 @@ Indulge in a one-of-a-kind gift for a loved one or treat yourself to the ultimat
           />
         </div>
         <DetailsBanner
-          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675484446/kodiak/Blades/DSC02473_wdpygj.jpg"
+          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675484446/kodiak/Blades/DSC02473_wdpygj.jpg"
           minHeight="230px"
         />
         <DetailsBanner
-          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675473938/kodiak/Blades/DSC02336_cqwwxz.jpg"
+          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675473938/kodiak/Blades/DSC02336_cqwwxz.jpg"
           minHeight="230px"
         />
         <DetailsBanner
-          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675465118/kodiak/1_n9rg3y.webp"
+          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675465118/kodiak/1_n9rg3y.png"
           minHeight="230px"
         />
         <div className="mt-[4px]">
-          <NewsLetter image="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675484764/kodiak/Blades/DSC02791_dq3j5k.jpg" />
+          <NewsLetter image="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675484764/kodiak/Blades/DSC02791_dq3j5k.jpg" />
         </div>
       </Layout>
     </>

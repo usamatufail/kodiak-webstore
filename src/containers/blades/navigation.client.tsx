@@ -14,12 +14,12 @@ export const Navigation = () => {
     <div className="grid grid-cols-2 mt-[4px] h-[150px] gap-[4px]">
       <CustomLink
         link="#hunting-knives"
-        img="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675474860/kodiak/Blades/DSC02380_aprq6x.jpg"
+        img="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675474860/kodiak/Blades/DSC02380_aprq6x.jpg"
         text="Hunting Knives"
       />
       <CustomLink
         link="#handmade-knives"
-        img="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675474903/kodiak/Blades/DSC03679-Edit_a4xfoe.webp"
+        img="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675474903/kodiak/Blades/DSC03679-Edit_a4xfoe.png"
         text="Handmade Knives"
         objectPosition="0px -100px"
       />

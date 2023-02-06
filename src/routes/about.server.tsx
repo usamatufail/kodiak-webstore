@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <Layout>
       <Banner
-        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675504964/kodiak/About/Banner.webp"
+        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675504964/kodiak/About/Banner.png"
         heading="About Us"
         imageStyles={{ height: '150%', top: '-50%' }}
       />

@@ -59,7 +59,7 @@ export const HandmadeKnives = ({
       {/* Image */}
       <DetailsBanner
         heading={heading}
-        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto/v1675484446/kodiak/Blades/DSC02473_wdpygj.jpg"
+        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675484446/kodiak/Blades/DSC02473_wdpygj.jpg"
         description={description}
       />
       {/* Text with Mountains */}
@@ -67,7 +67,7 @@ export const HandmadeKnives = ({
         className="relative bg-cover bg-no-repeat"
         ref={ref}
         style={{
-          backgroundImage: `url(https://res.cloudinary.com/samtufail726/image/upload/f_auto,q_auto,b_white,o_50/v1675465743/kodiak/DSC02239_xrvqnk_6b09b01.webp)`,
+          backgroundImage: `url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_white,o_50/v1675465743/kodiak/DSC02239_xrvqnk_6b09b01.png)`,
         }}
       >
         {/* Top Left Mountains */}

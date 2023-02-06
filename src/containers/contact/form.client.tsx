@@ -11,7 +11,7 @@ export const Form = () => {
     <div className="w-full min-h-[450px] relative mt-[4px]">
       {/* Background */}
       <img
-        src="https://res.cloudinary.com/samtufail726/image/upload/f_auto/v1675492607/kodiak/Contact/DSC02251_oxr8rs.webp"
+        src="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675492607/kodiak/Contact/DSC02251_oxr8rs.png"
         className="w-full h-full object-cover absolute top-0 left-0 z-0"
       />
       {/* Overlay */}
