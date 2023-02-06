@@ -1,4 +1,5 @@
 import Slider from '@ant-design/react-slick';
+import { useState, useEffect } from 'react';
 
 const settings = {
   dots: true,
@@ -25,17 +26,24 @@ const settings = {
   ],
 };
 
-let images: string[] = [];
-for (let i = 2; i < 23; i++) {
-  images?.push(`/images/blades/icons/1 (${i}).png`);
-}
-
 export const Links = () => {
+  const [images, setImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    let imgHolder: string[] = [];
+    for (let i = 2; i < 24; i++) {
+      imgHolder?.push(`https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675689328/kodiak/icons/1_${i}.png`);
+    }
+    setImages(imgHolder);
+  }, []);
+
+  console.log(images);
+
   return (
     <div className="flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.95)' }}>
-      <div className="pt-[45px] pb-[45px] custom-slick max-w-[calc(100vw)] lg:max-w-[1200px] relative">
+      <div className="pt-[45px] pb-[45px] custom-slick w-[calc(100vw)] lg:w-[1200px] relative">
         <Slider {...settings}>
-          {images.map((image) => {
+          {images?.map((image) => {
             return (
               <div key={image} className="cursor-pointer">
                 <img key={image} src={image} alt="available image" className="max-w-[100px]" />

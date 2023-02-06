@@ -31,7 +31,7 @@ export const Header = () => {
     const random = Math.floor(Math.random() * images.length);
     console.log(images[random]);
     setImg(images[random]);
-  });
+  }, []);
 
   return (
     <header

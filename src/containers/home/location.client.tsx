@@ -17,7 +17,7 @@ export const Location = () => {
       center: [lng, lat],
       zoom: zoom,
     });
-  });
+  }, []);
 
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
@@ -26,7 +26,7 @@ export const Location = () => {
       setLat(map.current.getCenter().lat.toFixed(4));
       setZoom(map.current.getZoom().toFixed(2));
     });
-  });
+  }, []);
 
   return (
     <div className="mt-[4px] mb-[4px] relative">
