@@ -26,8 +26,10 @@
   },
   "dependencies": {
     "@ant-design/react-slick": "^1.0.0",
+    "@headlessui/react": "^1.7.9",
     "@shopify/hydrogen": "^1.6.6",
     "antd": "^5.1.7",
+    "clsx": "^1.2.1",
     "framer-motion": "^8.5.4",
     "hamburger-react": "^2.5.0",
     "lottie-web": "^5.10.2",
@@ -41,7 +43,9 @@
     "react-responsive": "^9.0.2",
     "react-slick": "^0.29.0",
     "react-type-animation": "^2.1.2",
-    "slick-carousel": "^1.8.1"
+    "react-use": "^17.4.0",
+    "slick-carousel": "^1.8.1",
+    "typographic-base": "^1.0.4"
   },
   "author": "mians"
 }
