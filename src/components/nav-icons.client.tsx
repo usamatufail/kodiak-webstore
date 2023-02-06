@@ -3,9 +3,9 @@ import { Link } from '@shopify/hydrogen';
 export const Icons = () => {
   return (
     <>
-      <div>
+      {/* <div>
         <img src="/images/navbar/search.svg" alt="search here" />
-      </div>
+      </div> */}
       <div className="relative">
         <div
           style={{ background: 'url(/images/navbar/cart-bubble.png)', backgroundPosition: 'center', backgroundSize: 'cover' }}
