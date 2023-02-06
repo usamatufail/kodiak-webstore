@@ -13,11 +13,12 @@ export const Menu = ({ isOpen, setIsOpen }: any) => {
       // Generating Custom Links
       const links = [
         { name: 'Home', handle: '/', variantValue: 0 },
-        { name: 'Shop All', handle: '/shop', variantValue: 0.2 },
-        { name: 'Blades', handle: '/gear', variantValue: 0.2 },
-        { name: 'Equipment', handle: '/all-blades', variantValue: 0.2 },
-        { name: 'Gear', handle: '/all-blades', variantValue: 0.2 },
-        { name: 'Contact Us', handle: '/all-blades', variantValue: 0.2 },
+        { name: 'Shop All', handle: '/shop/all', variantValue: 0.2 },
+        { name: 'Shop Blades', handle: '/shop/blades', variantValue: 0.2 },
+        { name: 'Shop Equipment', handle: '/shop/equipments', variantValue: 0.2 },
+        { name: 'Shop Gear', handle: '/shop/gear', variantValue: 0.2 },
+        { name: 'Learn More', handle: '/blades', variantValue: 0 },
+        { name: 'Contact Us', handle: '/contact', variantValue: 0.2 },
         { name: 'About', handle: '/about', variantValue: 0.2 },
       ];
       setCollections(links);

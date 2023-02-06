@@ -1,7 +1,6 @@
 import { Layout } from '../components/index.server';
-import { Links } from '../containers/index.server';
 import { NewsLetter, Banner, DetailsBanner } from '../components';
-import { Navigation, HuntingKnives } from '../containers';
+import { Navigation, Links, HuntingKnives } from '../containers';
 import { HandmadeKnives } from '../containers/blades/handmade-knives.client';
 
 const huntingTexts = {
@@ -75,7 +74,7 @@ Indulge in a one-of-a-kind gift for a loved one or treat yourself to the ultimat
           minHeight="230px"
         />
         <DetailsBanner
-          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675465118/kodiak/1_n9rg3y.png"
+          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675465118/kodiak/1_n9rg3y.jpg"
           minHeight="230px"
         />
         <div className="mt-[4px]">

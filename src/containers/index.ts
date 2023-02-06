@@ -7,6 +7,7 @@ export { Knives } from './home/knives.client';
 export { Location } from './home/location.client';
 
 // Blades
+export { Links } from './blades/links.client';
 export { Navigation } from './blades/navigation.client';
 export { Details } from './blades/details.client';
 export { HuntingKnives } from './blades/hunting-knives.client';

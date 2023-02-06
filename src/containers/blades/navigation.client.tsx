@@ -19,9 +19,9 @@ export const Navigation = () => {
       />
       <CustomLink
         link="#handmade-knives"
-        img="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675474903/kodiak/Blades/DSC03679-Edit_a4xfoe.png"
+        img="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675683664/kodiak/Blades/DSC03679-Edit_a4xfoe_1.jpg"
         text="Handmade Knives"
-        objectPosition="0px -100px"
+        // objectPosition="0px -100px"
       />
     </div>
   );

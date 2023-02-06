@@ -31,13 +31,13 @@ export const Available = () => {
         animate={controls}
         initial="hidden"
         variants={getVariant(0.5)}
-        className="relative z-30 flex flex-col items-center"
-        style={{ maxWidth: '1024px' }}
+        className="relative flex flex-col items-center"
+        style={{ maxWidth: '1024px', zIndex: 3 }}
       >
-        <p className="px-[20px] md:px-[0px] text-center text-gray-300 md:text-[24px]">
+        <p className="px-[20px] md:px-[0px] text-center text-gray-300 md:text-[24px] tracking-wider md:tracking-[unset] leading-normal md:leading-[unset]">
           If you are looking for a special and unique gift or the perfect addition to your own kitchen, consider handmade knives. Handmade
-          knives offer a level of craftsmanship that is simply unrivaled by regular store-bought models. Let&aspo;s explore why handmade
-          knives are so special and how they can make a great addition to any kitchen.{' '}
+          knives offer a level of craftsmanship that is simply unrivaled by regular store-bought models. Let's explore why handmade knives
+          are so special and how they can make a great addition to any kitchen.{' '}
         </p>
         <Link to="/shop/all">
           <button
