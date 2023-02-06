@@ -8,7 +8,7 @@ const getVariant = () => ({
 });
 
 export const NewsLetter = ({
-  image = 'https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675500468/kodiak/Shop/All/DSC02478_qcdfmd.jpg',
+  image = 'https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_65/v1675500468/kodiak/Shop/All/DSC02478_qcdfmd.jpg',
 }) => {
   const [ref, inView] = useInView();
   const controls = useAnimation();
@@ -21,7 +21,7 @@ export const NewsLetter = ({
 
   return (
     <div
-      className="min-h-[400px] bg-center bg-no-repeat bg-cover text-white flex items-center md:justify-center md:min-h-[450px] relative after:h-full after:w-full after:absolute after:bg-black after:opacity-[0.65] after:z-10"
+      className="min-h-[400px] py-[40px] bg-center bg-no-repeat bg-cover text-white flex items-center md:justify-center md:min-h-[450px] relative after:h-full after:w-full after:absolute after:bg-black after:opacity-[0.65] after:z-10"
       style={{ backgroundImage: `url(${image})` }}
       ref={ref}
     >
@@ -32,7 +32,7 @@ export const NewsLetter = ({
           animate={controls}
           variants={getVariant()}
           transition={{ duration: 0.5 }}
-          className="mt-[15px] text-[20px] max-w-[1515px] px-[20px]"
+          className="mt-[15px] text-[16px] md:text-[20px] max-w-[1515px] px-[20px] tracking-wide md:tracking-[unset]"
         >
           Embark on a never-ending journey of discovery and excitement. Join us on a quest to unlock the full potential of your outdoor
           adventures. Our weekly newsletters are designed to be your ultimate guide, filled with valuable insights and expert advice on

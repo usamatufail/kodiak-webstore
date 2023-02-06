@@ -93,10 +93,10 @@ export const Footer = () => {
   }, [controls, inView]);
 
   return (
-    <div className="py-[60px] px-[20px] grid grid-cols-1 gap-[30px] xl:gap-[100px] xl:grid-cols-[350px_auto] xl:px-[100px] bg-[#ededed]">
+    <div className="py-[45px] px-[20px] flex flex-col gap-[30px] xl:grid xl:gap-[100px] xl:grid-cols-[350px_auto] xl:px-[100px] bg-[#ededed]">
       {/* Logo */}
       <motion.div ref={ref} animate={controls} initial="hidden" variants={getVariant(0.5)}>
-        <img src="/images/navbar/logo.png" alt="logo" className="max-w-[180px] mx-auto " />
+        <img src="/images/navbar/logo.png" alt="logo" className="max-w-[180px] mx-auto" />
       </motion.div>
       <div className="grid gap-[45px] grid-cols-1 xl:grid-cols-4">
         <Links links={quickLinks} />
@@ -135,7 +135,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="col-span-2 -mt-[75px] gap-[15px] flex flex-col">
+      <div className="col-span-2 xl:-mt-[75px] gap-[15px] flex flex-col">
         <div className="flex items-center justify-center gap-[5px]">
           {payments?.map((payment) => (
             <img src={payment} alt="payment-icon" key={payment} />

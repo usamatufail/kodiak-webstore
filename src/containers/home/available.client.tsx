@@ -18,14 +18,14 @@ export const Available = () => {
     }
   }, [controls, inView]);
   return (
-    <section className="mt-[4px] relative flex items-center justify-center" style={{ height: '1024px' }}>
-      <video autoPlay muted loop id="myVideo" className="absolute h-full w-full object-cover z-10">
+    <section className="mt-[4px] h-[500px] relative flex items-center justify-center md:h-[1024px]">
+      <video autoPlay muted loop id="myVideo" className="absolute h-full w-full object-cover" style={{ zIndex: 1 }}>
         <source
           src="https://res.cloudinary.com/samtufail726/video/upload/q_auto/v1675559276/kodiak/Videos/Untitled_wml6iz.mp4"
           type="video/mp4"
         />
       </video>
-      <div className="absolute top-0 left-0 h-full w-full bg-black opacity-75 z-20" />
+      <div className="absolute top-0 left-0 h-full w-full bg-black opacity-75" style={{ zIndex: 2 }} />
       <motion.div
         ref={ref}
         animate={controls}
@@ -34,7 +34,7 @@ export const Available = () => {
         className="relative z-30 flex flex-col items-center"
         style={{ maxWidth: '1024px' }}
       >
-        <p className="text-center text-gray-300 text-[24px]">
+        <p className="px-[20px] md:px-[0px] text-center text-gray-300 md:text-[24px]">
           If you are looking for a special and unique gift or the perfect addition to your own kitchen, consider handmade knives. Handmade
           knives offer a level of craftsmanship that is simply unrivaled by regular store-bought models. Let&aspo;s explore why handmade
           knives are so special and how they can make a great addition to any kitchen.{' '}

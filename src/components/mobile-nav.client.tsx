@@ -13,9 +13,11 @@ export const Menu = ({ isOpen, setIsOpen }: any) => {
       // Generating Custom Links
       const links = [
         { name: 'Home', handle: '/', variantValue: 0 },
-        { name: 'Blades', handle: '/shop', variantValue: 0.2 },
-        { name: 'Gear', handle: '/gear', variantValue: 0.2 },
-        { name: 'All Blades Gear', handle: '/all-blades', variantValue: 0.2 },
+        { name: 'Shop All', handle: '/shop', variantValue: 0.2 },
+        { name: 'Blades', handle: '/gear', variantValue: 0.2 },
+        { name: 'Equipment', handle: '/all-blades', variantValue: 0.2 },
+        { name: 'Gear', handle: '/all-blades', variantValue: 0.2 },
+        { name: 'Contact Us', handle: '/all-blades', variantValue: 0.2 },
         { name: 'About', handle: '/about', variantValue: 0.2 },
       ];
       setCollections(links);
@@ -43,10 +45,18 @@ export const Menu = ({ isOpen, setIsOpen }: any) => {
 
   return (
     <>
-      <motion.div animate={{ rotate: 180 }} transition={{ type: 'spring' }}>
-        <button onClick={toggleDrawer} className="w-[40px] h-[40px] relative">
+      <motion.div
+        initial="initial"
+        animate="animate"
+        variants={{ initial: { x: 200 }, animate: { x: 0 } }}
+        className="flex flex-row-reverse items-center gap-[20px]"
+      >
+        <button onClick={toggleDrawer} className="w-[40px] h-[40px] relative flex items-center">
           <Hamburger toggled={isOpen} color="#1B1211" />
         </button>
+
+        {/* Icons */}
+        <Icons />
       </motion.div>
 
       <Drawer open={isOpen} onClose={toggleDrawer} direction="left" size="100vw" duration={300}>
@@ -56,33 +66,22 @@ export const Menu = ({ isOpen, setIsOpen }: any) => {
             <button className="absolute top-[10px] right-[10px]" onClick={toggleDrawer}>
               <AiOutlineClose style={{ fontSize: '32px' }} />
             </button>
-            <div className="relative w-[200px] h-[120px] flex items-center">
+            <div className="relative w-[130px] h-[120px] flex items-center">
               <img src="/images/navbar/logo.png" alt="menu button" style={{ objectFit: 'contain' }} />
             </div>
           </div>
           <div className="w-full h-[1px] bg-[#101010]" />
           {/* Menu Links */}
           <div className="flex flex-col items-center px-[20px] py-[50px] text-[26px] md:text-[45px]">
-            {collections?.map((link: any) => (
-              <motion.div key={link?.handle} ref={ref} animate={controls} initial="hidden" variants={getVariant(link?.variantValue)}>
-                <a href={link?.handle} onClick={toggleDrawer}>
-                  {link?.name}
-                </a>
-              </motion.div>
-            ))}
-            <motion.div
-              animate={controls}
-              initial="hidden"
-              ref={ref}
-              variants={{
-                visible: { x: 0, opacity: 1, transition: { duration: 0.4 } },
-                hidden: { x: -50, opacity: 0, transition: { duration: 0.4 } },
-              }}
-              className=" items-center gap-[30px] flex md:hidden mt-[40px]"
-            >
-              {/* Icons */}
-              <Icons />
-            </motion.div>
+            <div className="flex flex-col gap-[15px] items-center">
+              {collections?.map((link: any) => (
+                <motion.div key={link?.handle} ref={ref} animate={controls} initial="hidden" variants={getVariant(link?.variantValue)}>
+                  <a href={link?.handle} onClick={toggleDrawer}>
+                    {link?.name}
+                  </a>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </Drawer>

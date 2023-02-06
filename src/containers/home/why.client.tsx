@@ -27,7 +27,7 @@ export const Why = () => {
       style={{ backgroundImage: 'url(/images/why/background.png)' }}
     >
       {visible ? (
-        <h1 className="text-[68px] font-[900] text-white leading-[1.25] md:leadig-[1] md:text-[77px]">
+        <h1 className="text-[52px] font-[900] text-white leading-[1.25] md:leadig-[1] md:text-[77px]">
           <TypeAnimation sequence={['Why Kodiak']} wrapper="span" cursor={false} repeat={0} />
         </h1>
       ) : (
@@ -39,7 +39,7 @@ export const Why = () => {
         initial="hidden"
         variants={getVariant()}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="max-w-[1180px] text-white text-left md:text-center  text-[19px] font-[400] leading-normal"
+        className="max-w-[1180px] text-white text-left md:text-center  text-[17px] font-[400] leading-normal"
       >
         At Kodiak Knife Company, we aim to craft handmade Alaskan knives that inspire adventure and exceed expectations. As outdoor
         enthusiasts, we understand the importance of having a durable, reliable, and functional knife.
