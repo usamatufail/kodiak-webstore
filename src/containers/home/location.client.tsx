@@ -6,8 +6,8 @@ export const Location = () => {
   const mapContainer: any = useRef(null);
   const map: any = useRef(null);
 
-  const [lng, setLng] = useState(61.3293);
-  const [lat, setLat] = useState(149.568);
+  const [lng, setLng] = useState(30.3609);
+  const [lat, setLat] = useState(59.9311);
   const [zoom, setZoom] = useState(11);
 
   useEffect(() => {
