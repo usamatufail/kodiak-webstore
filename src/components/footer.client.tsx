@@ -117,7 +117,7 @@ export const Footer = () => {
         <div className="text-center md:text-left">
           <h5 className="font-[600] text-[22px] uppercase custom-gradient-text">STAY INFORMED</h5>
           <p className="mt-[10px] md:mt-[20px] flex gap-[8px]">
-            Subscribe to get special offers, drop announcements, and stay up to date on all things Toor Knives.
+            Subscribe to get special offers, drop announcements, and stay up to date on all things.
           </p>
           {/* Input */}
           <div className="items-center justify-start h-[40px] w-[300px] mx-auto grid grid-cols-[70%_auto] mt-[40px]">
@@ -141,7 +141,7 @@ export const Footer = () => {
             <img src={payment} alt="payment-icon" key={payment} />
           ))}
         </div>
-        <div className="flex items-center justify-center">© 2023 Toor Knives Inc.</div>
+        <div className="flex items-center justify-center">© 2023 Kodiak Knife Co.</div>
       </div>
     </div>
   );
