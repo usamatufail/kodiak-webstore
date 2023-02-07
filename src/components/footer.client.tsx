@@ -93,7 +93,7 @@ export const Footer = () => {
   }, [controls, inView]);
 
   return (
-    <div className="py-[45px] px-[20px] flex flex-col gap-[30px] xl:grid xl:gap-[100px] xl:grid-cols-[350px_auto] xl:px-[100px] bg-[#ededed]">
+    <div className="py-[45px] px-[20px] flex flex-col gap-[30px] xl:grid xl:gap-[100px] xl:grid-cols-[200px_auto] xl:px-[100px] bg-[#ededed]">
       {/* Logo */}
       <motion.div ref={ref} animate={controls} initial="hidden" variants={getVariant(0.5)}>
         <img src="/images/navbar/logo.png" alt="logo" className="max-w-[180px] mx-auto" />

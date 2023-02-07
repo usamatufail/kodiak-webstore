@@ -4,17 +4,9 @@ export default defineConfig({
   shopify: {
     defaultCountryCode: 'US',
     defaultLanguageCode: 'EN',
-    storeDomain: 'kodiak-webstore.myshopify.com',
-    storefrontToken: '4c87323a1e571b18c010cd8550a36d4c',
-    // privateStorefrontToken:
-    //   // @ts-ignore
-    //   Oxygen?.env?.PRIVATE_STOREFRONT_API_TOKEN,
+    storeDomain: import.meta.env.PUBLIC_STORE_DOMAIN,
+    storefrontToken: import.meta.env.PUBLIC_STORE_TOKEN,
     storefrontApiVersion: '2022-07',
-    // @ts-ignore
-    // storefrontId: Oxygen?.env?.PUBLIC_STOREFRONT_ID,
-    logger: {
-      showQueryTiming: true,
-    },
   },
   session: CookieSessionStorage('__session', {
     path: '/',

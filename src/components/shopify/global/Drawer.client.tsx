@@ -59,7 +59,7 @@ function Drawer({
               >
                 <Dialog.Panel className="w-screen max-w-lg text-left align-middle transition-all transform shadow-xl h-screen-dynamic bg-[rgba(0,0,0,0.9)]">
                   <header
-                    className={`sticky top-0 flex items-center px-6 h-nav sm:px-8 md:px-12 mt-[15px] mb-[45px] ${
+                    className={`sticky top-0 bg-[#000] pt-[15px] pb-[55px] mb-[10px] mt-[0px] flex items-center px-6 sm:px-8 md:px-12 ${
                       heading ? 'justify-between' : 'justify-end'
                     }`}
                   >

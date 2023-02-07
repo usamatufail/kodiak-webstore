@@ -1,18 +1,8 @@
-import {EnhancedMenu} from '~/lib/utils';
-import {Text} from '~/components';
-import {Drawer} from './Drawer.client';
-import {Link} from '@shopify/hydrogen';
-import {startTransition} from 'react';
+import { Drawer } from './Drawer.client';
+import { Link } from '@shopify/hydrogen';
+import { startTransition } from 'react';
 
-export function MenuDrawer({
-  isOpen,
-  onClose,
-  menu,
-}: {
-  isOpen: boolean;
-  onClose: () => void;
-  menu: EnhancedMenu;
-}) {
+export function MenuDrawer({ isOpen, onClose, menu }: { isOpen: boolean; onClose: () => void; menu: any }) {
   return (
     <Drawer open={isOpen} onClose={onClose} openFrom="left" heading="Menu">
       <div className="grid">
@@ -22,28 +12,18 @@ export function MenuDrawer({
   );
 }
 
-function MenuMobileNav({
-  menu,
-  onClose,
-}: {
-  menu: EnhancedMenu;
-  onClose: () => void;
-}) {
+function MenuMobileNav({ menu, onClose }: { menu: any; onClose: () => void }) {
   return (
     <nav className="grid gap-4 p-6 sm:gap-6 sm:px-12 sm:py-8">
       {/* Top level menu items */}
-      {(menu?.items || []).map((item) => (
-        <Link
-          key={item.id}
-          to={item.to}
-          target={item.target}
-          onClick={() => startTransition(onClose)}
-        >
-          <Text as="span" size="copy">
-            {item.title}
-          </Text>
-        </Link>
-      ))}
+      {menu?.map((item: any) => {
+        console.log(item);
+        return (
+          <Link key={item?.handle} to={item?.handle} onClick={() => startTransition(onClose)}>
+            {item?.name}
+          </Link>
+        );
+      })}
     </nav>
   );
 }

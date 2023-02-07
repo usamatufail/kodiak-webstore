@@ -13,12 +13,13 @@ export const AboutUs = () => {
         overflow: 'hidden',
       }}
     >
+      <h2 className="pt-[20px] md:pt-[45px] text-[45px] font-[700] text-white mb-[20px]">About Us</h2>
       <motion.p
         variants={{ initial: { opacity: 0, y: -200 }, animate: { opacity: 1, y: 0 } }}
         transition={{ delay: 0.1, duration: 0.5 }}
         initial="initial"
         animate="animate"
-        className="text-[16px] md:text-[24px] max-w-[950px] mx-auto text-white py-[45px] whitespace-pre-wrap"
+        className="text-[16px] md:text-[24px] max-w-[950px] mx-auto text-white py-[45px] pt-[10px] whitespace-pre-wrap"
       >
         {`At Kodiak Knife Company, we strive to provide top-notch, functional knives to outdoor enthusiasts and those who appreciate rugged, adventurous style. With our focus on quality and customer satisfaction, we aim to make your shopping experience a memorable one.
 

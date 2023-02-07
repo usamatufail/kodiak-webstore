@@ -1,48 +1,24 @@
-import { useAnimation, motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import Drawer from 'react-modern-drawer';
+import { motion } from 'framer-motion';
 import Hamburger from 'hamburger-react';
-import { AiOutlineClose } from 'react-icons/ai';
 import { Icons } from './nav-icons.client';
+import { MenuDrawer } from './shopify/global/MenuDrawer.client';
+import { useDrawer } from './shopify/global/Drawer.client';
 
-export const Menu = ({ isOpen, setIsOpen }: any) => {
-  const [collections, setCollections] = useState<any>([]);
-  useEffect(() => {
-    (async () => {
-      // Generating Custom Links
-      const links = [
-        { name: 'Home', handle: '/', variantValue: 0 },
-        { name: 'Shop All', handle: '/shop/all', variantValue: 0.2 },
-        { name: 'Shop Blades', handle: '/shop/blades', variantValue: 0.2 },
-        { name: 'Shop Equipment', handle: '/shop/equipment', variantValue: 0.2 },
-        { name: 'Shop Gear', handle: '/shop/gear', variantValue: 0.2 },
-        { name: 'Learn More', handle: '/blades', variantValue: 0 },
-        { name: 'Contact Us', handle: '/contact', variantValue: 0.2 },
-        { name: 'About', handle: '/about', variantValue: 0.2 },
-      ];
-      setCollections(links);
-    })();
-  }, []);
+const links = [
+  { name: 'Home', handle: '/', variantValue: 0 },
+  { name: 'Shop All', handle: '/shop/all', variantValue: 0.2 },
+  { name: 'Shop Blades', handle: '/shop/blades', variantValue: 0.2 },
+  { name: 'Shop Equipment', handle: '/shop/equipment', variantValue: 0.2 },
+  { name: 'Shop Gear', handle: '/shop/gear', variantValue: 0.2 },
+  { name: 'Learn More', handle: '/blades', variantValue: 0 },
+  { name: 'Contact Us', handle: '/contact', variantValue: 0.2 },
+  { name: 'About', handle: '/about', variantValue: 0.2 },
+];
 
-  const toggleDrawer = () => {
-    setIsOpen((prevState: any) => !prevState);
-  };
-  const getVariant = (duration: number) => ({
-    visible: { opacity: 1, transition: { duration } },
-    hidden: { opacity: 0, transition: { duration } },
-  });
+export const Menu = () => {
+  const { isOpen, openDrawer, closeDrawer } = useDrawer();
 
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
-  }, [controls, inView]);
+  console.log(isOpen);
 
   return (
     <>
@@ -52,7 +28,7 @@ export const Menu = ({ isOpen, setIsOpen }: any) => {
         variants={{ initial: { x: 200 }, animate: { x: 0 } }}
         className="flex flex-row-reverse items-center gap-[20px]"
       >
-        <button onClick={toggleDrawer} className="w-[40px] h-[40px] relative flex items-center">
+        <button onClick={openDrawer} className="w-[40px] h-[40px] relative flex items-center">
           <Hamburger toggled={isOpen} color="#1B1211" />
         </button>
 
@@ -60,9 +36,9 @@ export const Menu = ({ isOpen, setIsOpen }: any) => {
         <Icons />
       </motion.div>
 
-      <Drawer open={isOpen} lockBackgroundScroll onClose={toggleDrawer} direction="left" size="100vw" duration={300}>
+      <MenuDrawer menu={links} isOpen={isOpen} onClose={closeDrawer} />
+      {/* <Drawer open={isOpen} lockBackgroundScroll onClose={toggleDrawer} direction="left" size="100vw" duration={300}>
         <div className="text-black">
-          {/* Logo */}
           <div className="flex items-center justify-center relative">
             <button className="absolute top-[10px] right-[10px]" onClick={toggleDrawer}>
               <AiOutlineClose style={{ fontSize: '32px' }} />
@@ -72,7 +48,6 @@ export const Menu = ({ isOpen, setIsOpen }: any) => {
             </div>
           </div>
           <div className="w-full h-[1px] bg-[#101010]" />
-          {/* Menu Links */}
           <div className="flex flex-col items-center px-[20px] py-[50px] text-[26px] md:text-[45px]">
             <div className="flex flex-col gap-[15px] items-center">
               {collections?.map((link: any) => (
@@ -85,7 +60,7 @@ export const Menu = ({ isOpen, setIsOpen }: any) => {
             </div>
           </div>
         </div>
-      </Drawer>
+      </Drawer> */}
     </>
   );
 };
