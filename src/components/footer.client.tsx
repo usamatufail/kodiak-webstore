@@ -26,7 +26,7 @@ const connectLinks = {
   title: 'Connect',
   links: [
     { title: 'Get in touch', url: '/contact' },
-    { title: 'kodiak_knife_co', url: 'https://instagram.com/kodiak_knife_co', isOutside: true },
+    { title: 'kodiakknifeco', url: 'https://instagram.com/kodiakknifeco', isOutside: true },
     { title: 'kiakknifeco@gmail.com', url: 'mailto:kodiakknifeco@gmail.com', isOutside: true },
   ],
 };
@@ -42,7 +42,7 @@ const socialLinks = {
     {
       title: 'Instagram',
       icon: '/svg/insta.svg',
-      url: 'https://instagram.com/kodiak_knife_co',
+      url: 'https://instagram.com/kodiakknifeco',
     },
     {
       title: 'Twitter',

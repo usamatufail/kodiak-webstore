@@ -5,8 +5,9 @@ export const Location = () => {
   mapboxgl.accessToken = 'pk.eyJ1Ijoic2FtdHVmYWlsIiwiYSI6ImNrOGhvd2xuOTAyZm0zZHAzNXlrMGF5ZDkifQ.S4s4jAZo8yEmxc1ODsajdA';
   const mapContainer: any = useRef(null);
   const map: any = useRef(null);
-  const [lng, setLng] = useState(30.3609);
-  const [lat, setLat] = useState(59.9311);
+
+  const [lng, setLng] = useState(61.3293);
+  const [lat, setLat] = useState(149.568);
   const [zoom, setZoom] = useState(11);
 
   useEffect(() => {

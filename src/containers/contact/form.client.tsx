@@ -54,7 +54,7 @@ export const Form = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-[18px] max-w-[700px] mx-auto md:mt-[35px] px-[20px] pb-[50px] overflow-hidden"
         >
           {/* Instagram */}
-          <a href="https://instagram.com/kodiak_knife_co" target="_blank">
+          <a href="https://instagram.com/kodiakknifeco" target="_blank">
             <img src="/svg/contact/insta-text.svg" />
           </a>
           {/* Email */}

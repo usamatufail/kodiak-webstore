@@ -45,7 +45,7 @@ export const Social = () => {
           Stay ahead of the curve and get exclusive access to updates and content from Kodiak Knife Company, your trusted source for
           high-quality, rugged knives.
         </p>
-        <a href="https://www.instagram.com/kodiak_knife_co/" target="_blank">
+        <a href="https://www.instagram.com/kodiakknifeco/" target="_blank">
           <button className="text-[18px] text-black bg-[rgba(255,255,255,0.7)] px-[40px] py-[16px] rounded-[8px] titlecase font-semibold transition-all hover:bg-[rgba(255,255,255,0.9)]">
             Go to Insta Profile
           </button>
@@ -57,7 +57,7 @@ export const Social = () => {
         variants={rightVariant}
         className="flex justify-center mt-[40px] pb-[40px] md:mt-[0px] md:pb-[0px]"
       >
-        <a href="https://www.instagram.com/kodiak_knife_co/" target="_blank">
+        <a href="https://www.instagram.com/kodiakknifeco/" target="_blank">
           <img
             src="https://res.cloudinary.com/samtufail726/image/upload/v1675509800/kodiak/About/Group_993_feosju.png"
             alt="instagram"
