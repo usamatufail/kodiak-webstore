@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import animationData from '../../assets/brids.json';
 import lottie from 'lottie-web/build/player/lottie_light';
+import { Link } from '@shopify/hydrogen/client';
 
 const leftVariant = (duration: number) => ({
   visible: { x: 0, opacity: 1, transition: { duration } },
@@ -38,33 +39,25 @@ const settings = {
   ],
 };
 
-const productsData = [
-  { id: 1, name: 'the tongass', price: '175.00', image: '/images/products/black.png' },
-  { id: 2, name: 'the tongass', price: '175.00', image: '/images/products/white.png' },
-  { id: 3, name: 'the tongass', price: '175.00', image: '/images/products/black.png' },
-  { id: 4, name: 'the tongass', price: '175.00', image: '/images/products/white.png' },
-  { id: 5, name: 'the tongass', price: '175.00', image: '/images/products/black.png' },
-  { id: 6, name: 'the tongass', price: '175.00', image: '/images/products/white.png' },
-  { id: 7, name: 'the tongass', price: '175.00', image: '/images/products/black.png' },
-];
-
-const ProductCard = ({ name = '', image = '', price = '' }) => {
+const ProductCard = ({ data }: any) => {
   return (
-    <div className="max-w-[220px] m-auto">
-      {/* Image */}
-      <div className="h-[229px] w-[220px] bg-[#DCDCDC] rounded-[30px] flex items-center justify-center">
-        <img src={image} alt="black shirt" />
+    <Link to={`/products/${data?.handle}`}>
+      <div className="max-w-[220px] m-auto">
+        {/* Image */}
+        <div className="h-[229px] w-[220px] bg-[#DCDCDC] rounded-[30px] flex items-center justify-center">
+          <img src={data?.variants?.nodes?.[0]?.image?.url} alt="black shirt" className="object-cover w-full h-full rounded-[30px]" />
+        </div>
+        {/* Text */}
+        <div className="mt-[15px] text-center">
+          <p className="uppercase">{data?.title}</p>
+          <p>${data?.variants?.nodes?.[0]?.priceV2?.amount}</p>
+        </div>
       </div>
-      {/* Text */}
-      <div className="mt-[15px] text-center">
-        <p className="uppercase">{name}</p>
-        <p>{price}</p>
-      </div>
-    </div>
+    </Link>
   );
 };
 
-export const Products = () => {
+export const Products = ({ collection }: any) => {
   const [ref, inView] = useInView();
   const controls = useAnimation();
 
@@ -117,8 +110,8 @@ export const Products = () => {
         style={{ zIndex: 2 }}
       >
         <Slider {...settings}>
-          {productsData?.map((product: any) => {
-            return <ProductCard key={product?.id} {...product} />;
+          {collection?.products?.nodes?.map((product: any) => {
+            return <ProductCard key={product?.id} data={product} />;
           })}
         </Slider>
       </motion.div>

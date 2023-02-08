@@ -101,8 +101,8 @@ export function ProductForm() {
               {isOutOfStock ? (
                 <Text>Returning Soon</Text>
               ) : (
-                <Text as="span" className="flex items-center justify-center gap-2">
-                  <span>Add to bag</span> <span>·</span> <Money withoutTrailingZeros data={selectedVariant.priceV2!} as="span" />
+                <Text as="span" className="flex items-center justify-center gap-2 font-[700] uppercase">
+                  <span>Add to Cart</span> <span>·</span> <Money withoutTrailingZeros data={selectedVariant.priceV2!} as="span" />
                   {isOnSale && (
                     <Money withoutTrailingZeros data={selectedVariant.compareAtPriceV2!} as="span" className="opacity-50 strike" />
                   )}
@@ -110,9 +110,13 @@ export function ProductForm() {
               )}
             </Button>
           </AddToCartButton>
-          <a href="#stay-in-the-loop" target="_self" className="underline">
-            Sign up for email notification when online.
-          </a>
+          {isOutOfStock ? (
+            <a href="#news-letter" target="_self" className="underline">
+              Sign up for email notification when online.
+            </a>
+          ) : (
+            <></>
+          )}
           {!isOutOfStock && <ShopPayButton variantIds={[selectedVariant.id!]} />}
         </div>
       </form>

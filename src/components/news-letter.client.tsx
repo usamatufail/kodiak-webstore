@@ -21,6 +21,7 @@ export const NewsLetter = ({
 
   return (
     <div
+      id="news-letter"
       className="min-h-[400px] py-[40px] bg-center bg-no-repeat bg-cover text-white flex items-center md:justify-center md:min-h-[450px] relative after:h-full after:w-full after:absolute after:bg-black after:opacity-[0.65] after:z-10"
       style={{ backgroundImage: `url(${image})` }}
       ref={ref}

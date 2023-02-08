@@ -120,7 +120,7 @@ export const Footer = () => {
             Subscribe to get special offers, drop announcements, and stay up to date on all things.
           </p>
           {/* Input */}
-          <div className="items-center justify-start h-[40px] w-[300px] mx-auto grid grid-cols-[70%_auto] mt-[40px]">
+          <div className="items-center justify-start h-[40px] w-[300px] mx-auto grid grid-cols-[70%_auto] mt-[40px]  ml-0">
             {/* Email Icon */}
             <div className="relative">
               <img src="/svg/email-small.svg" className="left-[10px] absolute top-[50%] translate-y-[-50%]" />

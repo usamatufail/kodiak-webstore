@@ -13,7 +13,7 @@ import {
 import { MEDIA_FRAGMENT } from '~/lib/fragments';
 import { getExcerpt } from '~/lib/utils';
 import { NotFound, Layout, ProductSwimlane } from '~/components/index.server';
-import { Heading, ProductDetail, ProductForm, ProductGallery, Section, Text } from '~/components';
+import { Heading, NewsLetter, ProductDetail, ProductForm, ProductGallery, Section, Text } from '~/components';
 
 export default function Product() {
   const { handle } = useRouteParams();
@@ -91,18 +91,10 @@ export default function Product() {
                   <div className="grid gap-4 py-4">
                     {descriptionHtml && <ProductDetail title="Product Details" content={descriptionHtml} />}
                     {shippingPolicy?.body && (
-                      <ProductDetail
-                        title="Shipping"
-                        content={getExcerpt(shippingPolicy.body)}
-                        learnMore={`/policies/${shippingPolicy.handle}`}
-                      />
+                      <ProductDetail title="Shipping" content={getExcerpt(shippingPolicy.body)} learnMore={`/policies`} />
                     )}
                     {refundPolicy?.body && (
-                      <ProductDetail
-                        title="Returns"
-                        content={getExcerpt(refundPolicy.body)}
-                        learnMore={`/policies/${refundPolicy.handle}`}
-                      />
+                      <ProductDetail title="Returns" content={getExcerpt(refundPolicy.body)} learnMore={`/policies`} />
                     )}
                   </div>
                 </section>
@@ -113,6 +105,7 @@ export default function Product() {
             <ProductSwimlane title="Related Products" data={id} />
           </Suspense>
         </div>
+        <NewsLetter />
       </ProductOptionsProvider>
     </Layout>
   );

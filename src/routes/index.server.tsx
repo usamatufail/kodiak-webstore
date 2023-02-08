@@ -8,14 +8,24 @@ import {
   Location,
 } from '../containers';
 import { NewsLetter } from '../components/index';
+import { useShopQuery } from '@shopify/hydrogen';
+import { SHOP_QUERY } from '~/lib/queries';
 
 export default function Home() {
+  const {
+    data: { collection },
+  } = useShopQuery({
+    query: SHOP_QUERY,
+    variables: {
+      handle: 'all',
+    },
+  }) as any;
   return (
     <Layout>
       <Header />
       <Available />
       <Why />
-      <Products />
+      <Products collection={collection} />
       {/* <Knives /> */}
       <NewsLetter />
       <Location />

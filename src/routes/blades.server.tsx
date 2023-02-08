@@ -60,7 +60,6 @@ export default function Blades() {
           <HandmadeKnives
             texts={handmadeTexts}
             description={`Gain culinary creativity with the magic of handmade knives. These bespoke kitchen tools offer unmatched craftsmanship, elevating your cooking to new heights.
-
 Indulge in a one-of-a-kind gift for a loved one or treat yourself to the ultimate kitchen accessory. Embrace the beauty of handiwork with handmade knives.
 `}
           />
