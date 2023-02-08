@@ -116,7 +116,7 @@ export const Footer = () => {
         {/* Stay Informed Section */}
         <div className="text-center md:text-left">
           <h5 className="font-[600] text-[22px] uppercase custom-gradient-text">STAY INFORMED</h5>
-          <p className="mt-[10px] md:mt-[20px] flex gap-[8px]">
+          <p className="mt-[10px] md:mt-[20px] flex gap-[8px] text-black">
             Subscribe to get special offers, drop announcements, and stay up to date on all things.
           </p>
           {/* Input */}
@@ -141,7 +141,7 @@ export const Footer = () => {
             <img src={payment} alt="payment-icon" key={payment} />
           ))}
         </div>
-        <div className="flex items-center justify-center">© 2023 Kodiak Knife Co.</div>
+        <div className="flex items-center justify-center text-black">© 2023 Kodiak Knife Co.</div>
       </div>
     </div>
   );

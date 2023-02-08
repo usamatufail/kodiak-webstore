@@ -1,25 +1,17 @@
-import {MediaFile} from '@shopify/hydrogen/client';
-import type {MediaEdge} from '@shopify/hydrogen/storefront-api-types';
-import {ATTR_LOADING_EAGER} from '~/lib/const';
+import { MediaFile } from '@shopify/hydrogen/client';
+import type { MediaEdge } from '@shopify/hydrogen/storefront-api-types';
+import { ATTR_LOADING_EAGER } from '~/lib/const';
 
 /**
  * A client component that defines a media gallery for hosting images, 3D models, and videos of products
  */
-export function ProductGallery({
-  media,
-  className,
-}: {
-  media: MediaEdge['node'][];
-  className?: string;
-}) {
+export function ProductGallery({ media, className }: { media: MediaEdge['node'][]; className?: string }) {
   if (!media.length) {
     return null;
   }
 
   return (
-    <div
-      className={`swimlane md:grid-flow-row hiddenScroll md:p-0 md:overflow-x-auto md:grid-cols-2 ${className}`}
-    >
+    <div className={`swimlane md:grid-flow-row hiddenScroll md:p-0 md:overflow-x-auto md:grid-cols-2 ${className}`}>
       {media.map((med, i) => {
         let mediaProps: Record<string, any> = {};
         const isFirst = i === 0;
@@ -53,7 +45,7 @@ export function ProductGallery({
             };
             break;
           case 'EXTERNAL_VIDEO':
-            mediaProps = {width: '100%'};
+            mediaProps = { width: '100%' };
             break;
           case 'MODEL_3D':
             mediaProps = {

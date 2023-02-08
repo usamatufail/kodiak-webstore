@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
-import {Heading} from '~/components';
-import {missingClass} from '~/lib/utils';
+import { Heading } from '~/components';
+import { missingClass } from '~/lib/utils';
 
 export function Section({
   as: Component = 'section',
@@ -19,7 +19,7 @@ export function Section({
   divider?: 'none' | 'top' | 'bottom' | 'both';
   display?: 'grid' | 'flex';
   heading?: string;
-  padding?: 'x' | 'y' | 'swimlane' | 'all';
+  padding?: 'x' | 'y' | 'swimlane' | 'all' | 'none';
   [key: string]: any;
 }) {
   const paddings = {
@@ -27,6 +27,7 @@ export function Section({
     y: 'py-6 md:py-8 lg:py-12',
     swimlane: 'pt-4 md:pt-8 lg:pt-12 md:pb-4 lg:pb-8',
     all: 'p-6 md:p-8 lg:p-12',
+    none: 'p-0 md:p-0 lg:p-0',
   };
 
   const dividers = {
@@ -46,7 +47,7 @@ export function Section({
     displays[display],
     missingClass(className, '\\mp[xy]?-') && paddings[padding],
     dividers[divider],
-    className,
+    className
   );
 
   return (

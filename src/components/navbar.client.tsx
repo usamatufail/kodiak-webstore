@@ -77,7 +77,6 @@ const CustomDropdown = ({ animate, initial, variants }: any) => {
 };
 
 export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const controls = useAnimation();
 
   const url = useUrl();
@@ -87,7 +86,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between overflow-hidden py-[14px] px-[20px] md:pl-[120px] md:pr-[40px] relative z-10">
+    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:pl-[120px] md:pr-[40px] relative z-10">
       {/* Logo */}
       <Link to="/">
         <motion.div animate={controls} initial="hidden" variants={getVariant(0.5)} className="w-[100px] md:w-[unset]">
@@ -96,7 +95,7 @@ export const Navbar = () => {
       </Link>
       {/* Mobile Menu (Links) */}
       <motion.div animate={controls} initial="hidden" variants={getVariant(0.5)} className="block md:hidden overflow-hidden">
-        <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Menu />
       </motion.div>
 
       {/* Links */}

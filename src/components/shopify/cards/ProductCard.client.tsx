@@ -40,11 +40,15 @@ export function ProductCard({
   const styles = clsx('grid gap-6', className);
 
   return (
-    // TODO: Change this link when product page is ready
-    <Link onClick={onClick} to={`/shop/all`}>
+    <Link onClick={onClick} to={`/products/${product?.handle}`}>
       <div className={styles}>
         <div className="card-image aspect-[4/5] bg-primary/5 relative">
-          <Text as="label" size="fine" className="absolute top-0 right-0 m-4 text-right text-notice">
+          <Text
+            as="label"
+            size="fine"
+            className="px-[15px] py-[10px] rounded-full absolute top-0 right-0 m-4 text-right text-notice"
+            style={{ zIndex: 2, backgroundColor: '#000000b5' }}
+          >
             {cardLabel}
           </Text>
           {image && (

@@ -1,16 +1,17 @@
-import { useShopQuery } from '@shopify/hydrogen';
+import { useShopQuery, useRouteParams } from '@shopify/hydrogen';
 import { Layout } from '../../components/layout.server';
 import { Banner, NewsLetter } from '../../components/index';
 import { ShopCards } from '../../containers';
 import { SHOP_QUERY } from '../../lib/queries';
 
-export default function ShopAll() {
+export default function ShopPage() {
+  const { handle } = useRouteParams();
   const {
     data: { collection },
   } = useShopQuery({
     query: SHOP_QUERY,
     variables: {
-      handle: 'all',
+      handle,
     },
   }) as any;
 

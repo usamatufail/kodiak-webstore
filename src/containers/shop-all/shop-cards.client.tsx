@@ -11,20 +11,24 @@ export const ShopCards = ({ data = allData }: { data: any }) => {
           'url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_20/v1675496363/kodiak/Shop/All/DSC02514_jpiryo.jpg)',
       }}
     >
-      {data?.nodes?.map((data: any) => (
-        <div key={data?.id}>
-          <ProductOptionsProvider data={data} initialVariantId={data?.variants?.nodes?.[0]?.id}>
-            <ShopCard
-              id={data?.id}
-              img={data?.variants?.nodes?.[0]?.image?.url}
-              title={data?.title}
-              txt={data?.seo?.description}
-              price={`${data?.variants?.nodes?.[0]?.priceV2?.amount}`}
-              variantId={data?.variants?.nodes?.[0]?.id}
-            />
-          </ProductOptionsProvider>
-        </div>
-      ))}
+      {data?.nodes?.map((data: any) => {
+        return (
+          <div key={data?.id}>
+            <ProductOptionsProvider data={data} initialVariantId={data?.variants?.nodes?.[0]?.id}>
+              <ShopCard
+                id={data?.id}
+                img={data?.variants?.nodes?.[0]?.image?.url}
+                title={data?.title}
+                txt={data?.seo?.description}
+                price={`${data?.variants?.nodes?.[0]?.priceV2?.amount}`}
+                variantId={data?.variants?.nodes?.[0]?.id}
+                handle={data?.handle}
+                availableForSale={data?.availableForSale}
+              />
+            </ProductOptionsProvider>
+          </div>
+        );
+      })}
     </div>
   );
 };
