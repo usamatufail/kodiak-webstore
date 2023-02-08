@@ -1,6 +1,6 @@
 import { useEffect, useCallback, useState, useRef } from 'react';
 
-import { useProductOptions, isBrowser, useUrl, AddToCartButton, Money, OptionWithValues, ShopPayButton } from '@shopify/hydrogen';
+import { useProductOptions, isBrowser, useUrl, AddToCartButton, Money, OptionWithValues, BuyNowButton } from '@shopify/hydrogen';
 
 import { Heading, Text, Button, ProductOptions } from '~/components';
 import { message } from 'antd';
@@ -117,7 +117,19 @@ export function ProductForm() {
           ) : (
             <></>
           )}
-          {!isOutOfStock && <ShopPayButton variantIds={[selectedVariant.id!]} />}
+          {/* {!isOutOfStock && <ShopPayButton variantIds={[selectedVariant.id!]} />} */}
+          {!isOutOfStock && (
+            <BuyNowButton variantId={selectedVariant.id} quantity={1}>
+              <Button width="full" variant="secondary" as="span">
+                <Text as="span" className="flex items-center justify-center gap-2 font-[700] uppercase">
+                  <span>Buy Now</span> <span>·</span> <Money withoutTrailingZeros data={selectedVariant.priceV2!} as="span" />
+                  {isOnSale && (
+                    <Money withoutTrailingZeros data={selectedVariant.compareAtPriceV2!} as="span" className="opacity-50 strike" />
+                  )}
+                </Text>
+              </Button>
+            </BuyNowButton>
+          )}
         </div>
       </form>
     </>

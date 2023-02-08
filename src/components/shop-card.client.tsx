@@ -109,7 +109,7 @@ export const ShopCard = ({
             </AddToCartButton>
             <Link to={`/products/${handle}`}>
               <button className="bg-white border-black text-black hover:text-white hover:bg-gray-800 disabled:bg-opacity-90 inline-block rounded-sm font-medium text-center py-3 px-6 max-w-xl leading-none w-full border transition-all">
-                VIEW DETAILS
+                View Details
               </button>
             </Link>
           </div>
