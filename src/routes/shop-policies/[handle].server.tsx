@@ -6,11 +6,11 @@ import {
   ShopifyAnalyticsConstants,
   gql,
   type HydrogenRouteProps,
-} from '@shopify/hydrogen';
-import { Suspense } from 'react';
+} from "@shopify/hydrogen";
+import { Suspense } from "react";
 
-import { Button, PageHeader, Section } from '~/components';
-import { NotFound, Layout } from '~/components/index.server';
+import { Button, PageHeader, Section } from "~/components";
+import { NotFound, Layout } from "~/components/index.server";
 
 export default function Policy({ params }: HydrogenRouteProps) {
   const {
@@ -20,14 +20,19 @@ export default function Policy({ params }: HydrogenRouteProps) {
 
   // standard policy pages
   const policy: Record<string, boolean> = {
-    privacyPolicy: handle === 'privacy-policy',
-    shippingPolicy: handle === 'shipping-policy',
-    termsOfService: handle === 'terms-of-service',
-    refundPolicy: handle === 'refund-policy',
+    privacyPolicy: handle === "privacy-policy",
+    shippingPolicy: handle === "shipping-policy",
+    termsOfService: handle === "terms-of-service",
+    refundPolicy: handle === "refund-policy",
   };
 
   // if not a valid policy route, return not found
-  if (!policy.privacyPolicy && !policy.shippingPolicy && !policy.termsOfService && !policy.refundPolicy) {
+  if (
+    !policy.privacyPolicy &&
+    !policy.shippingPolicy &&
+    !policy.termsOfService &&
+    !policy.refundPolicy
+  ) {
     return <NotFound />;
   }
 
@@ -68,13 +73,23 @@ export default function Policy({ params }: HydrogenRouteProps) {
         display="flex"
         className="flex-col items-baseline w-full gap-8 md:flex-row text-white bg-[url('https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_40/v1675465741/kodiak/DSC02328_ik8rcy.jpg')] bg-cover bg-no-repeat"
       >
-        <PageHeader heading={page.title} className="grid items-start flex-grow gap-4 md:sticky top-36 md:w-5/12">
-          <Button className="justify-self-start" variant="inline" to={'/policies'}>
+        <PageHeader
+          heading={page.title}
+          className="grid items-start flex-grow gap-4 md:sticky top-36 md:w-5/12"
+        >
+          <Button
+            className="justify-self-start"
+            variant="inline"
+            to={"/policies"}
+          >
             &larr; Back to Policies
           </Button>
         </PageHeader>
         <div className="flex-grow w-full md:w-7/12">
-          <div dangerouslySetInnerHTML={{ __html: page.body }} className="prose dark:prose-invert" />
+          <div
+            dangerouslySetInnerHTML={{ __html: page.body }}
+            className="prose-invert"
+          />
         </div>
       </Section>
     </Layout>
