@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "product-page"
+        "product-page",
+        "global"
     ]
 }

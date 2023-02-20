@@ -1,4 +1,4 @@
-import { Layout } from '../components/index.server';
+import { Layout } from "../components/index.server";
 import {
   Header,
   Available,
@@ -6,10 +6,10 @@ import {
   Products,
   // Knives,
   Location,
-} from '../containers';
-import { NewsLetter } from '../components/index';
-import { useShopQuery } from '@shopify/hydrogen';
-import { SHOP_QUERY } from '~/lib/queries';
+} from "../containers";
+import { NewsLetter } from "../components/index";
+import { useShopQuery } from "@shopify/hydrogen";
+import { SHOP_QUERY } from "~/lib/queries";
 
 export default function Home() {
   const {
@@ -17,9 +17,10 @@ export default function Home() {
   } = useShopQuery({
     query: SHOP_QUERY,
     variables: {
-      handle: 'all',
+      handle: "all",
     },
   }) as any;
+
   return (
     <Layout>
       <Header />

@@ -1,4 +1,4 @@
-import { gql } from '@shopify/hydrogen';
+import { gql } from "@shopify/hydrogen";
 
 export const SHOP_QUERY = gql`
   query CollectionDetails($handle: String!) {
