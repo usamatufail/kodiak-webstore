@@ -10,6 +10,7 @@ import {
 import { NewsLetter } from "../components/index";
 import { useShopQuery } from "@shopify/hydrogen";
 import { SHOP_QUERY } from "~/lib/queries";
+import { Discount } from "~/components/discount.client";
 
 export default function Home() {
   const {
@@ -23,6 +24,7 @@ export default function Home() {
 
   return (
     <Layout>
+      <Discount />
       <Header />
       <Available />
       <Why />

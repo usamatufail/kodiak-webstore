@@ -173,6 +173,8 @@ export const Footer = () => {
               <input
                 className="h-[40px] border border-black border-solid rounded-[7px] bg-transparent w-[240px] pl-[40px] placeholder:text-whtie"
                 placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>
