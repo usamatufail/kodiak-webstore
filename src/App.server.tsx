@@ -1,5 +1,5 @@
-import { Suspense } from 'react';
-import renderHydrogen from '@shopify/hydrogen/entry-server';
+import { Suspense } from "react";
+import renderHydrogen from "@shopify/hydrogen/entry-server";
 import {
   FileRoutes,
   type HydrogenRouteProps,
@@ -13,24 +13,24 @@ import {
   useSession,
   useServerAnalytics,
   Seo,
-} from '@shopify/hydrogen';
-import { HeaderFallback, EventsListener } from '~/components';
-import type { CountryCode } from '@shopify/hydrogen/storefront-api-types';
-import { NotFound } from '~/components/index.server';
-import 'antd/dist/reset.css';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import 'react-modern-drawer/dist/index.css';
+} from "@shopify/hydrogen";
+import { HeaderFallback, EventsListener, Chat } from "~/components";
+import type { CountryCode } from "@shopify/hydrogen/storefront-api-types";
+import { NotFound } from "~/components/index.server";
+import "antd/dist/reset.css";
+import "mapbox-gl/dist/mapbox-gl.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "react-modern-drawer/dist/index.css";
 // import './custom-font.css';
-import './index.css';
+import "./index.css";
 
 function App({ request }: HydrogenRouteProps) {
   const pathname = new URL(request.normalizedUrl).pathname;
   const localeMatch = /^\/([a-z]{2})(\/|$)/i.exec(pathname);
   const countryCode = localeMatch ? (localeMatch[1] as CountryCode) : undefined;
 
-  const isHome = pathname === `/${countryCode ? countryCode + '/' : ''}`;
+  const isHome = pathname === `/${countryCode ? countryCode + "/" : ""}`;
 
   const { customerAccessToken } = useSession();
 
@@ -47,14 +47,20 @@ function App({ request }: HydrogenRouteProps) {
         <Seo
           type="defaultSeo"
           data={{
-            title: 'Kodiak Knife Co.',
+            title: "Kodiak Knife Co.",
             description: `At Kodiak Knife Company, we aim to craft handmade Alaskan knives that inspire adventure and exceed expectations. As outdoor enthusiasts, we understand the importance of having a durable, reliable, and functional knife.`,
             titleTemplate: `%s`,
           }}
         />
-        <CartProvider countryCode={countryCode} customerAccessToken={customerAccessToken}>
+        <CartProvider
+          countryCode={countryCode}
+          customerAccessToken={customerAccessToken}
+        >
           <Router>
-            <FileRoutes basePath={countryCode ? `/${countryCode}/` : undefined} />
+            <Chat />
+            <FileRoutes
+              basePath={countryCode ? `/${countryCode}/` : undefined}
+            />
             <Route path="*" page={<NotFound />} />
           </Router>
         </CartProvider>
