@@ -35,7 +35,7 @@ const connectLinks = {
       isOutside: true,
     },
     {
-      title: "kiakknifeco@gmail.com",
+      title: "kodiakknifeco@gmail.com",
       url: "mailto:kodiakknifeco@gmail.com",
       isOutside: true,
     },
