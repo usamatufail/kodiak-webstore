@@ -19,9 +19,10 @@ export { Form } from './contact/form.client';
 // About Us
 export { AboutUs } from './about/about-us.client';
 export { Social } from './about/social.client';
+// Product Care
+export {ProductCare} from './product-care/product-care.client';
 
 // Policies
 export { PoliciesContainer } from './policies/policies.client';
 //Shop-All
-
 export { ShopCards } from './shop-all/shop-cards.client';
