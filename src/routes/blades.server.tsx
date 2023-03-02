@@ -1,10 +1,10 @@
-import { Layout } from '../components/index.server';
-import { NewsLetter, Banner, DetailsBanner } from '../components';
-import { Navigation, Links, HuntingKnives } from '../containers';
-import { HandmadeKnives } from '../containers/blades/handmade-knives.client';
+import { Layout } from "../components/index.server";
+import { NewsLetter, Banner, DetailsBanner } from "../components";
+import { Navigation, Links, HuntingKnives } from "../containers";
+import { HandmadeKnives } from "../containers/blades/handmade-knives.client";
 
 const huntingTexts = {
-  h1: 'Types of Hunting Knives',
+  h1: "Types of Hunting Knives",
   h1p: `Discover the World of Hunting Knives Embark on an exciting adventure with hunting knives, available in a range of shapes and sizes to suit your needs.
 
   From the dependable fixed-blade knives to the portable folding knives, and the specialized gut hooks and caping knives, you'll find the right tool for any hunting challenge.
@@ -13,7 +13,7 @@ const huntingTexts = {
 
   Whether you prefer leather or modern synthetic materials like G10 or Micarta, make sure your sheath design is both secure and easily accessible. With these considerations, you'll be ready to make your mark in the hunting world.
   `,
-  h2: 'Benefits of Owning a Hunting Knife',
+  h2: "Benefits of Owning a Hunting Knife",
   h2p: `Unleash your inner adventurer with a hunting knife from Kodiak Knife Co. Our high-quality knives offer numerous benefits over conventional tools, such as kitchen knives or pocket knives.
 
   With a thicker steel construction and premium steel materials, our hunting knives maintain a sharp edge for longer and boast superior edge retention, even after intense use in the field.
@@ -36,7 +36,7 @@ const handmadeTexts = {
   `,
   h2: `Expert Craftsmanship`,
   h2p: `Handmade knives offer unique qualities such as precision, attention to detail, and ergonomic design. They are made by experienced artisans to ensure maximum comfort, performance, strength, resilience, and sharpness. Each knife is a one-of-a-kind tool that will last for years.`,
-  h3: 'Quality Assurance',
+  h3: "Quality Assurance",
   h3p: `Each blade, forged with meticulous precision and honed to perfection, undergoes a rigorous inspection by our master craftsmen to ensure it meets the highest standards of accuracy and safety.
 
   Not only do these one-of-a-kind knives boast exceptional quality and craftsmanship, but they also come with a lifetime warranty - a testament to our unwavering confidence in their durability.
