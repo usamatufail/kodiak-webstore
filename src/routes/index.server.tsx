@@ -26,7 +26,7 @@ export default function Home() {
     <Layout>
       <Discount />
       <Header />
-      <Available />
+      {/* <Available /> */}
       <Why />
       <Products collection={collection} />
       {/* <Knives /> */}
