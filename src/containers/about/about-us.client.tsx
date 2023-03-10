@@ -1,50 +1,49 @@
-import { motion } from 'framer-motion';
-import { Link } from '@shopify/hydrogen';
+import { motion } from "framer-motion";
 export const AboutUs = () => {
   return (
     <div
-      className="w-full mt-[4px] text-center pb-[45px] md:pb-[40px] px-[20px]"
+      className="w-full mt-[4px] pb-[45px] md:pb-[40px] px-[20px] min-h-[860px] bg-no-repeat bg-cover grid md:grid-cols-2 justify-center items-center gap-[180px] md:px-[280px]"
       style={{
         backgroundImage:
-          'url(https://res.cloudinary.com/samtufail726/image/upload/b_black,o_40/v1675505545/kodiak/About/DSC02558_z7tmka.png)',
-        backgroundPosition: '-200px -100px',
-        backgroundRepeat: 'no-repeat',
-        minHeight: '701px',
-        overflow: 'hidden',
+          "url(https://res.cloudinary.com/samtufail726/image/upload/v1678470000/kodiak/About/company.png)",
       }}
     >
-      <h2 className="pt-[20px] md:pt-[45px] text-[45px] font-[700] text-white mb-[20px]">About Us</h2>
-      <motion.p
-        variants={{ initial: { opacity: 0, y: -200 }, animate: { opacity: 1, y: 0 } }}
+      <motion.div
+        variants={{
+          initial: { opacity: 0, y: -200 },
+          animate: { opacity: 1, y: 0 },
+        }}
         transition={{ delay: 0.1, duration: 0.5 }}
         initial="initial"
         animate="animate"
-        className="text-[16px] md:text-[24px] max-w-[950px] mx-auto text-white py-[45px] pt-[10px] whitespace-pre-wrap"
+        className="md:max-w-[500px] flex flex-col gap-[20px]"
       >
-        {`At Kodiak Knife Company, we strive to provide top-notch, functional knives to outdoor enthusiasts and those who appreciate rugged, adventurous style. With our focus on quality and customer satisfaction, we aim to make your shopping experience a memorable one.
+        <h1 className="text-[48px] font-[700] text-black">
+          At Kodiac F.A.S.T Company,
+        </h1>
+        <p className="text-[18px] font-[600] text-black">
+          We strive to provide top-notch, functional knives to outdoor
+          enthusiasts and those who appreciate rugged, adventurous style. With
+          our focus on quality and customer satisfaction, we aim to make your
+          shopping experience a memorable one.
+        </p>
+      </motion.div>
 
-Our target audience includes hunters, hikers, backpackers, prepper enthusiasts, and tactical gear users, and we offer designs for each specific need. Inspired by the Alaskan spirit, our aesthetic blends rustic and modern elements to create a warm and adventurous feel.
-
-We want our website visitors to feel inspired for their next adventure and confident in their gear. With our use of earth tones, leather, metal, and wood, we aim to evoke a natural and adventurous vibe. Keywords that best represent our service include Adventure, Knives, and Hiking.
-
-Our values and mission center around delivering excellent customer service and ensuring that each product is made with care and attention to detail. We aim to exceed your expectations by providing a natural, outdoor aesthetic and a user-friendly experience.
-
-Our target audience is made up of outdoor enthusiasts and those who appreciate the adventurous lifestyle. We offer designs for different types of outdoor activities, including big game hunting, waterfowl hunting, fishing, and more.
-
-We hope to exceed your expectations by delivering a high-quality website that showcases our passion for adventure and our commitment to crafting reliable, functional knives.
-`}
-      </motion.p>
-      <Link to="/contact">
-        <motion.button
-          variants={{ initial: { opacity: 0, scale: 0 }, animate: { opacity: 1, scale: 1 } }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          initial="initial"
-          animate="animate"
-          className="text-[16px] md:text-[24px] mx-auto text-black bg-[rgba(255,255,255,0.7)] px-[25px] md:px-[40px] py-[15px] md:py-[20px] rounded-[8px] titlecase font-[900] transition-all hover:bg-[rgba(255,255,255,0.9)]"
-        >
-          Contact Support
-        </motion.button>
-      </Link>
+      <motion.div
+        variants={{
+          initial: { opacity: 0, y: -200 },
+          animate: { opacity: 1, y: 0 },
+        }}
+        transition={{ delay: 0.1, duration: 0.5 }}
+        initial="initial"
+        animate="animate"
+      >
+        <img
+          src="https://res.cloudinary.com/samtufail726/image/upload/v1678470141/kodiak/About/man.png"
+          alt="man"
+          className="hidden md:block"
+        />
+      </motion.div>
     </div>
   );
 };
