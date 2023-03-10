@@ -11,6 +11,7 @@ export const ContactUs = () => {
         transition={{ delay: 0.1, duration: 0.5 }}
         initial="initial"
         animate="animate"
+        className="hidden md:block"
       >
         <img
           src="https://res.cloudinary.com/samtufail726/image/upload/v1678477372/kodiak/About/contact.png"
@@ -29,7 +30,7 @@ export const ContactUs = () => {
         animate="animate"
         className="md:max-w-[500px] flex flex-col gap-[20px]"
       >
-        <p className="text-[18px] font-[600] text-black">
+        <p className="text-[18px] font-[600] text-black mb-[0px]">
           We strive to provide top-notch, functional knives to outdoor
           enthusiasts and those who appreciate rugged, adventurous style. With
           our focus on quality and customer satisfaction, we aim to make your

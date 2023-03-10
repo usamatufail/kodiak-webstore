@@ -21,6 +21,7 @@ export { AboutUs } from "./about/about-us.client";
 export { AboutCards } from "./about/about-cards.client";
 export { OurMission } from "./about/mission.client";
 export { ContactUs } from "./about/contact-us.client";
+export { Follow } from "./about/follow.client";
 // export { Social } from "./about/social.client";
 
 // Policies

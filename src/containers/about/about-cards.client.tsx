@@ -59,7 +59,7 @@ export const AboutCards = () => {
               alt={data.heading}
               className="w-[64px] h-[64px]"
             />
-            <h1 className="text-[38px] md:text-[48px] text-white font-[700]">
+            <h1 className="text-[38px] md:text-[48px] text-white font-[700] mb-[0px]">
               {data.heading}
             </h1>
             <p className="text-[18px] text-white font-[600] md:max-w-[500px]">

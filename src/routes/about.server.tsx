@@ -1,4 +1,10 @@
-import { AboutCards, AboutUs, ContactUs, OurMission } from "../containers";
+import {
+  AboutCards,
+  AboutUs,
+  ContactUs,
+  Follow,
+  OurMission,
+} from "../containers";
 import { Layout } from "../components/index.server";
 
 export default function AboutPage() {
@@ -8,6 +14,7 @@ export default function AboutPage() {
       <AboutCards />
       <OurMission />
       <ContactUs />
+      <Follow />
       {/* <Social /> */}
     </Layout>
   );
