@@ -4,8 +4,10 @@ import {
   Available,
   Why,
   Products,
-  // Knives,
+  Knives,
   Location,
+  Fundamentals,
+  Categories,
 } from "../containers";
 import { NewsLetter } from "../components/index";
 import { useShopQuery } from "@shopify/hydrogen";
@@ -27,9 +29,11 @@ export default function Home() {
       <Discount />
       <Header />
       {/* <Available /> */}
-      <Why />
+      {/* <Why /> */}
       <Products collection={collection} />
+      <Fundamentals />
       {/* <Knives /> */}
+      <Categories />
       <NewsLetter />
       <Location />
     </Layout>

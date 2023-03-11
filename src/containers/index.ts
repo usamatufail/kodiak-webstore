@@ -5,6 +5,8 @@ export { Header } from "./home/header.client";
 export { Products } from "./home/products.client";
 export { Knives } from "./home/knives.client";
 export { Location } from "./home/location.client";
+export { Fundamentals } from "./home/fundamentals.client";
+export { Categories } from "./home/categories.client";
 
 // Blades
 export { Links } from "./blades/links.client";
