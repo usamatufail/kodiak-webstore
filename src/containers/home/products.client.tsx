@@ -77,7 +77,7 @@ export const Products = ({ collection }: any) => {
   return (
     <>
       <div className="overflow-hidden py-[30px] mt-[18px] mb-[18px]  lg:py-[70px] lg:gap-[unset] relative">
-        <div className="pl-[200px]">
+        <div className="px-[30px] md:pl-[80px] lg:pl-[200px]">
           <h1 className="text-[48px] font-[700] text-black">Best sellers</h1>
         </div>
         {/* Left Mountains */}

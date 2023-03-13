@@ -44,7 +44,7 @@ export const PoliciesContainer = () => {
           User comments & submissions
         </h1>
         <p className="md:max-w-[500px] text-[18px] text-white font-[600]">
-          If you tag Kodiak Knife Co. or provide us images, you agree that we
+          If you tag Kodiak F.A.S.T Co. or provide us images, you agree that we
           may, edit, copy, publish, distribute, and comment on the
           content/images that you forward to us or tag us in. We are and shall
           be under no obligation (1) to maintain any comments in confidence; (2)

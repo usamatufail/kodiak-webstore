@@ -1,6 +1,6 @@
-import { motion, Variants, useAnimation } from 'framer-motion';
-import { useUrl } from '@shopify/hydrogen';
-import { useEffect } from 'react';
+import { motion, Variants, useAnimation } from "framer-motion";
+import { useUrl } from "@shopify/hydrogen";
+import { useEffect } from "react";
 // import { useMediaQuery } from 'react-responsive';
 
 const parentVariant: Variants = {
@@ -19,9 +19,9 @@ const textVariant: Variants = {
 };
 
 export const Banner = ({
-  backgroundImg = '/images/banner/hunting-knives.png',
-  heading = 'Heading Knive',
-  height = '320px',
+  backgroundImg = "/images/banner/hunting-knives.png",
+  heading = "Heading F.A.S.T",
+  height = "320px",
   imageStyles = {},
 }) => {
   // const [isDesktop, setIsDesktop] = useState(false);
@@ -32,7 +32,7 @@ export const Banner = ({
   const controls = useAnimation();
 
   useEffect(() => {
-    controls.start('animate');
+    controls.start("animate");
   }, [url]);
 
   // useEffect(() => {
@@ -54,7 +54,7 @@ export const Banner = ({
         animate={controls}
         variants={imageVariant}
         key={backgroundImg}
-        transition={{ type: 'tween', delay: 0, duration: 1 }}
+        transition={{ type: "tween", delay: 0, duration: 1 }}
         style={imageStyles}
         src={backgroundImg}
         className="z-10 absolute top-0 left-0 object-cover w-full h-full"
@@ -65,7 +65,7 @@ export const Banner = ({
         initial="initial"
         animate={controls}
         key={backgroundImg}
-        transition={{ type: 'tween', delay: 0.2, duration: 0.5 }}
+        transition={{ type: "tween", delay: 0.2, duration: 0.5 }}
         className="relative z-30 leading-[1.12] text-white text-[58px] font-bold text-center md:text-[77px] md:font-[900]"
       >
         {heading}

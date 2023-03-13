@@ -163,7 +163,7 @@ export const Footer = () => {
             date on all things.
           </p>
           {/* Input */}
-          <div className="items-center justify-start h-[40px] w-[300px] mx-auto grid grid-cols-[70%_auto] mt-[40px]  ml-0">
+          <div className="items-center justify-start flex flex-col h-[40px]  mx-auto md:grid md:grid-cols-[70%_auto] mt-[40px]  ml-0">
             {/* Email Icon */}
             <div className="relative">
               <img

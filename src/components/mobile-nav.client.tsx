@@ -7,10 +7,10 @@ import { useDrawer } from "./shopify/global/Drawer.client";
 const links = [
   { name: "Home", handle: "/", variantValue: 0 },
   { name: "Shop All", handle: "/shop/all", variantValue: 0.2 },
-  { name: "Shop Blades", handle: "/shop/blades", variantValue: 0.2 },
+  { name: "Shop F.A.S.T", handle: "/shop/fast", variantValue: 0.2 },
   { name: "Shop Equipment", handle: "/shop/equipment", variantValue: 0.2 },
   { name: "Shop Gear", handle: "/shop/gear", variantValue: 0.2 },
-  { name: "Learn More", handle: "/blades", variantValue: 0 },
+  { name: "Learn More", handle: "/fast", variantValue: 0 },
   { name: "Contact Us", handle: "/contact", variantValue: 0.2 },
   { name: "Maintenance & Care", handle: "/product-care", variantValue: 0.2 },
   { name: "About", handle: "/about", variantValue: 0.2 },
@@ -27,7 +27,7 @@ export const Menu = () => {
         initial="initial"
         animate="animate"
         variants={{ initial: { x: 200 }, animate: { x: 0 } }}
-        className="flex flex-row-reverse items-center gap-[20px]"
+        className="flex flex-row-reverse items-center gap-[20px] min-h-[80px]"
       >
         <button
           onClick={openDrawer}

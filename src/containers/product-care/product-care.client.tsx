@@ -27,13 +27,13 @@ export const ProductCare = () => {
         animate="animate"
         className="text-[16px] md:text-[24px] max-w-[950px] mx-auto text-white py-[45px] pt-[10px] whitespace-pre-wrap"
       >
-        {`Maintaining the condition of your Kodiak knife is essential for ensuring its longevity and reliable performance. To help you achieve this, we've outlined a few steps to follow to make your knife last for years.
+        {`Maintaining the condition of your Kodiak F.A.S.T is essential for ensuring its longevity and reliable performance. To help you achieve this, we've outlined a few steps to follow to make your F.A.S.T last for years.
 
-Lubricate the blade and handle with Kodiak's specially formulated oil when needed. Doing this will keep the blade and handle well-lubricated and protected from corrosion, moisture, and other harmful elements. To do this, simply apply a small amount of the oil to both the blade and handle, and use one of our gentle cleaning rags to gently wipe the knife dry.
+Lubricate the F.A.S.T and handle with Kodiak's specially formulated oil when needed. Doing this will keep the F.A.S.T and handle well-lubricated and protected from corrosion, moisture, and other harmful elements. To do this, simply apply a small amount of the oil to both the F.A.S.T and handle, and use one of our gentle cleaning rags to gently wipe the F.A.S.T dry.
 
-Sharpen the blade periodically using a Kodiak high-grit whetstone. Sharpening the knife regularly will keep it sharp and ready for use. However, it's essential to be extra careful not to damage the Cerakote coating on the blade's body while sharpening. The Cerakote coating is a highly durable and corrosion-resistant coating that enhances the blade's durability, so handling it with care is essential. You can avoid damaging the layer by being gentle and precise when using the whetstone on the blade.
+Sharpen the F.A.S.T periodically using a Kodiak high-grit whetstone. Sharpening the F.A.S.T regularly will keep it sharp and ready for use. However, it's essential to be extra careful not to damage the Cerakote coating on the F.A.S.T's body while sharpening. The Cerakote coating is a highly durable and corrosion-resistant coating that enhances the F.A.S.T's durability, so handling it with care is essential. You can avoid damaging the layer by being gentle and precise when using the whetstone on the F.A.S.T.
 
-Following these simple yet effective maintenance steps, you can keep your Kodiak knife in pristine condition and ensure it remains a reliable tool for years. With proper care and maintenance, your Kodiak knife will serve you well in all your adventure & cutting needs.
+Following these simple yet effective maintenance steps, you can keep your Kodiak F.A.S.T in pristine condition and ensure it remains a reliable tool for years. With proper care and maintenance, your Kodiak F.A.S.T will serve you well in all your adventure & cutting needs.
 `}
       </motion.p>
       <Link to="/contact">

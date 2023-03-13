@@ -56,7 +56,7 @@ export const Header = () => {
         </motion.h1>
         <p className="font-bold text-white text-[18px] mt-[20px] md:text-[24px] text-center flex flex-col gap-[28px] md:max-w-[700px] md:pl-[150px]">
           <TypeAnimation
-            sequence={["Handmade Knives"]}
+            sequence={["Handmade F.A.S.T"]}
             speed={85}
             wrapper="span"
             cursor={false}
