@@ -66,14 +66,16 @@ export function AccountCreateForm() {
 
   return (
     <div
-      className="flex flex-col justify-center items-center py-[20px] px-4 min-h-[750px] text-white bg-no-repeat bg-cover"
+      className="flex flex-col justify-center items-center py-[20px] px-2 md:px-4 min-h-[750px] text-white bg-no-repeat bg-cover"
       style={{
         backgroundImage:
           "url(https://res.cloudinary.com/samtufail726/image/upload/v1678719431/kodiak/signup.png)",
       }}
     >
-      <div className="flex flex-col gap-[20px] bg-white rounded-[15px] mx-auto px-[56px] py-[50px] w-[500px]">
-        <h1 className="text-4xl text-black">Sign-Up</h1>
+      <div className="flex flex-col gap-[20px] bg-white rounded-[15px] mx-auto px-[20px] md:px-[56px] py-[50px] md:w-[500px]">
+        <h1 className="text-[32px] md:text-[48px] font-[700] text-black">
+          Sign-Up
+        </h1>
         <form
           noValidate
           className="flex flex-col gap-[20px]"
@@ -86,7 +88,7 @@ export function AccountCreateForm() {
           )}
           <div className="mb-3">
             <input
-              className={`mb-1 border-b-[1px] border-solid border-black text-[18px] font-[600] text-black input-border ${getInputStyleClasses()}`}
+              className={`mb-1 border-b-[1px] border-solid border-black text-[12px] md:text-[18px] font-[600] text-black input-border ${getInputStyleClasses()}`}
               id="name"
               name="name"
               type="text"
@@ -109,7 +111,7 @@ export function AccountCreateForm() {
           </div>
           <div className="mb-3">
             <input
-              className={`mb-1 border-b-[1px] border-solid border-black text-[18px] font-[600] text-black input-border ${getInputStyleClasses(
+              className={`mb-1 border-b-[1px] border-solid border-black text-[12px] md:text-[18px] font-[600] text-black input-border ${getInputStyleClasses(
                 emailError
               )}`}
               id="email"
@@ -134,7 +136,7 @@ export function AccountCreateForm() {
           </div>
           <div className="mb-3">
             <input
-              className={`mb-1 border-b-[1px] border-solid border-black text-[18px] font-[600] text-black input-border ${getInputStyleClasses(
+              className={`mb-1 border-b-[1px] border-solid border-black text-[12px] md:text-[18px] font-[600] text-black input-border ${getInputStyleClasses(
                 passwordError
               )}`}
               id="password"

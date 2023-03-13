@@ -14,6 +14,8 @@ const links = [
   { name: "Contact Us", handle: "/contact", variantValue: 0.2 },
   { name: "Maintenance & Care", handle: "/product-care", variantValue: 0.2 },
   { name: "About", handle: "/about", variantValue: 0.2 },
+  { name: "Login", handle: "/account/login", variantValue: 0.2 },
+  { name: "SignUp", handle: "/account/register", variantValue: 0.2 },
 ];
 
 export const Menu = () => {

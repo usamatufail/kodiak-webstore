@@ -74,17 +74,19 @@ export function AccountLoginForm({ shopName }: { shopName: string }) {
 
   return (
     <div
-      className="flex flex-col justify-center items-center py-[20px] px-4 min-h-[750px] text-white bg-no-repeat bg-cover"
+      className="flex flex-col justify-center md:items-center py-[20px] px-4 min-h-[750px] text-white bg-no-repeat bg-cover"
       style={{
         backgroundImage:
           "url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_25/v1675642627/kodiak/DSC02548_iwundp.png)",
       }}
     >
-      <div className="flex flex-col gap-[20px] bg-white rounded-[15px] mx-auto px-[56px] py-[50px] w-[500px]">
-        <h1 className="text-[48px] font-[700] text-black">Login</h1>
-        <form noValidate className="pt-6 pb-8 mt-4 mb-4" onSubmit={onSubmit}>
+      <div className="flex flex-col gap-[20px] bg-white rounded-[15px] mx-auto px-[20px] md:px-[56px] py-[50px] w-full md:w-[500px]">
+        <h1 className="text-[32px] md:text-[48px] font-[700] text-black">
+          Login
+        </h1>
+        <form noValidate className=" w-full" onSubmit={onSubmit}>
           {hasSubmitError && (
-            <div className="flex items-center justify-center mb-6 bg-zinc-500">
+            <div className="flex items-center justify-center  bg-zinc-500">
               <p className="m-4 text-s text-contrast">
                 Sorry we did not recognize either your email or password. Please
                 try to sign in again or create a new account.
@@ -109,16 +111,16 @@ export function AccountLoginForm({ shopName }: { shopName: string }) {
           {!showEmailField && (
             <ValidEmail email={email} resetForm={resetForm} />
           )}
-          {!showEmailField && (
+          {/* {!showEmailField && (
             <PasswordField
               password={password}
               setPassword={setPassword}
               passwordError={passwordError}
             />
-          )}
+          )} */}
         </form>
       </div>
-      <div className="flex  mt-[20px]">
+      <div className="flex justify-center ">
         <p className="align-baseline text-sm mt-6 text-white">
           Don’t have an account &nbsp;
           <Link className="inline underline" to="/account/register">
@@ -173,7 +175,7 @@ function EmailField({
     <>
       <div className="mb-3">
         <input
-          className={`mb-1 border-black text-[18px] font-[600] text-black ${getInputStyleClasses(
+          className={`mb-1 input-border text-[12px] md:text-[18px] font-[600] text-black ${getInputStyleClasses(
             emailError
           )}`}
           id="email"
@@ -184,7 +186,7 @@ function EmailField({
           placeholder="Email address"
           aria-label="Email address"
           // eslint-disable-next-line jsx-a11y/no-autofocus
-          autoFocus
+          // autoFocus
           value={email}
           onChange={(event) => {
             setEmail(event.target.value);
@@ -262,7 +264,7 @@ function PasswordField({
     <>
       <div className="mb-3">
         <input
-          className={`mb-1 border-black text-[18px] font-[600] text-black ${getInputStyleClasses(
+          className={`mb-1 text-[12px] md:text-[18px] font-[600] text-black input-border ${getInputStyleClasses(
             passwordError
           )}`}
           id="password"
@@ -275,7 +277,7 @@ function PasswordField({
           minLength={8}
           required
           // eslint-disable-next-line jsx-a11y/no-autofocus
-          autoFocus
+          // autoFocus
           onChange={(event) => {
             setPassword(event.target.value);
           }}
@@ -288,7 +290,9 @@ function PasswordField({
       </div>
       <div className="flex items-center justify-between">
         <button
-          className="bg-[#fff] rounded text-contrast py-[10px] px-4 focus:shadow-outline block w-full"
+          className="h-[58px] flex w-full items-center justify-center font-[600] border-[1px] border-black border-solid 
+          text-[12px] md:text-[18px] text-black bg-transparent focus:bg-[rgba(255,255,255,0.8)]
+          hover:bg-[rgba(255,255,255,0.8)] transition-all rounded-[80px] mt-[10px]"
           type="submit"
         >
           Sign in
@@ -297,7 +301,7 @@ function PasswordField({
       <div className="flex items-center justify-between mt-4">
         <div className="flex-1"></div>
         <Link
-          className="inline-block align-baseline text-sm text-primary/50"
+          className="inline-block align-baseline text-sm text-black"
           to="/account/recover"
         >
           Forgot password
