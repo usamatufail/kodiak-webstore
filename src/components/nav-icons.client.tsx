@@ -1,10 +1,12 @@
-import { Link, useCart } from "@shopify/hydrogen";
-import { useDrawer } from "./index";
+import { useCart } from "@shopify/hydrogen";
+// import { useDrawer } from "./index";
 import { CartDrawer } from "./shopify/global/CartDrawer.client";
+import { useDrawer } from "./index";
 
 export const Icons = () => {
   const { totalQuantity } = useCart();
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
+  // const {op}
   return (
     <>
       <CartDrawer isOpen={isOpen} onClose={closeDrawer} />

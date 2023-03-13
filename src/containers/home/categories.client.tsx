@@ -51,6 +51,7 @@ export const Categories = () => {
         {data.map((data) => {
           return (
             <motion.div
+              key={data.to}
               animate={controls}
               initial="hidden"
               variants={getVariant(0.5)}

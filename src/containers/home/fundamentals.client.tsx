@@ -20,7 +20,7 @@ export const Fundamentals = () => {
   return (
     <div
       ref={ref}
-      className="min-h-[560px] w-full flex items-center justify-center px-[10px] py-[50px] "
+      className="min-h-[560px] w-full flex items-center justify-center px-[10px] py-[50px] bg-cover bg-no-repeat"
       style={{
         backgroundImage:
           "url(https://res.cloudinary.com/samtufail726/image/upload/v1678492221/kodiak/fundamentals.png)",
