@@ -34,6 +34,7 @@ export const ProductBox = ({ data }: any) => {
               src={data?.variants?.nodes?.[0]?.image?.url}
               alt="black shirt"
               className="object-cover w-full h-full rounded-[30px] shadow-md hover:shadow-xl transition-all"
+              style={{ opacity: !data?.availableForSale ? 0.75 : 1 }}
             />
           </Link>
           {!data?.availableForSale ? (
@@ -49,6 +50,11 @@ export const ProductBox = ({ data }: any) => {
             buttonRef={buttonRef}
             accessibleAddingToCartLabel="Adding Item to your cart"
             disabled={!data?.availableForSale}
+            style={
+              !data?.availableForSale
+                ? { opacity: 0.75, cursor: "not-allowed" }
+                : {}
+            }
             className="product-box__link transition-all absolute left-[50%] -translate-x-[50%] bottom-5"
           >
             <span className="bg-white text-black text-[1.1rem] hover:text-white rounded-[83px] hover:bg-gray-800 disabled:bg-opacity-90 inline-block font-medium text-center py-3 px-6 max-w-xl leading-none w-full border transition-all">
@@ -78,7 +84,6 @@ export const ProductBox = ({ data }: any) => {
           </div>
         </Link>
       </div>
-      //{" "}
     </ProductOptionsProvider>
   );
 };

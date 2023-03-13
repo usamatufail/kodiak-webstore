@@ -1,8 +1,8 @@
-import { useShopQuery, useRouteParams } from '@shopify/hydrogen';
-import { Layout } from '../../components/layout.server';
-import { Banner, NewsLetter } from '../../components/index';
-import { ShopCards } from '../../containers';
-import { SHOP_QUERY } from '../../lib/queries';
+import { useShopQuery, useRouteParams } from "@shopify/hydrogen";
+import { Layout } from "../../components/layout.server";
+import { Banner, NewsLetter } from "../../components/index";
+import { ShopCards } from "../../containers";
+import { SHOP_QUERY } from "../../lib/queries";
 
 export default function ShopPage() {
   const { handle } = useRouteParams();
@@ -19,7 +19,7 @@ export default function ShopPage() {
     <Layout>
       <Banner
         backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/v1675500694/kodiak/Shop/All/DSC02256_x8g256.png"
-        heading={`Shop ${collection?.title}`}
+        heading={`${collection?.title}`}
       />
       <ShopCards data={collection?.products} />
       <NewsLetter />
