@@ -122,7 +122,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:pl-[120px] md:pr-[40px] relative z-10">
+    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:pl-[120px] md:pr-[140px] relative z-10">
       {/* Logo */}
       <Link to="/">
         <motion.div
@@ -185,6 +185,19 @@ export const Navbar = () => {
         }}
         className=" items-center gap-[30px] hidden md:flex"
       >
+        <div className="flex gap-[30px] text-[18px] font-[600] text-black">
+          <Link to="/account/login" className=" transition-all">
+            <div className="cursor-pointer px-[20px] py-[13px]">Login</div>
+          </Link>
+          <Link
+            to="/account/register"
+            className=" transition-all  rounded-[83px]"
+          >
+            <div className="cursor-pointer px-[20px] py-[13px] rounded-[83px] border-[1px] border-black  border-solid">
+              Sign Up
+            </div>
+          </Link>
+        </div>
         <Icons />
       </motion.div>
     </nav>

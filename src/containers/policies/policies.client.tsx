@@ -1,44 +1,56 @@
-import { AiOutlineCloseCircle } from 'react-icons/ai';
-import { Link } from '@shopify/hydrogen';
-
-const Text = ({ heading = '', text = '' }) => {
-  return (
-    <div>
-      <h1 className="text-[30px] text-slate-900 uppercase font-[900]">{heading}</h1>
-      <p className="text-[16px] text-white">{text}</p>
-    </div>
-  );
-};
-
+const data = [
+  {
+    icon: "/svg/policies/shipping.svg",
+    heading: "Shipping",
+    text: "Because we are located on a small island in beautiful South East Alaska we ship USPS priority mail, that is our only option at the moment and we don't think it will change any time soon.",
+  },
+  {
+    icon: "/svg/policies/return.svg",
+    heading: "Returns",
+    text: "If you are not satisfied with your product, please contact us for customer support or with any questions at Cody@kodiakknifeco.com.",
+  },
+  {
+    icon: "/svg/policies/minors.svg",
+    heading: "Minors",
+    text: "The purchases must be in accordance with United States law and the laws of the state or providence the purchaser is located in. It is up to the purchaser to abide by these laws accordingly.",
+  },
+];
 export const PoliciesContainer = () => {
   return (
-    <div className="max-w-[850px] w-full px-[10px] md:px-[80px] py-[25px] md:py-[50px] rounded-[30px] bg-slate-700 bg-opacity-[.85] text-white md:border-solid md:border-white md:border-8">
-      <div className="text-center mb-[20px] relative">
-        <h1 className="text-[32px] uppercase tracking-wider font-[900]">Policies</h1>
-        <Link to="/" className="flex items-center justify-end absolute top-0 right-[15px]">
-          <AiOutlineCloseCircle className="text-[24px]" />
-        </Link>
+    <div className="">
+      <div className="min-h-[500px] px-[20px] md:px-[200px] grid md:grid-cols-3 gap-[30px] md:gap-[100px] justify-center items-center">
+        {data.map((data) => (
+          <div key={data.heading} className="flex flex-col gap-[20px]">
+            <img
+              src={data.icon}
+              alt={data.heading}
+              className="w-[64px] h-[64px]"
+            />
+            <h1 className="text-[48px] text-black font-[700]">
+              {data.heading}
+            </h1>
+            <p className="text-[18px] text-black font-[600]">{data.text}</p>
+          </div>
+        ))}
       </div>
-      <hr />
-      {/* #1 */}
-      <div className="flex flex-col gap-[20px] mt-[20px]">
-        <Text
-          heading="Shipping:"
-          text="Because we are located on a small island in beautiful South East Alaska we ship USPS priority mail, that is our only option at the
-          moment and we don't think it will change any time soon."
-        />
-        <Text
-          heading="Returns:"
-          text="If you are not satisfied with your product, please contact us for customer support or with any questions at Cody@kodiakknifeco.com."
-        />
-        <Text
-          heading="MINORS:"
-          text="The purchases must be in accordance with United States law and the laws of the state or providence the purchaser is located in. It is up to the purchaser to abide by these laws accordingly."
-        />
-        <Text
-          heading="USER COMMENTS AND SUBMISSIONS:"
-          text="If you tag Kodiak Knife Co. or provide us images, you agree that we may, edit, copy, publish, distribute, and comment on the content/images that you forward to us or tag us in. We are and shall be under no obligation (1) to maintain any comments in confidence; (2) to pay compensation for any shared content or comments unless otherwise agreed upon."
-        />
+      <div
+        className="min-h-[430px] py-[70px] px-[20px] md:pl-[145px] bg-cover bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url(https://res.cloudinary.com/samtufail726/image/upload/b_black,o_75/v1678458488/kodiak/policies.png)",
+        }}
+      >
+        <h1 className="text-[48px] text-white leading-[1.25] font-[700] md:max-w-[500px]">
+          User comments & submissions
+        </h1>
+        <p className="md:max-w-[500px] text-[18px] text-white font-[600]">
+          If you tag Kodiak Knife Co. or provide us images, you agree that we
+          may, edit, copy, publish, distribute, and comment on the
+          content/images that you forward to us or tag us in. We are and shall
+          be under no obligation (1) to maintain any comments in confidence; (2)
+          to pay compensation for any shared content or comments unless
+          otherwise agreed upon.
+        </p>
       </div>
     </div>
   );

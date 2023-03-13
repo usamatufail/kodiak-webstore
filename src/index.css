@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -52,8 +52,10 @@
 
 html,
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 @layer base {
@@ -197,7 +199,7 @@ body {
 .custom-slick .slick-arrow.slick-next {
   right: 60px;
   @media (min-width: 1024px) {
-    right: -40px;
+    right: 0px;
   }
 }
 .custom-slick .slick-arrow.slick-next::before {
@@ -226,4 +228,13 @@ shop-pay-button {
   display: flex !important;
   align-items: center;
   justify-content: center;
+}
+
+.product-box .product-box__link {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.product-box:hover .product-box__link {
+  opacity: 1;
 }

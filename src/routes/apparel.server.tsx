@@ -1,15 +1,6 @@
 import { Layout } from "../components/index.server";
-import {
-  Header,
-  Available,
-  Why,
-  Products,
-  Knives,
-  Location,
-  Fundamentals,
-  Categories,
-} from "../containers";
-import { NewsLetter } from "../components/index";
+import {} from "../containers";
+
 import { useShopQuery } from "@shopify/hydrogen";
 import { SHOP_QUERY } from "~/lib/queries";
 import { Discount } from "~/components/discount.client";
@@ -27,15 +18,8 @@ export default function Home() {
   return (
     <Layout>
       <Discount />
-      <Header />
-      {/* <Available /> */}
-      {/* <Why /> */}
-      <Products collection={collection} />
-      <Fundamentals />
-      {/* <Knives /> */}
-      <Categories />
-      <NewsLetter />
-      <Location />
+
+      {/* <Products collection={collection} /> */}
     </Layout>
   );
 }

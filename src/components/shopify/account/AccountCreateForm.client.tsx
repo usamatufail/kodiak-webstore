@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { useNavigate, Link } from '@shopify/hydrogen/client';
+import { useState } from "react";
+import { useNavigate, Link } from "@shopify/hydrogen/client";
 
-import { emailValidation, passwordValidation } from '../../../lib/utils';
+import { emailValidation, passwordValidation } from "../../../lib/utils";
 
-import { callLoginApi } from './AccountLoginForm.client';
-import { getInputStyleClasses } from '../../../lib/styleUtils';
+import { callLoginApi } from "./AccountLoginForm.client";
+import { getInputStyleClasses } from "../../../lib/styleUtils";
 
 interface FormElements {
   email: HTMLInputElement;
@@ -15,12 +15,14 @@ export function AccountCreateForm() {
   const navigate = useNavigate();
 
   const [submitError, setSubmitError] = useState<null | string>(null);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState<null | string>(null);
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState<null | string>(null);
 
-  async function onSubmit(event: React.FormEvent<HTMLFormElement & FormElements>) {
+  async function onSubmit(
+    event: React.FormEvent<HTMLFormElement & FormElements>
+  ) {
     event.preventDefault();
 
     setEmailError(null);
@@ -57,7 +59,7 @@ export function AccountCreateForm() {
       password,
     });
 
-    navigate('/account');
+    navigate("/account");
   }
 
   return (
@@ -65,7 +67,7 @@ export function AccountCreateForm() {
       className="flex justify-center items-center py-[20px] px-4 min-h-[calc(100vh_-_470px)] text-white bg-no-repeat bg-cover"
       style={{
         backgroundImage:
-          'url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_25/v1675642627/kodiak/DSC02548_iwundp.png)',
+          "url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_25/v1675642627/kodiak/DSC02548_iwundp.png)",
       }}
     >
       <div className="max-w-md w-full">
@@ -93,7 +95,11 @@ export function AccountCreateForm() {
                 setEmail(event.target.value);
               }}
             />
-            {!emailError ? '' : <p className={`text-red-500 text-xs`}>{emailError} &nbsp;</p>}
+            {!emailError ? (
+              ""
+            ) : (
+              <p className={`text-red-500 text-xs`}>{emailError} &nbsp;</p>
+            )}
           </div>
           <div className="mb-3">
             <input
@@ -111,10 +117,17 @@ export function AccountCreateForm() {
                 setPassword(event.target.value);
               }}
             />
-            {!passwordError ? '' : <p className={`text-red-500 text-xs`}>{passwordError} &nbsp;</p>}
+            {!passwordError ? (
+              ""
+            ) : (
+              <p className={`text-red-500 text-xs`}>{passwordError} &nbsp;</p>
+            )}
           </div>
           <div className="flex items-center justify-between">
-            <button className="bg-[#fff] text-contrast rounded-[12px] py-4 px-4 focus:shadow-outline block w-full" type="submit">
+            <button
+              className="bg-[#fff] text-contrast rounded-[12px] py-4 px-4 focus:shadow-outline block w-full"
+              type="submit"
+            >
               Create Account
             </button>
           </div>
@@ -145,10 +158,10 @@ export async function callAccountCreateApi({
 }) {
   try {
     const res = await fetch(`/account/register`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password, firstName, lastName }),
     });

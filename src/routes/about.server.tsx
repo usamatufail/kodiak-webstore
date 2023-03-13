@@ -1,11 +1,21 @@
-import { AboutUs, Social } from '../containers';
-import { Layout } from '../components/index.server';
+import {
+  AboutCards,
+  AboutUs,
+  ContactUs,
+  Follow,
+  OurMission,
+} from "../containers";
+import { Layout } from "../components/index.server";
 
 export default function AboutPage() {
   return (
     <Layout>
       <AboutUs />
-      <Social />
+      <AboutCards />
+      <OurMission />
+      <ContactUs />
+      <Follow />
+      {/* <Social /> */}
     </Layout>
   );
 }

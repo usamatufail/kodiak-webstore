@@ -1,8 +1,8 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState } from "react";
 // @ts-expect-error @headlessui/react incompatibility with node16 resolution
-import { Dialog, Transition } from '@headlessui/react';
+import { Dialog, Transition } from "@headlessui/react";
 
-import { Heading, IconClose } from '~/components';
+import { Heading, IconClose } from "~/components";
 
 /**
  * Drawer component that opens on user click.
@@ -16,18 +16,18 @@ function Drawer({
   heading,
   open,
   onClose,
-  openFrom = 'right',
+  openFrom = "right",
   children,
 }: {
   heading?: string;
   open: boolean;
   onClose: () => void;
-  openFrom: 'right' | 'left';
+  openFrom: "right" | "left";
   children: React.ReactNode;
 }) {
   const offScreen = {
-    right: 'translate-x-full',
-    left: '-translate-x-full',
+    right: "translate-x-full",
+    left: "-translate-x-full",
   };
 
   return (
@@ -47,7 +47,11 @@ function Drawer({
 
         <div className="fixed inset-0">
           <div className="absolute inset-0 overflow-hidden">
-            <div className={`fixed inset-y-0 flex max-w-full ${openFrom === 'right' ? 'right-0' : ''}`}>
+            <div
+              className={`fixed inset-y-0 flex max-w-full ${
+                openFrom === "right" ? "right-0" : ""
+              }`}
+            >
               <Transition.Child
                 as={Fragment}
                 enter="transform transition ease-in-out duration-300"
@@ -60,7 +64,7 @@ function Drawer({
                 <Dialog.Panel className="w-screen max-w-lg text-left align-middle transition-all transform shadow-xl h-screen-dynamic bg-[rgba(0,0,0,0.9)]">
                   <header
                     className={`sticky top-0 bg-[#000] pt-[15px] pb-[55px] mb-[10px] mt-[0px] flex items-center px-6 sm:px-8 md:px-12 ${
-                      heading ? 'justify-between' : 'justify-end'
+                      heading ? "justify-between" : "justify-end"
                     }`}
                   >
                     {heading !== null && (
@@ -70,7 +74,11 @@ function Drawer({
                         </Heading>
                       </Dialog.Title>
                     )}
-                    <button type="button" className="p-4 -m-4 transition text-primary hover:text-primary/50" onClick={onClose}>
+                    <button
+                      type="button"
+                      className="p-4 -m-4 transition text-primary hover:text-primary/50"
+                      onClick={onClose}
+                    >
                       <IconClose aria-label="Close panel" />
                     </button>
                   </header>

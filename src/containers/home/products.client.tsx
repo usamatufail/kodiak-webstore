@@ -1,10 +1,10 @@
-import Slider from '@ant-design/react-slick';
-import { useAnimation, motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
-import animationData from '../../assets/brids.json';
-import lottie from 'lottie-web/build/player/lottie_light';
-import { Link } from '@shopify/hydrogen/client';
+import Slider from "@ant-design/react-slick";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import animationData from "../../assets/brids.json";
+import lottie from "lottie-web/build/player/lottie_light";
+import { ProductBox } from "~/components";
 
 const leftVariant = (duration: number) => ({
   visible: { x: 0, opacity: 1, transition: { duration } },
@@ -39,39 +39,21 @@ const settings = {
   ],
 };
 
-const ProductCard = ({ data }: any) => {
-  return (
-    <Link to={`/products/${data?.handle}`}>
-      <div className="max-w-[220px] m-auto">
-        {/* Image */}
-        <div className="h-[229px] w-[220px] bg-[#DCDCDC] rounded-[30px] flex items-center justify-center">
-          <img src={data?.variants?.nodes?.[0]?.image?.url} alt="black shirt" className="object-cover w-full h-full rounded-[30px]" />
-        </div>
-        {/* Text */}
-        <div className="mt-[15px] text-center">
-          <p className="uppercase">{data?.title}</p>
-          <p>${data?.variants?.nodes?.[0]?.priceV2?.amount}</p>
-        </div>
-      </div>
-    </Link>
-  );
-};
-
 export const Products = ({ collection }: any) => {
   const [ref, inView] = useInView();
   const controls = useAnimation();
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     }
   }, [controls, inView]);
 
   useEffect(() => {
     lottie.loadAnimation({
-      container: document.querySelector('#lottie-left') as Element,
+      container: document.querySelector("#lottie-left") as Element,
       animationData: animationData,
-      renderer: 'svg', // "canvas", "html"
+      renderer: "svg", // "canvas", "html"
       loop: true, // boolean
       autoplay: true, // boolean
     });
@@ -79,53 +61,60 @@ export const Products = ({ collection }: any) => {
 
   useEffect(() => {
     lottie.loadAnimation({
-      container: document.querySelector('#lottie-right') as Element,
+      container: document.querySelector("#lottie-right") as Element,
       animationData: animationData,
-      renderer: 'svg', // "canvas", "html"
+      renderer: "svg", // "canvas", "html"
       loop: true, // boolean
       autoplay: true, // boolean
     });
   }, []);
 
   return (
-    <div className="overflow-hidden py-[30px] mt-[18px] mb-[18px] flex items-center justify-center lg:py-[70px] lg:gap-[unset] relative">
-      {/* Left Mountains */}
-      <motion.div
-        animate={controls}
-        initial="hidden"
-        variants={leftVariant(0.5)}
-        className="max-w-[35%] xl:max-w-[15%] absolute left-[0px] bottom-[20%]"
-        style={{ zIndex: 1 }}
-      >
-        <div id="lottie-left" style={{ width: 200, height: 200 }} />
-        <img src="/images/products/left-bg.png" alt="background" />
-      </motion.div>
-      {/* Products */}
-      <motion.div
-        ref={ref}
-        animate={controls}
-        initial="hidden"
-        variants={mainVariant(1)}
-        className="custom-slick max-w-[calc(100vw)] lg:max-w-[1200px] relative"
-        style={{ zIndex: 2 }}
-      >
-        <Slider {...settings}>
-          {collection?.products?.nodes?.map((product: any) => {
-            return <ProductCard key={product?.id} data={product} />;
-          })}
-        </Slider>
-      </motion.div>
-      {/* Right Mountains */}
-      <motion.div
-        animate={controls}
-        initial="hidden"
-        variants={rightVariant(0.5)}
-        className="max-w-[35%] xl:max-w-[15%] absolute right-[0px] bottom-[20%]"
-        style={{ zIndex: 1 }}
-      >
-        <div id="lottie-right" style={{ width: 200, height: 200 }} />
-        <img src="/images/products/right-bg.png" alt="background" />
-      </motion.div>
-    </div>
+    <>
+      <div className="overflow-hidden py-[30px] mt-[18px] mb-[18px]  lg:py-[70px] lg:gap-[unset] relative">
+        <div className="pl-[200px]">
+          <h1 className="text-[48px] font-[700] text-black">Best sellers</h1>
+        </div>
+        {/* Left Mountains */}
+        <div className="flex justify-center items-center mt-[20px]">
+          <motion.div
+            animate={controls}
+            initial="hidden"
+            variants={leftVariant(0.5)}
+            className="max-w-[35%] xl:max-w-[15%] absolute left-[0px] bottom-[20%]"
+            style={{ zIndex: 1 }}
+          >
+            <div id="lottie-left" style={{ width: 200, height: 200 }} />
+            <img src="/images/products/left-bg.png" alt="background" />
+          </motion.div>
+          {/* Products */}
+          <motion.div
+            ref={ref}
+            animate={controls}
+            initial="hidden"
+            variants={mainVariant(1)}
+            className="custom-slick max-w-[calc(100vw)] lg:max-w-[1600px] relative"
+            style={{ zIndex: 2 }}
+          >
+            <Slider {...settings}>
+              {collection?.products?.nodes?.map((product: any) => {
+                return <ProductBox key={product?.id} data={product} />;
+              })}
+            </Slider>
+          </motion.div>
+          {/* Right Mountains */}
+          <motion.div
+            animate={controls}
+            initial="hidden"
+            variants={rightVariant(0.5)}
+            className="max-w-[35%] xl:max-w-[15%] absolute right-[0px] bottom-[20%]"
+            style={{ zIndex: 1 }}
+          >
+            <div id="lottie-right" style={{ width: 200, height: 200 }} />
+            <img src="/images/products/right-bg.png" alt="background" />
+          </motion.div>
+        </div>
+      </div>
+    </>
   );
 };
