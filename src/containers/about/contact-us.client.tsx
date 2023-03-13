@@ -1,16 +1,32 @@
 import { Link } from "@shopify/hydrogen";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+
+import { useInView } from "react-intersection-observer";
+
+const getVariant = (duration: number) => ({
+  visible: { scale: 1, opacity: 1, transition: { duration } },
+  hidden: { scale: 0.5, opacity: 0, transition: { duration } },
+});
+
 export const ContactUs = () => {
+  const [ref, inView] = useInView();
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
-    <div className="w-full mt-[4px] pb-[45px] md:pb-[40px] px-[20px] min-h-[800px]  grid md:grid-cols-2 justify-center items-center gap-[180px] md:px-[280px]">
+    <div
+      className="w-full mt-[4px] pb-[45px] md:pb-[40px] px-[20px] min-h-[800px]  grid md:grid-cols-2 justify-center items-center gap-[180px] md:px-[280px]"
+      ref={ref}
+    >
       <motion.div
-        variants={{
-          initial: { opacity: 0, y: -200 },
-          animate: { opacity: 1, y: 0 },
-        }}
-        transition={{ delay: 0.1, duration: 0.5 }}
-        initial="initial"
-        animate="animate"
+        animate={controls}
+        initial="hidden"
+        variants={getVariant(0.5)}
         className="hidden md:block"
       >
         <img
