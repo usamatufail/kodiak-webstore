@@ -33,7 +33,13 @@ export const PoliciesContainer = () => {
           </div>
         ))}
       </div>
-      <div className="min-h-[430px] py-[70px]  bg-[url('https://res.cloudinary.com/samtufail726/image/upload/v1678458488/kodiak/policies.png')] px-[20px] md:pl-[145px] bg-cover bg-no-repeat">
+      <div
+        className="min-h-[430px] py-[70px] px-[20px] md:pl-[145px] bg-cover bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url(https://res.cloudinary.com/samtufail726/image/upload/b_black,o_75/v1678458488/kodiak/policies.png)",
+        }}
+      >
         <h1 className="text-[48px] text-white leading-[1.25] font-[700] md:max-w-[500px]">
           User comments & submissions
         </h1>

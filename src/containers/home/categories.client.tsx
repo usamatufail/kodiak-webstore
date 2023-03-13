@@ -44,10 +44,10 @@ export const Categories = () => {
           "url(https://res.cloudinary.com/samtufail726/image/upload/v1678470000/kodiak/About/company.png)",
       }}
     >
-      <h1 className="text-[48px] font-[700] text-black px-[20px] md:px-[145px]">
+      <h1 className="text-[48px] font-[700] text-black px-[20px] md:px-[100px] mt-[60px]">
         Categories
       </h1>
-      <div className="px-[10px] md:px-[85px] grid md:grid-cols-3 gap-[50px] mt-[70px]">
+      <div className="px-[10px] md:px-[85px] grid md:grid-cols-3 gap-[50px] mt-[20px]">
         {data.map((data) => {
           return (
             <motion.div
@@ -59,11 +59,11 @@ export const Categories = () => {
                 backgroundImage: `url(${data.bg})`,
               }}
             >
-              <div className="absolute bottom-[50px] left-40 ">
+              <div className="absolute bottom-[50px] left-[50%] -translate-x-[50%]">
                 <Link to={data.to}>
                   <button
                     className={`h-[58px] flex items-center justify-center font-[600] px-[60px]
-                        text-[18px] text-white hover:px-[70px]
+                        text-[18px] text-white hover:px-[70px] hover:scale-[1.15]
                         transition-all rounded-[80px] mt-[20px] ${
                           data.black
                             ? "bg-black"
