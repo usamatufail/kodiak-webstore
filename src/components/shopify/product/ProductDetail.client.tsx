@@ -8,19 +8,26 @@ export function ProductDetail({
   title,
   content,
   learnMore,
+  defaultOpen = false,
 }: {
   title: string;
   content: string;
   learnMore?: string;
+  defaultOpen?: boolean;
 }) {
   return (
-    <Disclosure key={title} as="div" className="grid w-full gap-2">
+    <Disclosure
+      key={title}
+      as="div"
+      className="grid w-full gap-2"
+      defaultOpen={defaultOpen}
+    >
       {/* @ts-expect-error @headlessui/react incompatibility with node16 resolution */}
       {({ open }) => (
         <>
           <Disclosure.Button className="text-left">
-            <div className="flex justify-between">
-              <Text size="lead" as="h4">
+            <div className="flex justify-between  items-center">
+              <Text size="lead" as="h4" className="text-[2rem]">
                 {title}
               </Text>
               <IconClose
@@ -33,7 +40,7 @@ export function ProductDetail({
 
           <Disclosure.Panel className={"pb-4 pt-2 grid gap-2"}>
             <div
-              className="prose-invert"
+              className="text-[1.14rem]"
               dangerouslySetInnerHTML={{ __html: content }}
             />
             {learnMore && (

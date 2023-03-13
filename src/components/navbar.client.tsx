@@ -122,7 +122,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:pl-[120px] md:pr-[140px] relative z-10">
+    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:pl-[120px] md:pr-[140px] relative z-10 shadow-lg">
       {/* Logo */}
       <Link to="/">
         <motion.div

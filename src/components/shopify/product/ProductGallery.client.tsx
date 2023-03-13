@@ -1,17 +1,25 @@
-import { MediaFile } from '@shopify/hydrogen/client';
-import type { MediaEdge } from '@shopify/hydrogen/storefront-api-types';
-import { ATTR_LOADING_EAGER } from '~/lib/const';
+import { MediaFile } from "@shopify/hydrogen/client";
+import type { MediaEdge } from "@shopify/hydrogen/storefront-api-types";
+import { ATTR_LOADING_EAGER } from "~/lib/const";
 
 /**
  * A client component that defines a media gallery for hosting images, 3D models, and videos of products
  */
-export function ProductGallery({ media, className }: { media: MediaEdge['node'][]; className?: string }) {
+export function ProductGallery({
+  media,
+  className,
+}: {
+  media: MediaEdge["node"][];
+  className?: string;
+}) {
   if (!media.length) {
     return null;
   }
 
   return (
-    <div className={`swimlane md:grid-flow-row hiddenScroll md:p-0 md:overflow-x-auto md:grid-cols-2 ${className}`}>
+    <div
+      className={`swimlane md:grid-flow-row md:p-0 md:overflow-x-auto md:grid-cols-2 ${className}`}
+    >
       {media.map((med, i) => {
         let mediaProps: Record<string, any> = {};
         const isFirst = i === 0;
@@ -23,34 +31,34 @@ export function ProductGallery({ media, className }: { media: MediaEdge['node'][
           image: {
             // @ts-ignore
             ...med.image,
-            altText: med.alt || 'Product image',
+            altText: med.alt || "Product image",
           },
         };
 
         switch (med.mediaContentType) {
-          case 'IMAGE':
+          case "IMAGE":
             mediaProps = {
               width: 800,
               widths: [400, 800, 1200, 1600, 2000, 2400],
             };
             break;
-          case 'VIDEO':
+          case "VIDEO":
             mediaProps = {
-              width: '100%',
+              width: "100%",
               autoPlay: true,
               controls: false,
               muted: true,
               loop: true,
-              preload: 'auto',
+              preload: "auto",
             };
             break;
-          case 'EXTERNAL_VIDEO':
-            mediaProps = { width: '100%' };
+          case "EXTERNAL_VIDEO":
+            mediaProps = { width: "100%" };
             break;
-          case 'MODEL_3D':
+          case "MODEL_3D":
             mediaProps = {
-              width: '100%',
-              interactionPromptThreshold: '0',
+              width: "100%",
+              interactionPromptThreshold: "0",
               ar: true,
               loading: ATTR_LOADING_EAGER,
               disableZoom: true,
@@ -58,15 +66,15 @@ export function ProductGallery({ media, className }: { media: MediaEdge['node'][
             break;
         }
 
-        if (i === 0 && med.mediaContentType === 'IMAGE') {
+        if (i === 0 && med.mediaContentType === "IMAGE") {
           mediaProps.loading = ATTR_LOADING_EAGER;
         }
 
         const style = [
-          isFullWidth ? 'md:col-span-2' : 'md:col-span-1',
-          isFirst || isFourth ? '' : 'md:aspect-[4/5]',
-          'aspect-square snap-center card-image bg-white dark:bg-contrast/10 w-mobileGallery md:w-full',
-        ].join(' ');
+          isFullWidth ? "md:col-span-2" : "md:col-span-1",
+          isFirst || isFourth ? "" : "md:aspect-[4/5]",
+          "aspect-square snap-center card-image bg-white dark:bg-contrast/10 w-mobileGallery md:w-full",
+        ].join(" ");
 
         return (
           <div
@@ -80,12 +88,12 @@ export function ProductGallery({ media, className }: { media: MediaEdge['node'][
               data={data}
               sizes={
                 isFullWidth
-                  ? '(min-width: 64em) 60vw, (min-width: 48em) 50vw, 90vw'
-                  : '(min-width: 64em) 30vw, (min-width: 48em) 25vw, 90vw'
+                  ? "(min-width: 64em) 60vw, (min-width: 48em) 50vw, 90vw"
+                  : "(min-width: 64em) 30vw, (min-width: 48em) 25vw, 90vw"
               }
               // @ts-ignore
               options={{
-                crop: 'center',
+                crop: "center",
                 scale: 2,
               }}
               {...mediaProps}

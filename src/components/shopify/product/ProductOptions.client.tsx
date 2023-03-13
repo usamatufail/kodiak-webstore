@@ -1,9 +1,9 @@
-import {useCallback, useState} from 'react';
+import { useCallback, useState } from "react";
 // @ts-expect-error @headlessui/react incompatibility with node16 resolution
-import {Listbox} from '@headlessui/react';
-import {useProductOptions} from '@shopify/hydrogen';
+import { Listbox } from "@headlessui/react";
+import { useProductOptions } from "@shopify/hydrogen";
 
-import {Text, IconCheck, IconCaret} from '~/components';
+import { Text, IconCheck, IconCaret } from "~/components";
 
 export function ProductOptions({
   values,
@@ -30,7 +30,7 @@ function OptionsGrid({
   name: string;
   handleChange: (name: string, value: string) => void;
 }) {
-  const {selectedOptions} = useProductOptions();
+  const { selectedOptions } = useProductOptions();
 
   return (
     <>
@@ -50,8 +50,8 @@ function OptionsGrid({
               onChange={() => handleChange(name, value)}
             />
             <div
-              className={`leading-none py-1 border-b-[1.5px] cursor-pointer transition-all duration-200 ${
-                checked ? 'border-primary/50' : 'border-primary/0'
+              className={`leading-none py-1 text-[1.18rem] border-b-[1.5px] cursor-pointer transition-all duration-200 ${
+                checked ? "border-black/50" : "border-primary/0"
               }`}
             >
               {value}
@@ -74,37 +74,37 @@ function OptionsDropdown({
   handleChange: (name: string, value: string) => void;
 }) {
   const [listboxOpen, setListboxOpen] = useState(false);
-  const {selectedOptions} = useProductOptions();
+  const { selectedOptions } = useProductOptions();
 
   const updateSelectedOption = useCallback(
     (value: string) => {
       handleChange(name, value);
     },
-    [name, handleChange],
+    [name, handleChange]
   );
 
   return (
     <div className="relative w-full">
       <Listbox onChange={updateSelectedOption} value="">
         {/* @ts-expect-error @headlessui/react incompatibility with node16 resolution */}
-        {({open}) => {
+        {({ open }) => {
           setTimeout(() => setListboxOpen(open));
           return (
             <>
               <Listbox.Button
                 className={`flex items-center justify-between w-full py-3 px-4 border border-primary ${
-                  open ? 'rounded-b md:rounded-t md:rounded-b-none' : 'rounded'
+                  open ? "rounded-b md:rounded-t md:rounded-b-none" : "rounded"
                 }`}
               >
                 <span>{selectedOptions![name]}</span>
-                <IconCaret direction={open ? 'up' : 'down'} />
+                <IconCaret direction={open ? "up" : "down"} />
               </Listbox.Button>
 
               <Listbox.Options
                 className={`border-primary bg-contrast absolute bottom-12 z-30 grid
                 h-48 w-full overflow-y-scroll rounded-t border px-2 py-2 transition-[max-height]
                 duration-150 sm:bottom-auto md:rounded-b md:rounded-t-none md:border-t-0 md:border-b ${
-                  listboxOpen ? 'max-h-48' : 'max-h-0'
+                  listboxOpen ? "max-h-48" : "max-h-0"
                 }`}
               >
                 {values.map((value) => {
@@ -114,10 +114,10 @@ function OptionsDropdown({
                   return (
                     <Listbox.Option key={id} value={value}>
                       {/* @ts-expect-error @headlessui/react incompatibility with node16 resolution */}
-                      {({active}) => (
+                      {({ active }) => (
                         <div
                           className={`text-primary w-full p-2 transition rounded flex justify-start items-center text-left cursor-pointer ${
-                            active ? 'bg-primary/10' : null
+                            active ? "bg-primary/10" : null
                           }`}
                         >
                           {value}
