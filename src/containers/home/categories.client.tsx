@@ -18,7 +18,7 @@ const data = [
   {
     bg: "https://res.cloudinary.com/samtufail726/image/upload/v1678495187/kodiak/cat3.png",
     btn: "Apparel",
-    to: "/shop/blades",
+    to: "/shop/gear",
   },
 ];
 const getVariant = (duration: number) => ({

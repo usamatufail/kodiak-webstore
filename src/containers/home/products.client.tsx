@@ -25,7 +25,9 @@ const settings = {
   infinite: true,
   speed: 500,
   slidesToShow: 4,
-  slidesToScroll: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 1500,
   responsive: [
     {
       breakpoint: 1024,
@@ -34,6 +36,9 @@ const settings = {
         slidesToScroll: 1,
         dots: true,
         arrows: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 1000,
       },
     },
   ],
