@@ -72,7 +72,7 @@ export function AccountCreateForm() {
           "url(https://res.cloudinary.com/samtufail726/image/upload/v1678719431/kodiak/signup.png)",
       }}
     >
-      <div className="flex flex-col gap-[20px] bg-white rounded-[15px] mx-auto px-[20px] md:px-[56px] py-[50px] md:w-[500px]">
+      <div className="flex flex-col gap-[20px] bg-white rounded-[15px] mx-auto px-[20px] md:px-[56px] py-[50px] w-full md:w-[500px]">
         <h1 className="text-[32px] md:text-[48px] font-[700] text-black">
           Sign-Up
         </h1>
