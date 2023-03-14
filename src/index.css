@@ -238,3 +238,8 @@ shop-pay-button {
 .product-box:hover .product-box__link {
   opacity: 1;
 }
+
+
+.input-border{
+  border-bottom: 1px solid black !important;
+}

@@ -16,6 +16,8 @@ export function AccountCreateForm() {
 
   const [submitError, setSubmitError] = useState<null | string>(null);
   const [email, setEmail] = useState("");
+  // const [name, setName] = useState("");
+
   const [emailError, setEmailError] = useState<null | string>(null);
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState<null | string>(null);
@@ -64,23 +66,54 @@ export function AccountCreateForm() {
 
   return (
     <div
-      className="flex justify-center items-center py-[20px] px-4 min-h-[calc(100vh_-_470px)] text-white bg-no-repeat bg-cover"
+      className="flex flex-col justify-center items-center py-[20px] px-2 md:px-4 min-h-[750px] text-white bg-no-repeat bg-cover"
       style={{
         backgroundImage:
-          "url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_25/v1675642627/kodiak/DSC02548_iwundp.png)",
+          "url(https://res.cloudinary.com/samtufail726/image/upload/v1678719431/kodiak/signup.png)",
       }}
     >
-      <div className="max-w-md w-full">
-        <h1 className="text-4xl">Create an Account.</h1>
-        <form noValidate className="pt-6 pb-8 mt-4 mb-4" onSubmit={onSubmit}>
+      <div className="flex flex-col gap-[20px] bg-white rounded-[15px] mx-auto px-[20px] md:px-[56px] py-[50px] md:w-[500px]">
+        <h1 className="text-[32px] md:text-[48px] font-[700] text-black">
+          Sign-Up
+        </h1>
+        <form
+          noValidate
+          className="flex flex-col gap-[20px]"
+          onSubmit={onSubmit}
+        >
           {submitError && (
             <div className="flex items-center justify-center mb-6 bg-zinc-500">
               <p className="m-4 text-s text-contrast">{submitError}</p>
             </div>
           )}
           <div className="mb-3">
+            {/* <input
+              className={`mb-1 border-b-[1px] border-solid border-black text-[12px] md:text-[18px] font-[600] text-black input-border ${getInputStyleClasses()}`}
+              id="name"
+              name="name"
+              type="text"
+              autoComplete="name"
+              required
+              placeholder="Name"
+              aria-label="Name"
+              // eslint-disable-next-line jsx-a11y/no-autofocus
+              autoFocus
+              value={name}
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
+            /> */}
+            {!emailError ? (
+              ""
+            ) : (
+              <p className={`text-red-500 text-xs`}>{emailError} &nbsp;</p>
+            )}
+          </div>
+          <div className="mb-3">
             <input
-              className={`mb-1 ${getInputStyleClasses(emailError)}`}
+              className={`mb-1 border-b-[1px] border-solid border-black text-[12px] md:text-[18px] font-[600] text-black input-border ${getInputStyleClasses(
+                emailError
+              )}`}
               id="email"
               name="email"
               type="email"
@@ -103,7 +136,9 @@ export function AccountCreateForm() {
           </div>
           <div className="mb-3">
             <input
-              className={`mb-1 ${getInputStyleClasses(passwordError)}`}
+              className={`mb-1 border-b-[1px] border-solid border-black text-[12px] md:text-[18px] font-[600] text-black input-border ${getInputStyleClasses(
+                passwordError
+              )}`}
               id="password"
               name="password"
               type="password"
@@ -125,21 +160,22 @@ export function AccountCreateForm() {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="bg-[#fff] text-contrast rounded-[12px] py-4 px-4 focus:shadow-outline block w-full"
-              type="submit"
+              className={`h-[58px] flex w-full items-center justify-center font-[600] border-[1px] border-black border-solid 
+          text-[18px] text-black bg-transparent focus:bg-[rgba(255,255,255,0.8)]
+          hover:bg-[rgba(255,255,255,0.8)] transition-all rounded-[80px] `}
             >
-              Create Account
+              Sign Up
             </button>
           </div>
-          <div className="flex items-center mt-4">
-            <p className="align-baseline text-sm">
-              Already have an account? &nbsp;
-              <Link className="inline underline" to="/account">
-                Sign in
-              </Link>
-            </p>
-          </div>
         </form>
+      </div>
+      <div className="flex items-center mt-4">
+        <p className="align-baseline text-[18px] font-[600] text-white">
+          Already a memeber? &nbsp;
+          <Link className="inline underline" to="/account">
+            Login
+          </Link>
+        </p>
       </div>
     </div>
   );

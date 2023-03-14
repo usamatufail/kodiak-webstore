@@ -7,15 +7,14 @@ export const Discount: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [show, setShow] = useState(false);
 
-  // TODO: Enable after work done
-  // useEffect(() => {
-  //   const alreadyDone = localStorage.getItem("discount");
-  //   if (alreadyDone !== null) {
-  //     setIsModalOpen(false);
-  //   } else {
-  //     setIsModalOpen(true);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const alreadyDone = localStorage.getItem("discount");
+    if (alreadyDone !== null) {
+      setIsModalOpen(false);
+    } else {
+      setIsModalOpen(true);
+    }
+  }, []);
 
   const handleOk = () => {
     setIsModalOpen(false);

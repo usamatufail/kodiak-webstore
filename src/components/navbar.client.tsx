@@ -112,8 +112,14 @@ const CustomDropdown = ({ animate, initial, variants }: any) => {
   );
 };
 
-export const Navbar = () => {
+export const Navbar = ({ customerAccessToken = "" }) => {
   const controls = useAnimation();
+
+  const logout = () => {
+    fetch("/account/logout", { method: "POST" }).then(() => {
+      window.location.href = "/";
+    });
+  };
 
   const url = useUrl();
 
@@ -141,7 +147,7 @@ export const Navbar = () => {
         variants={getVariant(0.5)}
         className="block md:hidden overflow-hidden"
       >
-        <Menu />
+        <Menu customerAccessToken={customerAccessToken} />
       </motion.div>
 
       {/* Links */}
@@ -186,17 +192,37 @@ export const Navbar = () => {
         className=" items-center gap-[30px] hidden md:flex"
       >
         <div className="flex gap-[30px] text-[18px] font-[600] text-black">
-          <Link to="/account/login" className=" transition-all">
-            <div className="cursor-pointer px-[20px] py-[13px]">Login</div>
-          </Link>
-          <Link
-            to="/account/register"
-            className=" transition-all  rounded-[83px]"
-          >
-            <div className="cursor-pointer px-[20px] py-[13px] rounded-[83px] border-[1px] border-black  border-solid">
-              Sign Up
-            </div>
-          </Link>
+          {!!customerAccessToken ? (
+            <>
+              <Link to="/account" className=" transition-all">
+                <div className="cursor-pointer px-[20px] py-[13px]">
+                  Account
+                </div>
+              </Link>
+              <div
+                onClick={logout}
+                className=" transition-all rounded-[83px] cursor-pointer"
+              >
+                <div className="cursor-pointer px-[20px] py-[13px] rounded-[83px] border-[1px] border-black  border-solid">
+                  Logout
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <Link to="/account/login" className=" transition-all">
+                <div className="cursor-pointer px-[20px] py-[13px]">Login</div>
+              </Link>
+              <Link
+                to="/account/register"
+                className=" transition-all  rounded-[83px]"
+              >
+                <div className="cursor-pointer px-[20px] py-[13px] rounded-[83px] border-[1px] border-black  border-solid">
+                  Sign Up
+                </div>
+              </Link>
+            </>
+          )}
         </div>
         <Icons />
       </motion.div>
