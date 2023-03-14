@@ -27,11 +27,11 @@ export const NewsLetter = ({
   return (
     <div
       id="news-letter"
-      className="min-h-[400px] py-[40px] bg-center bg-no-repeat bg-cover text-white grid md:grid-cols-2 gap-[100px] px-[20px] items-center md:min-h-[490px] md:px-[200px] relative after:h-full after:w-full after:absolute after:bg-black after:opacity-[0.65] after:z-10"
+      className="min-h-[400px] py-[40px] bg-center bg-no-repeat bg-cover text-white grid md:grid-cols-2 md:gap-[100px] items-center md:min-h-[490px] md:px-[200px] relative after:h-full after:w-full after:absolute after:bg-black after:opacity-[0.65] after:z-10"
       style={{ backgroundImage: `url(${image})` }}
       ref={ref}
     >
-      <div className="relative z-20 ">
+      <div className="relative z-20 px-[20px] text-center md:text-left">
         <h2 className="text-[42px] tracking-[0.01em] capitalize font-bold md:text-[62px] md:font-[900]">
           Stay in the Loop
         </h2>

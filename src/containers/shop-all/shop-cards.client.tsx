@@ -8,7 +8,7 @@ import { allData } from "../../data";
 export const ShopCards = ({ data = allData }: { data: any }) => {
   return (
     <div
-      className="px-[12px] md:px-[280px] flex flex-col gap-[45px] mb-[4px] mt-[4px] py-[45px] bg-cover bg-no-repeat overflow-hidden relative md:grid md:grid-cols-4 md:gap-[45px]"
+      className="px-[12px] md:px-[75px] lg:px-[180px] 2xl:px-[280px] flex flex-col gap-[45px] mb-[4px] mt-[4px] py-[45px] bg-cover bg-no-repeat overflow-hidden relative md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-[45px]"
       // style={{
       //   backgroundImage:
       //     "url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_20/v1675496363/kodiak/Shop/All/DSC02514_jpiryo.jpg)",

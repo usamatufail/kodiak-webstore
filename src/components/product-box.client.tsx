@@ -25,7 +25,7 @@ export const ProductBox = ({ data }: any) => {
     >
       <div className="max-w-[350px] m-auto ">
         {/* Image */}
-        <div className="h-[350px] w-[350px] bg-[#DCDCDC] rounded-[30px] flex items-center justify-center product-box relative">
+        <div className="h-[350px] w-full bg-[#DCDCDC] rounded-[30px] flex items-center justify-center product-box relative">
           <Link
             to={`/products/${data?.handle}`}
             className="object-cover w-full h-full rounded-[30px] shadow-md hover:shadow-xl transition-all"

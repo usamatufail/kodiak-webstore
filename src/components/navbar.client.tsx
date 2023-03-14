@@ -15,12 +15,12 @@ const getVariant = (duration: number) => ({
 
 const links = [
   { name: "home", to: "/" },
-  { name: "blades", to: "/blades" },
+  { name: "F.A.S.T", to: "/fast" },
   {
     name: "shop",
     links: [
       { name: "All", link: "/shop/all" },
-      { name: "Blades", link: "/shop/all" },
+      { name: "F.A.S.T", link: "/shop/all" },
       { name: "Equipment", link: "/shop/all" },
       { name: "Gear", link: "/shop/all" },
     ],
@@ -61,14 +61,14 @@ const CustomDropdown = ({ animate, initial, variants }: any) => {
             </div>
           </Link>
           <Link
-            to="/shop/blades"
+            to="/shop/fast"
             className="hover:bg-gray-300 transition-all"
             onClick={() => setOpen(false)}
           >
             <div
               className={`${styles["nav-link"]} cursor-pointer select-none px-[20px] py-[13px]`}
             >
-              blades
+              F.A.S.T
             </div>
           </Link>
           <Link

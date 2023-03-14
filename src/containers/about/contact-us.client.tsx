@@ -47,7 +47,7 @@ export const ContactUs = () => {
         className="md:max-w-[500px] flex flex-col gap-[20px]"
       >
         <p className="text-[18px] font-[600] text-black mb-[0px]">
-          We strive to provide top-notch, functional knives to outdoor
+          We strive to provide top-notch, functional F.A.S.T to outdoor
           enthusiasts and those who appreciate rugged, adventurous style. With
           our focus on quality and customer satisfaction, we aim to make your
           shopping experience a memorable one.

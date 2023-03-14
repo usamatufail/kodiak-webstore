@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import { DetailsBanner } from '../../components';
-import lottie from 'lottie-web/build/player/lottie_light';
-import animationData from '../../assets/brids.json';
-import { useAnimation, motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useEffect } from "react";
+import { DetailsBanner } from "../../components";
+import lottie from "lottie-web/build/player/lottie_light";
+import animationData from "../../assets/brids.json";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const leftVariant = (duration: number) => ({
   visible: { x: 0, opacity: 1, transition: { duration } },
@@ -15,16 +15,16 @@ const rightVariant = (duration: number) => ({
 });
 
 export const Details = ({
-  link = 'hunting-knives',
-  heading = 'Hunting Knives',
-  image = 'https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675478484/kodiak/Blades/DSC02397_t8wssi.png',
-  description = `"Hunting knives are essential pieces of equipment for any serious hunter. They are multi-purpose tools that can help you with
+  link = "hunting-knives",
+  heading = "Hunting F.A.S.T",
+  image = "https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675478484/kodiak/Blades/DSC02397_t8wssi.png",
+  description = `"Hunting F.A.S.T are essential pieces of equipment for any serious hunter. They are multi-purpose tools that can help you with
 everything from skinning and cleaning game to cutting rope and fabricating shelter. In this article, we will explore the benefits
-of owning a hunting knife and what you need to know before making your purchase."`,
+of owning a hunting F.A.S.T and what you need to know before making your purchase."`,
   texts = {
-    h1: '',
+    h1: "",
     h1p: ``,
-    h2: '',
+    h2: "",
     h2p: ``,
     h3: ``,
     h3p: ``,
@@ -35,7 +35,7 @@ of owning a hunting knife and what you need to know before making your purchase.
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     }
   }, [controls, inView]);
 
@@ -43,7 +43,7 @@ of owning a hunting knife and what you need to know before making your purchase.
     lottie.loadAnimation({
       container: document.querySelector(`#${link}-left`) as Element,
       animationData: animationData,
-      renderer: 'svg', // "canvas", "html"
+      renderer: "svg", // "canvas", "html"
       loop: true, // boolean
       autoplay: true, // boolean
     });
@@ -53,7 +53,7 @@ of owning a hunting knife and what you need to know before making your purchase.
     lottie.loadAnimation({
       container: document.querySelector(`#${link}-right`) as Element,
       animationData: animationData,
-      renderer: 'svg', // "canvas", "html"
+      renderer: "svg", // "canvas", "html"
       loop: true, // boolean
       autoplay: true, // boolean
     });
@@ -61,7 +61,11 @@ of owning a hunting knife and what you need to know before making your purchase.
   return (
     <div id={`#${link}`} className="overflow-hidden">
       {/* Image */}
-      <DetailsBanner heading={heading} backgroundImg={image} description={description} />
+      <DetailsBanner
+        heading={heading}
+        backgroundImg={image}
+        description={description}
+      />
       {/* Text with Mountains */}
       <div className="relative" ref={ref}>
         {/* Top Left Mountains */}
@@ -72,7 +76,11 @@ of owning a hunting knife and what you need to know before making your purchase.
           className="max-w-[15%] absolute left-[0px] top-[-113px] z-10"
         >
           <div id={`${link}-left`} style={{ width: 200, height: 200 }} />
-          <img src="/images/products/left-bg.png" alt="background" className="opacity-40 z-10" />
+          <img
+            src="/images/products/left-bg.png"
+            alt="background"
+            className="opacity-40 z-10"
+          />
         </motion.div>
         {/* Bottom Right Mountains */}
         <motion.div
@@ -82,7 +90,11 @@ of owning a hunting knife and what you need to know before making your purchase.
           className="max-w-[35%] xl:max-w-[15%] absolute right-[0px] bottom-[40px] z-10"
         >
           <div id={`${link}-right`} style={{ width: 200, height: 200 }} />
-          <img src="/images/products/right-bg.png" alt="background" className="opacity-40 z-10" />
+          <img
+            src="/images/products/right-bg.png"
+            alt="background"
+            className="opacity-40 z-10"
+          />
         </motion.div>
         <div className="relative z-20 px-[200px] flex flex-col gap-[20px] mt-[40px]">
           <h2 className="text-[40px] font-bold">{texts.h1}</h2>

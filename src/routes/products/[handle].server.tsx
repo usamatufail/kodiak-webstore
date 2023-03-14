@@ -111,7 +111,7 @@ export default function Product() {
                       </Heading>
                       {vendor && (
                         <Text className={"opacity-50 font-medium"}>
-                          {"Kodiak F.A.S.T. Company"}
+                          {"Kodiak F.A.S.T Company"}
                         </Text>
                       )}
                       <img

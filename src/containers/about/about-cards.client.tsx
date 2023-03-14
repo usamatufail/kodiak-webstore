@@ -19,7 +19,7 @@ const data = [
     text: `We want our website visitors to feel inspired for their next adventure
     and confident in their gear. With our use of earth tones, leather,
     metal, and wood, we aim to evoke a natural and adventurous vibe.
-    Keywords that best represent our service include Adventure, Knives,
+    Keywords that best represent our service include Adventure, F.A.S.T,
     and Hiking.`,
   },
 ];
