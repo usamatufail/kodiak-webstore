@@ -3,6 +3,7 @@ import Hamburger from "hamburger-react";
 import { Icons } from "./nav-icons.client";
 import { MenuDrawer } from "./shopify/global/MenuDrawer.client";
 import { useDrawer } from "./shopify/global/Drawer.client";
+import { useEffect, useState } from "react";
 
 const links = [
   { name: "Home", handle: "/", variantValue: 0 },
@@ -14,14 +15,19 @@ const links = [
   { name: "Contact Us", handle: "/contact", variantValue: 0.2 },
   { name: "Maintenance & Care", handle: "/product-care", variantValue: 0.2 },
   { name: "About", handle: "/about", variantValue: 0.2 },
+];
+
+const signinLinks = [
+  { name: "My Account", handle: "/account", variantValue: 0.2 },
+];
+
+const signoutLinks = [
   { name: "Login", handle: "/account/login", variantValue: 0.2 },
   { name: "SignUp", handle: "/account/register", variantValue: 0.2 },
 ];
 
-export const Menu = () => {
+export const Menu = ({ customerAccessToken = "" }) => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer();
-
-  console.log(isOpen);
 
   return (
     <>
@@ -42,7 +48,15 @@ export const Menu = () => {
         <Icons />
       </motion.div>
 
-      <MenuDrawer menu={links} isOpen={isOpen} onClose={closeDrawer} />
+      <MenuDrawer
+        menu={
+          customerAccessToken
+            ? [...links, ...signinLinks]
+            : [...links, ...signoutLinks]
+        }
+        isOpen={isOpen}
+        onClose={closeDrawer}
+      />
       {/* <Drawer open={isOpen} lockBackgroundScroll onClose={toggleDrawer} direction="left" size="100vw" duration={300}>
         <div className="text-black">
           <div className="flex items-center justify-center relative">

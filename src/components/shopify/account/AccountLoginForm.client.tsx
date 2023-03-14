@@ -101,32 +101,19 @@ export function AccountLoginForm({ shopName }: { shopName: string }) {
                 setEmail={setEmail}
                 emailError={emailError}
               />
-              <PasswordField
-                password={password}
-                setPassword={setPassword}
-                passwordError={passwordError}
-              />
             </>
           )}
           {!showEmailField && (
             <ValidEmail email={email} resetForm={resetForm} />
           )}
-          {/* {!showEmailField && (
+          {!showEmailField && (
             <PasswordField
               password={password}
               setPassword={setPassword}
               passwordError={passwordError}
             />
-          )} */}
+          )}
         </form>
-      </div>
-      <div className="flex justify-center ">
-        <p className="align-baseline text-sm mt-6 text-white">
-          Don’t have an account &nbsp;
-          <Link className="inline underline" to="/account/register">
-            Sign Up
-          </Link>
-        </p>
       </div>
     </div>
   );
@@ -199,22 +186,24 @@ function EmailField({
         )}
       </div>
 
-      {/* <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between">
         <button
-          className="bg-[#fff] rounded text-contrast py-[10px] px-4 focus:shadow-outline block w-full"
+          className="h-[58px] flex w-full items-center justify-center font-[600] border-[1px] border-black border-solid 
+          text-[12px] md:text-[18px] text-black bg-transparent focus:bg-[rgba(255,255,255,0.8)]
+          hover:bg-[rgba(255,255,255,0.8)] transition-all rounded-[80px] mt-[10px]"
           type="submit"
         >
           Next
         </button>
-      </div> */}
-      {/* <div className="flex items-center mt-8 border-t  border-gray-300">
+      </div>
+      <div className="flex items-center mt-8 border-t  border-gray-300">
         <p className="align-baseline text-sm mt-6 text-black">
           New to {shopName}? &nbsp;
           <Link className="inline underline" to="/account/register">
             Create an account
           </Link>
         </p>
-      </div> */}
+      </div>
     </>
   );
 }
@@ -227,9 +216,9 @@ function ValidEmail({
   resetForm: () => void;
 }) {
   return (
-    <div className="mb-3 flex items-center justify-between">
+    <div className="mb-3 flex items-center justify-between input-border">
       <div>
-        <p>{email}</p>
+        <p className="text-black">{email}</p>
         <input
           className="hidden border-black"
           type="text"
@@ -240,7 +229,7 @@ function ValidEmail({
       </div>
       <div>
         <button
-          className="inline-block align-baseline text-sm underline"
+          className="inline-block align-baseline text-sm underline text-black mb-[5px]"
           type="button"
           onClick={resetForm}
         >
