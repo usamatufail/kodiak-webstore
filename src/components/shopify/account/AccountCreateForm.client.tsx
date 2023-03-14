@@ -16,7 +16,7 @@ export function AccountCreateForm() {
 
   const [submitError, setSubmitError] = useState<null | string>(null);
   const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
 
   const [emailError, setEmailError] = useState<null | string>(null);
   const [password, setPassword] = useState("");
@@ -87,7 +87,7 @@ export function AccountCreateForm() {
             </div>
           )}
           <div className="mb-3">
-            <input
+            {/* <input
               className={`mb-1 border-b-[1px] border-solid border-black text-[12px] md:text-[18px] font-[600] text-black input-border ${getInputStyleClasses()}`}
               id="name"
               name="name"
@@ -102,7 +102,7 @@ export function AccountCreateForm() {
               onChange={(event) => {
                 setName(event.target.value);
               }}
-            />
+            /> */}
             {!emailError ? (
               ""
             ) : (
