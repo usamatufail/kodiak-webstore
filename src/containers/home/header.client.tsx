@@ -52,7 +52,7 @@ export const Header = () => {
           variants={getVariant(0.5)}
           className="text-[42px] font-[700] text-white leading-[1] md:text-[62px] text-center"
         >
-          Embody the Alaskan Spirit.
+          Field Adaptive Survival Tool
         </motion.h1>
         <p className="font-bold text-white text-[18px] mt-[20px] md:text-[24px] text-center flex flex-col gap-[28px] md:max-w-[700px] md:pl-[150px]">
           <TypeAnimation
@@ -83,9 +83,9 @@ export const Header = () => {
         >
           <Link to="/shop/all">
             <button
-              className={`h-[58px] flex items-center justify-center font-[600] border-[1px] border-white border-solid px-[60px]
+              className={`h-[58px] flex items-center justify-center font-[600] border-[1px] border-white border-solid px-[30px] hover:scale-125 md:px-[60px]
             text-[18px] text-white bg-transparent focus:bg-[rgba(255,255,255,0.8)]
-            hover:bg-[rgba(255,255,255,0.8)] transition-all rounded-[80px] mt-[20px]`}
+            hover:bg-[rgba(255,255,255,0.8)] hover:text-black transition-all rounded-[80px] mt-[20px]`}
             >
               Shop Now
             </button>
