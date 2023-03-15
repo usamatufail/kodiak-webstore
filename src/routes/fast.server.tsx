@@ -52,7 +52,7 @@ export default function Blades() {
           backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675473938/kodiak/Blades/DSC02336_cqwwxz.jpg"
         />
         <Links />
-        <Navigation />
+        {/* <Navigation /> */}
         <div className="mt-[4px] mb-[4px]">
           <HuntingKnives texts={huntingTexts} />
         </div>
