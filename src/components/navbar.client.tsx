@@ -135,12 +135,12 @@ export const Navbar = ({ customerAccessToken = "" }) => {
           animate={controls}
           initial="hidden"
           variants={getVariant(0.5)}
-          className="w-[100px] md:w-[unset]"
+          className="w-[150px] md:w-[unset]"
         >
           <img
             src="/images/navbar/logo.png"
             alt="logo"
-            className="w-[125px] md:w-[175px]"
+            className="w-[150px] md:w-[175px]"
           />
         </motion.div>
       </Link>

@@ -125,7 +125,7 @@ export function ProductForm() {
             })}
           </div>
         }
-        <div className="grid gap-4 max-w-[600px]">
+        <div className="grid gap-4 md:max-w-[600px]">
           <AddToCartButton
             variantId={selectedVariant?.id}
             quantity={1}

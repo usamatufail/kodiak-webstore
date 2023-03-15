@@ -27,7 +27,11 @@ export function ProductDetail({
         <>
           <Disclosure.Button className="text-left">
             <div className="flex justify-between  items-center">
-              <Text size="lead" as="h4" className="text-[2rem]">
+              <Text
+                size="lead"
+                as="h4"
+                className="text-[1.6rem] md:text-[2rem]"
+              >
                 {title}
               </Text>
               <IconClose

@@ -44,7 +44,7 @@ export const Categories = () => {
           "url(https://res.cloudinary.com/samtufail726/image/upload/v1678470000/kodiak/About/company.png)",
       }}
     >
-      <h1 className="text-[48px] font-[700] text-black px-[20px] md:px-[100px] mt-[60px]">
+      <h1 className="text-[42px] text-center md:text-left font-[700] text-black px-[20px] md:px-[100px] mt-[60px]">
         Categories
       </h1>
       <div className="px-[10px] md:px-[85px] grid md:grid-cols-3 gap-[50px] mt-[20px]">

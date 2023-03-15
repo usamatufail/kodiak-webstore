@@ -50,7 +50,7 @@ export const Header = () => {
           animate={controls}
           initial="hidden"
           variants={getVariant(0.5)}
-          className="text-[52px] font-[700] text-white leading-[1] md:text-[62px] text-center"
+          className="text-[42px] font-[700] text-white leading-[1] md:text-[62px] text-center"
         >
           Embody the Alaskan Spirit.
         </motion.h1>

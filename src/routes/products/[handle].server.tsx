@@ -94,13 +94,13 @@ export default function Product() {
               {/* <div className="">
                 <section className="flex flex-col items-center gap-8 p-6 mt-[34px] md:mx-[30px] md:px-0"></section>
               </div> */}
-              <div className="grid grid-cols-2 gap-[80px]">
+              <div className="grid md:grid-cols-2 gap-[20px] md:gap-[80px]">
                 <ProductGallery
                   media={media.nodes}
                   className="w-screen md:w-full"
                 />
                 <div className="flex items-start justify-center">
-                  <div className="max-w-[1200px] px-[20px] mt-[20px]">
+                  <div className="max-w-[1200px] px-[20px] md:mt-[20px]">
                     <div className="grid gap-2">
                       <Heading
                         as="h1"
