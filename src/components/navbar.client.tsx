@@ -83,14 +83,14 @@ const CustomDropdown = ({ animate, initial, variants }: any) => {
             </div>
           </Link>
           <Link
-            to="/shop/gear"
+            to="/shop/apparel"
             className="hover:bg-gray-300 transition-all"
             onClick={() => setOpen(false)}
           >
             <div
               className={`${styles["nav-link"]} cursor-pointer select-none px-[20px] py-[13px]`}
             >
-              gear
+              apparel
             </div>
           </Link>
         </div>
@@ -128,7 +128,7 @@ export const Navbar = ({ customerAccessToken = "" }) => {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:pl-[120px] md:pr-[140px] relative z-10 shadow-lg">
+    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:pr-[75px] 2xl:pr-[140px] relative z-10 shadow-lg md:pl-[75] 2xl:pl-[120px]">
       {/* Logo */}
       <Link to="/">
         <motion.div
@@ -155,7 +155,7 @@ export const Navbar = ({ customerAccessToken = "" }) => {
       </motion.div>
 
       {/* Links */}
-      <div className="items-center gap-[45px] hidden md:flex">
+      <div className="items-center gap-[25px] hidden md:flex">
         {links?.map((link) => {
           if (!link?.links) {
             return (

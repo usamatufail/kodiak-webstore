@@ -48,7 +48,7 @@ export default function Blades() {
     <>
       <Layout>
         <Banner
-          heading="F.A.S.T"
+          heading="Field Adaptive Survival Tool (F.A.S.T.)"
           backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675473938/kodiak/Blades/DSC02336_cqwwxz.jpg"
         />
         <Links />
