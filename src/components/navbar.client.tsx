@@ -28,8 +28,7 @@ const links = [
   { name: "about", to: "/about" },
   { name: "Maintenance & Care", to: "/product-care" },
   { name: "Journal", to: "/journal" },
-  { name: "contact", to: "/contact" },
-  // { name: 'gallery', to: '/gallery' },
+  // { name: "contact", to: "/contact" },
 ];
 
 const CustomDropdown = ({ animate, initial, variants }: any) => {
@@ -129,7 +128,7 @@ export const Navbar = ({ customerAccessToken = "" }) => {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:pr-[75px] 2xl:pr-[140px] relative z-10 shadow-lg md:pl-[75] 2xl:pl-[120px]">
+    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:px-[60px] lg:px-[120px] relative z-10 shadow-lg">
       {/* Logo */}
       <Link to="/">
         <motion.div
