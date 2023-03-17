@@ -27,6 +27,7 @@ const links = [
   },
   { name: "about", to: "/about" },
   { name: "Maintenance & Care", to: "/product-care" },
+  { name: "Journal", to: "/journal" },
   { name: "contact", to: "/contact" },
   // { name: 'gallery', to: '/gallery' },
 ];
