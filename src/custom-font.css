@@ -1,32 +1,13 @@
-// Arial Fonts
 @font-face {
-  font-family: 'Arial';
-  font-display: swap;
-  font-weight: 900;
-  font-style: normal;
-  src: url('/fonts/black.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Arial';
-  font-display: swap;
-  font-weight: 800;
-  font-style: normal;
-  src: url('/fonts/bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Arial';
+  font-family: 'IBMPlexSerif';
   font-display: swap;
   font-weight: 400;
-  font-style: normal;
-  src: url('/fonts/regular.ttf') format('truetype');
+  src: url('/fonts/IBMPlexSerif-Text.woff2') format('woff2');
 }
-
 @font-face {
-  font-family: 'Arial';
+  font-family: 'IBMPlexSerif';
   font-display: swap;
   font-weight: 400;
-  font-style: italic, oblique;
-  src: url('/fonts/italic.ttf') format('truetype');
+  font-style: italic;
+  src: url('/fonts/IBMPlexSerif-TextItalic.woff2') format('woff2');
 }
