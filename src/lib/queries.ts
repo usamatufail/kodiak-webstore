@@ -17,7 +17,7 @@ export const SHOP_QUERY = gql`
         height
         altText
       }
-      products(first: 8) {
+      products(first: 100) {
         nodes {
           id
           title

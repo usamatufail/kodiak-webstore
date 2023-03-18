@@ -22,6 +22,7 @@ export const subscribe = async ({
   setEmail,
   message,
   tags,
+  notification = "",
 }: any) => {
   setLoading(true);
   if (!email) {
@@ -30,7 +31,8 @@ export const subscribe = async ({
     await newsLetterSignup({ email, tags });
     setEmail("");
     message.success(
-      "Congratulations! You are successfully subscribed to our newsletter. We'll keep you in loop about new products."
+      notification ||
+        "Congratulations! You are successfully subscribed to our newsletter. We'll keep you in loop about new products."
     );
   }
   setLoading(false);

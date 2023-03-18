@@ -65,7 +65,9 @@ export const NewsLetter = ({
         </div>
         <button
           disabled={loading}
-          onClick={() => subscribe({ setLoading, email, setEmail, message })}
+          onClick={async () =>
+            await subscribe({ setLoading, email, setEmail, message })
+          }
           className="disabled:bg-gray-300 w-[300px] md:w-[370px] flex justify-center items-center gap-[8px] h-[48px] border bg-white text-black text-[18px] tracking-[0.16em] font-[600] px-[26px] rounded-[50px] relative"
         >
           {loading ? (

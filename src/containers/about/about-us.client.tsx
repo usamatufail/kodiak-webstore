@@ -19,7 +19,7 @@ export const AboutUs = () => {
         className="md:max-w-[500px] flex flex-col gap-[20px]"
       >
         <h1 className="text-[48px] font-[700] text-black mb-[0px]">
-          At Kodiac F.A.S.T Company,
+          At Kodiak F.A.S.T Company,
         </h1>
         <p className="text-[18px] font-[600] text-black mb-[0px]">
           We strive to provide top-notch, functional knives to outdoor
