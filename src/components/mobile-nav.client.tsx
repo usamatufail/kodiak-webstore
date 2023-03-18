@@ -3,7 +3,6 @@ import Hamburger from "hamburger-react";
 import { Icons } from "./nav-icons.client";
 import { MenuDrawer } from "./shopify/global/MenuDrawer.client";
 import { useDrawer } from "./shopify/global/Drawer.client";
-import { useEffect, useState } from "react";
 
 const links = [
   { name: "Home", handle: "/", variantValue: 0 },
@@ -15,7 +14,7 @@ const links = [
   { name: "Contact Us", handle: "/contact", variantValue: 0.2 },
   { name: "Maintenance & Care", handle: "/product-care", variantValue: 0.2 },
   { name: "About", handle: "/about", variantValue: 0.2 },
-  { name: "Journal", handle: "/journal" },
+  // { name: "Journal", handle: "/journal" },
 ];
 
 const signinLinks = [
