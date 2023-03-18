@@ -53,7 +53,8 @@ export const Waitlist = ({
       <div className="grid md:grid-cols-2 md:gap-[100px]">
         <div className="relative z-20 px-[20px] text-center md:text-left">
           <h2 className="capitalize font-bold md:text-[32px] md:font-[900]">
-            Win Adventure Box and get 20% OFF on first purchase
+            Join the waitlist & Win Adventure Box and get 20% OFF on first
+            purchase
           </h2>
           {/* Input Mobile */}
           <div className="md:hidden items-center justify-center w-[350px] mx-auto mt-[10px] mb-[20px] md:w-[500px] relative z-20 flex flex-col gap-[20px]">
@@ -63,9 +64,7 @@ export const Waitlist = ({
                 Code to get 20% off on your first purchase
               </h2>
             ) : (
-              <h2 className="capitalize font-bold md:text-[32px] md:font-[900]">
-                Join the waitlist
-              </h2>
+              <></>
             )}
             {submitted ? (
               <></>
