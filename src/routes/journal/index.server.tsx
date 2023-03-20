@@ -15,7 +15,7 @@ import type {
 } from "@shopify/hydrogen/storefront-api-types";
 import { Suspense } from "react";
 
-import { ArticleCard, Grid, PageHeader } from "~/components";
+import { ArticleCard, Grid } from "~/components";
 import { Layout } from "~/components/index.server";
 import { getImageLoadingPriority, PAGINATION_SIZE } from "~/lib/const";
 
