@@ -116,7 +116,7 @@ export const Waitlist = ({
                 ) : (
                   <></>
                 )}
-                <span>Subscribe</span>
+                <span>Enter</span>
               </button>
             )}
           </div>
@@ -217,7 +217,7 @@ export const Waitlist = ({
               ) : (
                 <></>
               )}
-              <span>Subscribe</span>
+              <span>Enter</span>
             </button>
           )}
         </div>
