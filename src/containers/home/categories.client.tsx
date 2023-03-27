@@ -6,19 +6,19 @@ import { useEffect } from "react";
 const data = [
   {
     bg: "https://res.cloudinary.com/samtufail726/image/upload/v1678495018/kodiak/cat1.png",
-    btn: "Equipment",
-    to: "/shop/equipment",
+    btn: "F.A.S.T.",
+    to: "/shop/fast",
   },
   {
     bg: "https://res.cloudinary.com/samtufail726/image/upload/v1678495180/kodiak/cat2.png",
-    btn: "Gear",
-    to: "/shop/gear",
+    btn: "Equipment",
+    to: "/shop/equipment",
     black: true,
   },
   {
     bg: "https://res.cloudinary.com/samtufail726/image/upload/v1678495187/kodiak/cat3.png",
     btn: "Apparel",
-    to: "/shop/gear",
+    to: "/shop/apparel",
   },
 ];
 const getVariant = (duration: number) => ({
