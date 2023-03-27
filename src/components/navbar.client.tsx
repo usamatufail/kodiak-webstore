@@ -128,7 +128,7 @@ export const Navbar = ({ customerAccessToken = "" }) => {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:px-[60px] lg:px-[120px] relative z-10 shadow-lg">
+    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:px-[60px] 2xl:px-[120px] relative z-10 shadow-lg">
       {/* Logo */}
       <Link to="/">
         <motion.div
