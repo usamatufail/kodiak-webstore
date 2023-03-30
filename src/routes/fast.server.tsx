@@ -55,14 +55,6 @@ export default function Blades() {
         <div className="mt-[4px] mb-[4px]">
           <HuntingKnives />
         </div>
-        {/* <div className="mt-[4px] mb-[40px]">
-          <HandmadeKnives
-            texts={handmadeTexts}
-            description={`Gain culinary creativity with the magic of handmade F.A.S.T These bespoke kitchen tools offer unmatched craftsmanship, elevating your cooking to new heights.
-Indulge in a one-of-a-kind gift for a loved one or treat yourself to the ultimate kitchen accessory. Embrace the beauty of handiwork with handmade F.A.S.T
-`}
-          />
-        </div> */}
         <DetailsBanner
           backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675484446/kodiak/Blades/DSC02473_wdpygj.jpg"
           minHeight="230px"

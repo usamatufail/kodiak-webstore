@@ -35,10 +35,6 @@ export const Banner = ({
     controls.start("animate");
   }, [url]);
 
-  // useEffect(() => {
-  //   setIsDesktop(isDesktopOrLaptop);
-  // }, [isDesktopOrLaptop]);
-
   return (
     <motion.div
       className="w-full flex items-center justify-center relative overflow-hidden"
@@ -47,7 +43,6 @@ export const Banner = ({
       animate={controls}
       variants={parentVariant}
       style={{ height }}
-      // style={{ height: isDesktop ? height : 150 }}
     >
       <motion.img
         initial="initial"
@@ -66,7 +61,7 @@ export const Banner = ({
         animate={controls}
         key={backgroundImg}
         transition={{ type: "tween", delay: 0.2, duration: 0.5 }}
-        className="relative z-30 leading-[1.12] text-white text-[58px] font-bold text-center md:text-[77px] md:font-[900]"
+        className="relative z-30 leading-[1.12] text-white text-[48px] font-bold text-center md:text-[77px] md:font-[900]"
       >
         {heading}
       </motion.h2>
