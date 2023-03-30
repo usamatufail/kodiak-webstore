@@ -101,7 +101,7 @@ export default function Product() {
                 />
                 <div className="flex items-start justify-center">
                   <div className="max-w-[1200px] px-[20px] md:mt-[20px]">
-                    <div className="grid gap-2">
+                    <div className="grid gap-1 md:gap-2">
                       <Heading
                         as="h1"
                         format
@@ -114,11 +114,11 @@ export default function Product() {
                           {"Kodiak F.A.S.T Company"}
                         </Text>
                       )}
-                      <img
+                      {/* <img
                         src="https://res.cloudinary.com/samtufail726/image/upload/v1678696771/kodiak/stars.png"
                         alt="stars"
                         className="pt-[2px] pr-[5px]"
-                      />
+                      /> */}
                     </div>
                     <ProductForm />
                     <div className="grid gap-4 py-4 mt-[2.4rem]">

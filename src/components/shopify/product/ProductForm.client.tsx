@@ -109,7 +109,7 @@ export function ProductForm() {
                   <Heading
                     as="legend"
                     size="lead"
-                    className="min-w-[4rem] text-[2rem]"
+                    className="min-w-[4rem] text-[2rem] mt-4 mb-0"
                   >
                     {name}
                   </Heading>
