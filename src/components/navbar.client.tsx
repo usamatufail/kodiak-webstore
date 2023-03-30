@@ -82,7 +82,7 @@ const CustomDropdown = ({ animate, initial, variants }: any) => {
               equipment
             </div>
           </Link>
-          <Link
+          {/* <Link
             to="/shop/apparel"
             className="hover:bg-gray-300 transition-all"
             onClick={() => setOpen(false)}
@@ -92,7 +92,7 @@ const CustomDropdown = ({ animate, initial, variants }: any) => {
             >
               apparel
             </div>
-          </Link>
+          </Link> */}
         </div>
       )}
     >
