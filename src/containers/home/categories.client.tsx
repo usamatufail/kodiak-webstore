@@ -15,11 +15,11 @@ const data = [
     to: "/shop/equipment",
     black: true,
   },
-  // {
-  //   bg: "https://res.cloudinary.com/samtufail726/image/upload/v1678495187/kodiak/cat3.png",
-  //   btn: "Apparel",
-  //   to: "/shop/apparel",
-  // },
+  {
+    bg: "https://res.cloudinary.com/samtufail726/image/upload/v1678495187/kodiak/cat3.png",
+    btn: "Apparel",
+    to: "/shop/apparel",
+  },
 ];
 const getVariant = (duration: number) => ({
   visible: { scale: 1, opacity: 1, transition: { duration } },
@@ -47,7 +47,7 @@ export const Categories = () => {
       <h1 className="text-[42px] text-center md:text-left font-[700] text-black px-[20px] md:px-[100px] mt-[60px]">
         Categories
       </h1>
-      <div className="px-[10px] md:px-[85px] grid md:grid-cols-2 gap-[50px] mt-[20px]">
+      <div className="px-[10px] md:px-[85px] grid md:grid-cols-3 gap-[50px] mt-[20px]">
         {data.map((data) => {
           return (
             <motion.div
