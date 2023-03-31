@@ -5,12 +5,12 @@ import { useEffect } from "react";
 
 const data = [
   {
-    bg: "https://res.cloudinary.com/samtufail726/image/upload/v1678495018/kodiak/cat1.png",
+    bg: "/cloudinary/homepage/cat1.png",
     btn: "F.A.S.T.",
     to: "/shop/fast",
   },
   {
-    bg: "https://res.cloudinary.com/samtufail726/image/upload/v1678495180/kodiak/cat2.png",
+    bg: "/cloudinary/homepage/cat2.png",
     btn: "Equipment",
     to: "/shop/equipment",
     black: true,

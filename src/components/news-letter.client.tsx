@@ -11,7 +11,7 @@ const getVariant = () => ({
 });
 
 export const NewsLetter = ({
-  image = "https://res.cloudinary.com/samtufail726/image/upload/v1678491390/kodiak/news-letter.png",
+  image = "/cloudinary/homepage/news-letter.png",
 }) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");

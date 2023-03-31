@@ -10,13 +10,10 @@ const getVariant = (duration: number) => ({
 });
 
 const images = [
-  // 'https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_50/v1675465118/kodiak/1_n9rg3y.png',
-  // 'https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_50/v1675465116/kodiak/DSC03088-Edit_vwzexh.png',
-
-  "https://res.cloudinary.com/samtufail726/image/upload/v1678488177/kodiak/header.png",
-  "https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_40/v1675465741/kodiak/DSC02328_ik8rcy.jpg",
-  "https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_40/v1675465743/kodiak/DSC02452_ggxiqy.jpg",
-  "https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_40/v1675465742/kodiak/DSC02277_y6krg4.jpg",
+  "/cloudinary/homepage/banner.png",
+  "/cloudinary/homepage/banner-1.jpeg",
+  "/cloudinary/homepage/banner-2.jpeg",
+  "/cloudinary/homepage/banner-3.jpeg",
 ];
 
 export const Header = () => {
@@ -37,7 +34,7 @@ export const Header = () => {
 
   return (
     <header
-      className="min-h-[60vh] flex flex-col justify-center items-center px-[20px] md:min-h-[78vh] md:px-[160px] relative"
+      className="min-h-[60vh] flex flex-col justify-center items-center px-[20px] md:px-[160px] relative"
       ref={ref}
       style={{
         backgroundImage: `url(${img})`,
