@@ -51,7 +51,7 @@ export const Header = () => {
         >
           Field Adaptive Survival Tool
         </motion.h1>
-        <p className="font-bold text-white text-[18px] mt-[20px] md:text-[24px] text-center flex flex-col gap-[28px] md:max-w-[700px] md:pl-[150px]">
+        <p className="font-bold text-white text-[18px] mt-[20px] md:text-[24px] flex flex-col gap-[28px] md:max-w-[700px] text-center mx-auto">
           <TypeAnimation
             sequence={["Handmade F.A.S.T"]}
             speed={85}

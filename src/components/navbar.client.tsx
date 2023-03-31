@@ -149,13 +149,13 @@ export const Navbar = ({ customerAccessToken = "" }) => {
         animate={controls}
         initial="hidden"
         variants={getVariant(0.5)}
-        className="block md:hidden overflow-hidden"
+        className="block 2xl:hidden overflow-hidden"
       >
         <Menu customerAccessToken={customerAccessToken} />
       </motion.div>
 
       {/* Links */}
-      <div className="items-center gap-[25px] hidden md:flex">
+      <div className="items-center gap-[25px] hidden 2xl:flex">
         {links?.map((link) => {
           if (!link?.links) {
             return (
@@ -193,7 +193,7 @@ export const Navbar = ({ customerAccessToken = "" }) => {
           visible: { x: 0, opacity: 1, transition: { duration: 0.4 } },
           hidden: { x: -50, opacity: 0, transition: { duration: 0.4 } },
         }}
-        className=" items-center gap-[30px] hidden md:flex"
+        className=" items-center gap-[30px] hidden 2xl:flex"
       >
         <div className="flex gap-[30px] text-[18px] font-[600] text-black">
           {!!customerAccessToken ? (

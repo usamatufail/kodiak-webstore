@@ -29,6 +29,18 @@ const settings = {
   autoplay: true,
   autoplaySpeed: 1500,
   responsive: [
+    // {
+    //   breakpoint: 1440,
+    //   settings: {
+    //     slidesToShow: 2,
+    //     slidesToScroll: 2,
+    //     dots: true,
+    //     arrows: false,
+    //     infinite: true,
+    //     autoplay: true,
+    //     autoplaySpeed: 1500,
+    //   },
+    // },
     {
       breakpoint: 1024,
       settings: {
@@ -38,7 +50,7 @@ const settings = {
         arrows: false,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 1500,
       },
     },
   ],
