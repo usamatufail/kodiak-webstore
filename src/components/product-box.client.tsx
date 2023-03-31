@@ -76,7 +76,7 @@ export const ProductBox = ({ data }: any) => {
             </div>
             <div className="pt-[2px] pr-[5px]">
               <img
-                src="https://res.cloudinary.com/samtufail726/image/upload/v1678696771/kodiak/stars.png"
+                src="/cloudinary/ma/stars.png"
                 alt="stars"
                 className="pt-[2px] pr-[5px]"
               />

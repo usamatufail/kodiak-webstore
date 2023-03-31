@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import { emailValidation } from '~/lib/utils';
-import { getInputStyleClasses } from '../../../lib/styleUtils';
+import { emailValidation } from "~/lib/utils";
+import { getInputStyleClasses } from "../../../lib/styleUtils";
 
 interface FormElements {
   email: HTMLInputElement;
@@ -10,10 +10,12 @@ interface FormElements {
 export function AccountRecoverForm() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState<string | null>(null);
 
-  async function onSubmit(event: React.FormEvent<HTMLFormElement & FormElements>) {
+  async function onSubmit(
+    event: React.FormEvent<HTMLFormElement & FormElements>
+  ) {
     event.preventDefault();
 
     setEmailError(null);
@@ -30,7 +32,7 @@ export function AccountRecoverForm() {
       email,
     });
 
-    setEmail('');
+    setEmail("");
     setSubmitSuccess(true);
   }
 
@@ -38,8 +40,7 @@ export function AccountRecoverForm() {
     <div
       className="flex justify-center items-center py-[20px] px-4 min-h-[calc(100vh_-_470px)] text-white bg-no-repeat bg-cover"
       style={{
-        backgroundImage:
-          'url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_25/v1675642627/kodiak/DSC02548_iwundp.png)',
+        backgroundImage: "url(/cloudinary/ma/DSC02548_iwundp.png)",
       }}
     >
       <div className="max-w-md w-full">
@@ -47,14 +48,18 @@ export function AccountRecoverForm() {
           <>
             <h1 className="text-4xl">Request Sent.</h1>
             <p className="mt-4">
-              If that email address is in our system, you will receive an email with instructions about how to reset your password in a few
+              If that email address is in our system, you will receive an email
+              with instructions about how to reset your password in a few
               minutes.
             </p>
           </>
         ) : (
           <>
             <h1 className="text-4xl">Forgot Password.</h1>
-            <p className="mt-4">Enter the email address associated with your account to receive a link to reset your password.</p>
+            <p className="mt-4">
+              Enter the email address associated with your account to receive a
+              link to reset your password.
+            </p>
           </>
         )}
         <form noValidate className="pt-6 pb-8 mt-4 mb-4" onSubmit={onSubmit}>
@@ -80,10 +85,17 @@ export function AccountRecoverForm() {
                 setEmail(event.target.value);
               }}
             />
-            {!emailError ? '' : <p className={`text-red-500 text-xs`}>{emailError} &nbsp;</p>}
+            {!emailError ? (
+              ""
+            ) : (
+              <p className={`text-red-500 text-xs`}>{emailError} &nbsp;</p>
+            )}
           </div>
           <div className="flex items-center justify-between">
-            <button className="bg-[#fff] text-contrast rounded-[12px] py-4 px-4 focus:shadow-outline block w-full" type="submit">
+            <button
+              className="bg-[#fff] text-contrast rounded-[12px] py-4 px-4 focus:shadow-outline block w-full"
+              type="submit"
+            >
               Request Reset Link
             </button>
           </div>
@@ -106,10 +118,10 @@ export async function callAccountRecoverApi({
 }) {
   try {
     const res = await fetch(`/account/recover`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password, firstName, lastName }),
     });

@@ -76,8 +76,7 @@ export function AccountLoginForm({ shopName }: { shopName: string }) {
     <div
       className="flex flex-col justify-center md:items-center py-[20px] px-4 min-h-[750px] text-white bg-no-repeat bg-cover"
       style={{
-        backgroundImage:
-          "url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_25/v1675642627/kodiak/DSC02548_iwundp.png)",
+        backgroundImage: "url(/cloudinary/fast/01.jpeg)",
       }}
     >
       <div className="flex flex-col gap-[20px] bg-white rounded-[15px] mx-auto px-[20px] md:px-[56px] py-[50px] w-full md:w-[500px]">

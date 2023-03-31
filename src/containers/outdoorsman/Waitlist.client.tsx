@@ -11,9 +11,7 @@ const getVariant = () => ({
   hidden: { scale: 0.5, opacity: 0 },
 });
 
-export const Waitlist = ({
-  image = "https://res.cloudinary.com/samtufail726/image/upload/b_black,o_30/v1678491390/kodiak/news-letter.png",
-}) => {
+export const Waitlist = ({ image = "/cloudinary/ma/account.png" }) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [ref, inView] = useInView();

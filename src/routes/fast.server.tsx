@@ -49,26 +49,26 @@ export default function Blades() {
       <Layout>
         <Banner
           heading="Field Adaptive Survival Tool (F.A.S.T.)"
-          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675473938/kodiak/Blades/DSC02336_cqwwxz.jpg"
+          backgroundImg="/cloudinary/fast/banner.jpeg"
         />
         <Links />
         <div className="mt-[4px] mb-[4px]">
           <HuntingKnives />
         </div>
         <DetailsBanner
-          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675484446/kodiak/Blades/DSC02473_wdpygj.jpg"
+          backgroundImg="/cloudinary/fast/01.jpeg"
           minHeight="230px"
         />
         <DetailsBanner
-          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675473938/kodiak/Blades/DSC02336_cqwwxz.jpg"
+          backgroundImg="/cloudinary/fast/02.jpeg"
           minHeight="230px"
         />
         <DetailsBanner
-          backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675465118/kodiak/1_n9rg3y.jpg"
+          backgroundImg="/cloudinary/fast/03.jpeg"
           minHeight="230px"
         />
         <div className="mt-[4px]">
-          <NewsLetter image="https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675484764/kodiak/Blades/DSC02791_dq3j5k.jpg" />
+          <NewsLetter />
         </div>
       </Layout>
     </>

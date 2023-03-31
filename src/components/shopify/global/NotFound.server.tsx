@@ -34,8 +34,7 @@ export function NotFound({
       <div
         className="bg-cover bg-no-repeat min-h-[calc(100vh_-_300px)]"
         style={{
-          backgroundImage:
-            "url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_20/v1675473938/kodiak/Blades/DSC02336_cqwwxz.jpg)",
+          backgroundImage: "url(/cloudinary/ma/not-found.jpeg)",
         }}
       >
         <PageHeader heading={heading}>

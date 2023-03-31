@@ -84,8 +84,7 @@ export default function Product() {
         <div
           className="bg-cover bg-no-repeat"
           style={{
-            backgroundImage:
-              "url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_white,o_20/v1675496363/kodiak/Shop/All/DSC02514_jpiryo.jpg)",
+            backgroundImage: "url(/cloudinary/ma/product.jpeg)",
             // color: 'white',
           }}
         >

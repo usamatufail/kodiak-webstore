@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense } from "react";
 import {
   CacheNone,
   flattenConnection,
@@ -11,12 +11,19 @@ import {
   type HydrogenRequest,
   type HydrogenApiRouteOptions,
   useServerAnalytics,
-} from '@shopify/hydrogen';
+} from "@shopify/hydrogen";
 
-import { PRODUCT_CARD_FRAGMENT } from '~/lib/fragments';
-import { getApiErrorMessage } from '~/lib/utils';
-import { AccountAddressBook, AccountDetails, AccountOrderHistory, FeaturedCollections, LogoutButton, PageHeader } from '~/components';
-import { Layout, ProductSwimlane } from '~/components/index.server';
+import { PRODUCT_CARD_FRAGMENT } from "~/lib/fragments";
+import { getApiErrorMessage } from "~/lib/utils";
+import {
+  AccountAddressBook,
+  AccountDetails,
+  AccountOrderHistory,
+  FeaturedCollections,
+  LogoutButton,
+  PageHeader,
+} from "~/components";
+import { Layout, ProductSwimlane } from "~/components/index.server";
 import type {
   Collection,
   CollectionConnection,
@@ -25,7 +32,7 @@ import type {
   Order,
   Product,
   ProductConnection,
-} from '@shopify/hydrogen/storefront-api-types';
+} from "@shopify/hydrogen/storefront-api-types";
 
 export default function Account({ response }: HydrogenRouteProps) {
   response.cache(CacheNone());
@@ -36,7 +43,7 @@ export default function Account({ response }: HydrogenRouteProps) {
   } = useLocalization();
   const { customerAccessToken } = useSession();
 
-  if (!customerAccessToken) return response.redirect('/account/login');
+  if (!customerAccessToken) return response.redirect("/account/login");
 
   const { data } = useShopQuery<{
     customer: Customer;
@@ -54,7 +61,7 @@ export default function Account({ response }: HydrogenRouteProps) {
 
   const { customer, featuredCollections, featuredProducts } = data;
 
-  if (!customer) return response.redirect('/account/login');
+  if (!customer) return response.redirect("/account/login");
 
   // The logged-in analytics state.
   useServerAnalytics({
@@ -63,13 +70,18 @@ export default function Account({ response }: HydrogenRouteProps) {
     },
   });
 
-  const addresses = flattenConnection<MailingAddress>(customer.addresses).map((address) => ({
-    ...address,
-    id: address.id!.substring(0, address.id!.lastIndexOf('?')),
-    originalId: address.id,
-  }));
+  const addresses = flattenConnection<MailingAddress>(customer.addresses).map(
+    (address) => ({
+      ...address,
+      id: address.id!.substring(0, address.id!.lastIndexOf("?")),
+      originalId: address.id,
+    })
+  );
 
-  const defaultAddress = customer?.defaultAddress?.id?.substring(0, customer.defaultAddress.id.lastIndexOf('?'));
+  const defaultAddress = customer?.defaultAddress?.id?.substring(
+    0,
+    customer.defaultAddress.id.lastIndexOf("?")
+  );
 
   return (
     <>
@@ -77,8 +89,12 @@ export default function Account({ response }: HydrogenRouteProps) {
         customer={customer}
         addresses={addresses}
         defaultAddress={defaultAddress}
-        featuredCollections={flattenConnection<Collection>(featuredCollections) as Collection[]}
-        featuredProducts={flattenConnection<Product>(featuredProducts) as Product[]}
+        featuredCollections={
+          flattenConnection<Collection>(featuredCollections) as Collection[]
+        }
+        featuredProducts={
+          flattenConnection<Product>(featuredProducts) as Product[]
+        }
       />
     </>
   );
@@ -99,18 +115,21 @@ function AuthenticatedAccount({
 }) {
   const orders = flattenConnection(customer?.orders) || [];
 
-  const heading = customer ? (customer.firstName ? `Welcome, ${customer.firstName}.` : `Welcome to your account.`) : 'Account Details';
+  const heading = customer
+    ? customer.firstName
+      ? `Welcome, ${customer.firstName}.`
+      : `Welcome to your account.`
+    : "Account Details";
 
   return (
     <Layout>
       <Suspense>
-        <Seo type="noindex" data={{ title: 'Account details' }} />
+        <Seo type="noindex" data={{ title: "Account details" }} />
       </Suspense>
       <div
         className="text-white bg-cover bg-no-repeat"
         style={{
-          backgroundImage:
-            'url(https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_15/v1675643643/kodiak/DSC02444_bwir7e.png)',
+          backgroundImage: "url(/cloudinary/ma/account.png)",
         }}
       >
         <PageHeader heading={heading}>
@@ -125,10 +144,16 @@ function AuthenticatedAccount({
           email={customer.email as string}
         />
         <hr />
-        <AccountAddressBook defaultAddress={defaultAddress} addresses={addresses} />
+        <AccountAddressBook
+          defaultAddress={defaultAddress}
+          addresses={addresses}
+        />
         {!orders && (
           <>
-            <FeaturedCollections title="Popular Collections" data={featuredCollections} />
+            <FeaturedCollections
+              title="Popular Collections"
+              data={featuredCollections}
+            />
             <ProductSwimlane data={featuredProducts} />
           </>
         )}
@@ -137,18 +162,21 @@ function AuthenticatedAccount({
   );
 }
 
-export async function api(request: HydrogenRequest, { session, queryShop }: HydrogenApiRouteOptions) {
-  if (request.method !== 'PATCH' && request.method !== 'DELETE') {
+export async function api(
+  request: HydrogenRequest,
+  { session, queryShop }: HydrogenApiRouteOptions
+) {
+  if (request.method !== "PATCH" && request.method !== "DELETE") {
     return new Response(null, {
       status: 405,
       headers: {
-        Allow: 'PATCH,DELETE',
+        Allow: "PATCH,DELETE",
       },
     });
   }
 
   if (!session) {
-    return new Response('Session storage not available.', {
+    return new Response("Session storage not available.", {
       status: 400,
     });
   }
@@ -157,7 +185,8 @@ export async function api(request: HydrogenRequest, { session, queryShop }: Hydr
 
   if (!customerAccessToken) return new Response(null, { status: 401 });
 
-  const { email, phone, firstName, lastName, newPassword } = await request.json();
+  const { email, phone, firstName, lastName, newPassword } =
+    await request.json();
 
   interface Customer {
     email?: string;
@@ -185,7 +214,7 @@ export async function api(request: HydrogenRequest, { session, queryShop }: Hydr
     cache: CacheNone(),
   });
 
-  const error = getApiErrorMessage('customerUpdate', data, errors);
+  const error = getApiErrorMessage("customerUpdate", data, errors);
 
   if (error) return new Response(JSON.stringify({ error }), { status: 400 });
 
@@ -194,8 +223,11 @@ export async function api(request: HydrogenRequest, { session, queryShop }: Hydr
 
 const CUSTOMER_QUERY = gql`
   ${PRODUCT_CARD_FRAGMENT}
-  query CustomerDetails($customerAccessToken: String!, $country: CountryCode, $language: LanguageCode)
-  @inContext(country: $country, language: $language) {
+  query CustomerDetails(
+    $customerAccessToken: String!
+    $country: CountryCode
+    $language: LanguageCode
+  ) @inContext(country: $country, language: $language) {
     customer(customerAccessToken: $customerAccessToken) {
       id
       firstName
@@ -277,8 +309,14 @@ const CUSTOMER_QUERY = gql`
 `;
 
 const CUSTOMER_UPDATE_MUTATION = gql`
-  mutation customerUpdate($customer: CustomerUpdateInput!, $customerAccessToken: String!) {
-    customerUpdate(customer: $customer, customerAccessToken: $customerAccessToken) {
+  mutation customerUpdate(
+    $customer: CustomerUpdateInput!
+    $customerAccessToken: String!
+  ) {
+    customerUpdate(
+      customer: $customer
+      customerAccessToken: $customerAccessToken
+    ) {
       customerUserErrors {
         code
         field

@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 const data = [
   {
-    img: "https://res.cloudinary.com/samtufail726/image/upload/v1678475067/kodiak/About/card1.png",
+    img: "/cloudinary/about/card1.png",
     icon: "/svg/about/business.svg",
     heading: "Where we do business",
     text: `Our target audience includes hunters, hikers, backpackers, prepper
@@ -13,7 +13,7 @@ const data = [
     rustic and modern elements to create a warm and adventurous feel.`,
   },
   {
-    img: "https://res.cloudinary.com/samtufail726/image/upload/v1678475093/kodiak/About/card2.png",
+    img: "/cloudinary/about/card2.png",
     icon: "/svg/about/environment.svg",
     heading: " Environment Friendly",
     text: `We want our website visitors to feel inspired for their next adventure
@@ -41,7 +41,8 @@ export const AboutCards = () => {
   return (
     <div
       ref={ref}
-      className="min-h-[900px] w-full grid md:grid-cols-2 gap-[30px] md:gap-[100px] justify-center items-center px-[10px] md:px-[180px] py-[50px]"
+      className="min-h-[900px] w-full grid md:grid-cols-2 gap-[30px] md:gap-[100px] justify-center items-center px-[10px] md:px-[180px] py-[50px] bg-center bg-cover bg-no-repeat"
+      style={{ background: "url(/cloudinary/ma/company.png)" }}
     >
       {data.map((data) => {
         return (

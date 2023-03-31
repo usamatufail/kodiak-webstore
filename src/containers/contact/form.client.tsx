@@ -12,7 +12,7 @@ export const Form = () => {
       <div
         className="w-full min-h-[800px] relative mt-[4px] grid md:grid-cols-2 gap-[150px] items-center bg-cover bg-no-repeat px-[20px] md:px-[350px] py-[50px]"
         style={{
-          backgroundImage: `url(https://res.cloudinary.com/samtufail726/image/upload/v1678460827/kodiak/register.png)`,
+          backgroundImage: `url(/cloudinary/ma/register.png)`,
         }}
       >
         {/* Form Container */}

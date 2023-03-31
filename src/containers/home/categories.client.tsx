@@ -40,8 +40,7 @@ export const Categories = () => {
       ref={ref}
       className="min-h-[800px] bg-cover bg-no-repeat pt-[15px] pb-[90px]"
       style={{
-        backgroundImage:
-          "url(https://res.cloudinary.com/samtufail726/image/upload/v1678470000/kodiak/About/company.png)",
+        backgroundImage: "url(/cloudinary/ma/company.png)",
       }}
     >
       <h1 className="text-[42px] text-center md:text-left font-[700] text-black px-[20px] md:px-[100px] mt-[60px]">

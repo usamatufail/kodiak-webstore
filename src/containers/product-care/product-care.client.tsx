@@ -6,8 +6,7 @@ export const ProductCare = () => {
     <div
       className="w-full mt-[4px] text-center pb-[45px] md:pb-[40px] px-[20px]"
       style={{
-        backgroundImage:
-          "url(https://res.cloudinary.com/samtufail726/image/upload/b_black,o_40/v1675686884/kodiak/Contact/DSC02114_vzodf1.jpg)",
+        backgroundImage: "url(/cloudinary/ma/main.jpeg)",
         backgroundPosition: "-200px -100px",
         backgroundRepeat: "no-repeat",
         minHeight: "701px",

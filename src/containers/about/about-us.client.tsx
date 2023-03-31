@@ -4,8 +4,7 @@ export const AboutUs = () => {
     <div
       className="w-full mt-[4px] pb-[45px] md:pb-[40px] px-[20px] min-h-[860px] bg-no-repeat bg-cover grid md:grid-cols-2 justify-center items-center gap-[180px] md:px-[280px]"
       style={{
-        backgroundImage:
-          "url(https://res.cloudinary.com/samtufail726/image/upload/v1678470000/kodiak/About/company.png)",
+        backgroundImage: "url(/cloudinary/ma/company.png)",
       }}
     >
       <motion.div

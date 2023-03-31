@@ -17,7 +17,7 @@ const rightVariant = (duration: number) => ({
 export const HuntingKnives = ({
   link = "hunting-fast",
   heading = "Why F.A.S.T?",
-  image = "https://res.cloudinary.com/samtufail726/image/upload/q_auto/v1675683664/kodiak/Blades/DSC03679-Edit_a4xfoe_1.jpg",
+  image = "/cloudinary/fast/text.jpeg",
   description = `At Kodiak Knife Co., we take pride in offering top-of-the-line, versatile, and stylish knives that cater to the diverse needs of adventure enthusiasts worldwide. Our exceptional knives, referred to as Field Adaptive Survival Tools (F.A.S.T.), are designed to provide unbeatable performance, durability, and functionality in the great outdoors. Whether you're an avid hiker, camper, or hunter, our F.A.S.T. knives are the perfect companion for your escapades.
 
   The F.A.S.T. acronym embodies our commitment to creating tools that adapt to various environments and outdoor conditions. This emphasis on versatility, functionality, and durability sets our knives apart from the competition and ensures that they can withstand even the most challenging outdoor adventures.

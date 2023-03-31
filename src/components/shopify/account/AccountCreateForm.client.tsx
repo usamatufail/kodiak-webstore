@@ -66,10 +66,10 @@ export function AccountCreateForm() {
 
   return (
     <div
-      className="flex flex-col justify-center items-center py-[20px] px-2 md:px-4 min-h-[750px] text-white bg-no-repeat bg-cover"
+      className="flex flex-col justify-center items-center py-[20px] px-2 md:px-4 min-h-[750px] text-white bg-no-repeat bg-cover bg-right"
       style={{
-        backgroundImage:
-          "url(https://res.cloudinary.com/samtufail726/image/upload/v1678719431/kodiak/signup.png)",
+        backgroundImage: "url(/cloudinary/ma/secondary.jpeg)",
+        backgroundSize: "120%",
       }}
     >
       <div className="flex flex-col gap-[20px] bg-white rounded-[15px] mx-auto px-[20px] md:px-[56px] py-[50px] w-full md:w-[500px]">

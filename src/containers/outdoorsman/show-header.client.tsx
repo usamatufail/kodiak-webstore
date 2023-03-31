@@ -4,8 +4,7 @@ export const ShowHeader = () => {
     <div
       className="w-full mt-[4px] pb-[45px] md:pb-[40px] px-[20px] py-[30px] bg-no-repeat bg-cover"
       style={{
-        backgroundImage:
-          "url(https://res.cloudinary.com/samtufail726/image/upload/v1678470000/kodiak/About/company.png)",
+        backgroundImage: "url(/cloudinary/ma/company.png)",
       }}
     >
       <div className="grid md:grid-cols-2 justify-center items-center gap-[180px] md:px-[280px] mt-[30px]">
@@ -41,7 +40,7 @@ export const ShowHeader = () => {
           className="hidden md:block"
         >
           <img
-            src="https://res.cloudinary.com/samtufail726/image/upload/v1678470141/kodiak/About/man.png"
+            src="/cloudinary/about/man.png"
             alt="man"
             className="hidden md:block max-w-[500px]"
           />

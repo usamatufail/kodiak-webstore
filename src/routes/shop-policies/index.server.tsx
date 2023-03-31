@@ -1,8 +1,15 @@
-import { useLocalization, useShopQuery, useServerAnalytics, ShopifyAnalyticsConstants, gql, Link } from '@shopify/hydrogen';
-import type { Shop } from '@shopify/hydrogen/storefront-api-types';
+import {
+  useLocalization,
+  useShopQuery,
+  useServerAnalytics,
+  ShopifyAnalyticsConstants,
+  gql,
+  Link,
+} from "@shopify/hydrogen";
+import type { Shop } from "@shopify/hydrogen/storefront-api-types";
 
-import { Section, Heading } from '~/components';
-import { Layout, NotFound } from '~/components/index.server';
+import { Section, Heading } from "~/components";
+import { Layout, NotFound } from "~/components/index.server";
 
 export default function Policies() {
   const {
@@ -24,9 +31,21 @@ export default function Policies() {
     },
   });
 
-  const { privacyPolicy, shippingPolicy, termsOfService, refundPolicy, subscriptionPolicy } = data.shop;
+  const {
+    privacyPolicy,
+    shippingPolicy,
+    termsOfService,
+    refundPolicy,
+    subscriptionPolicy,
+  } = data.shop;
 
-  const policies = [privacyPolicy, shippingPolicy, termsOfService, refundPolicy, subscriptionPolicy];
+  const policies = [
+    privacyPolicy,
+    shippingPolicy,
+    termsOfService,
+    refundPolicy,
+    subscriptionPolicy,
+  ];
 
   if (policies.every((element) => element === null)) {
     return <NotFound type="page" />;
@@ -34,15 +53,20 @@ export default function Policies() {
 
   return (
     <Layout>
-      <div className="text-white mb-24 min-h-screen pt-[45px] bg-[url('https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_40/v1675465742/kodiak/DSC02277_y6krg4.jpg')] bg-cover bg-no-repeat">
-        <h2 className="text-center text-[60px] text-white font-[650]">Policies</h2>
+      <div className="text-white mb-24 min-h-screen pt-[45px] bg-[url('')] bg-cover bg-no-repeat">
+        <h2 className="text-center text-[60px] text-white font-[650]">
+          Policies
+        </h2>
         <Section padding="x" className="mb-24">
           {policies.map((policy) => {
             if (!policy) {
               return;
             }
             return (
-              <Heading className="font-normal text-heading text-center" key={policy.id}>
+              <Heading
+                className="font-normal text-heading text-center"
+                key={policy.id}
+              >
                 <Link to={`/policies/${policy.handle}`}>
                   {`➫`} {policy.title}
                 </Link>

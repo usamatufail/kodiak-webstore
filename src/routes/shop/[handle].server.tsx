@@ -18,7 +18,7 @@ export default function ShopPage() {
   return (
     <Layout>
       <Banner
-        backgroundImg="https://res.cloudinary.com/samtufail726/image/upload/v1675500694/kodiak/Shop/All/DSC02256_x8g256.png"
+        backgroundImg="/cloudinary/shop/01.png"
         heading={`${collection?.title}`}
       />
       <ShopCards data={collection?.products} />

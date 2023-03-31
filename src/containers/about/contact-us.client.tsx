@@ -20,8 +20,9 @@ export const ContactUs = () => {
   }, [controls, inView]);
   return (
     <div
-      className="w-full mt-[4px] pb-[45px] md:pb-[40px] px-[20px] min-h-[800px]  grid md:grid-cols-2 justify-center items-center gap-[180px] md:px-[280px]"
+      className="w-full mt-[4px] pb-[45px] md:pb-[40px] px-[20px] min-h-[800px]  grid md:grid-cols-2 justify-center items-center gap-[180px] md:px-[280px] bg-cover bg-center bg-no-repeat"
       ref={ref}
+      style={{ background: "url(/cloudinary/ma/company.png)" }}
     >
       <motion.div
         animate={controls}
@@ -30,7 +31,7 @@ export const ContactUs = () => {
         className="hidden md:block"
       >
         <img
-          src="https://res.cloudinary.com/samtufail726/image/upload/v1678477372/kodiak/About/contact.png"
+          src="/cloudinary/about/contact.png"
           alt="contact"
           className="hidden md:block"
         />

@@ -21,8 +21,7 @@ export const OurMission = () => {
       ref={ref}
       className="min-h-[610px] w-full flex items-center px-[10px] md:px-[145px] py-[50px] "
       style={{
-        backgroundImage:
-          "url(https://res.cloudinary.com/samtufail726/image/upload/v1678476564/kodiak/About/mission.png)",
+        backgroundImage: "url(/cloudinary/about/mission.png)",
       }}
     >
       <motion.div

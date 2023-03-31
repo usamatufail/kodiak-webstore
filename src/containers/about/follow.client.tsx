@@ -22,8 +22,7 @@ export const Follow = () => {
       ref={ref}
       className="min-h-[560px] bg-cover bg-no-repeat w-full flex items-center justify-center px-[10px] md:px-[145px] py-[50px] "
       style={{
-        backgroundImage:
-          "url(https://res.cloudinary.com/samtufail726/image/upload/v1678485438/kodiak/About/follow.png)",
+        backgroundImage: "url(/cloudinary/about/follow.png)",
       }}
     >
       <motion.div

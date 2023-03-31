@@ -71,7 +71,7 @@ export default function Policy({ params }: HydrogenRouteProps) {
       <Section
         padding="all"
         display="flex"
-        className="flex-col items-baseline w-full gap-8 md:flex-row text-white bg-[url('https://res.cloudinary.com/samtufail726/image/upload/q_auto,b_black,o_40/v1675465741/kodiak/DSC02328_ik8rcy.jpg')] bg-cover bg-no-repeat"
+        className="flex-col items-baseline w-full gap-8 md:flex-row text-white bg-[url('/cloudinary/ma/banner.png')] bg-cover bg-no-repeat"
       >
         <PageHeader
           heading={page.title}

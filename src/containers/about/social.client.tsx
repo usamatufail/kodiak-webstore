@@ -27,8 +27,7 @@ export const Social = () => {
       className="w-full mt-[4px] text-center grid grid-cols-1 md:grid-cols-2 items-center justify-start px-[20px] md:px-[300px] overflow-hidden"
       ref={ref}
       style={{
-        backgroundImage:
-          "url(https://res.cloudinary.com/samtufail726/image/upload/b_black,o_40/v1675508797/kodiak/About/DSC02050_1_tptii0.jpg)",
+        backgroundImage: "url(/cloudinary/ma/secondary.jpeg)",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -64,11 +63,11 @@ export const Social = () => {
         initial="initial"
         animate={controls}
         variants={rightVariant}
-        className="flex justify-center mt-[40px] pb-[40px] md:mt-[0px] md:pb-[0px]"
+        className="flex justify-center mt-[40px] pb-[40px] py-[20px] md:mt-[0px] md:pb-[0px]"
       >
         <a href="https://www.instagram.com/kodiakknifeco/" target="_blank">
           <img
-            src="https://res.cloudinary.com/samtufail726/image/upload/v1675509800/kodiak/About/Group_993_feosju.png"
+            src="/cloudinary/ma/ig.png"
             alt="instagram"
             className="max-w-[250px] h-[auto]"
             style={{ filter: "drop-shadow(2px 4px 14px white)" }}
