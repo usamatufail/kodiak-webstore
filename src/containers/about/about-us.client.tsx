@@ -39,7 +39,7 @@ export const AboutUs = () => {
         className="hidden md:block"
       >
         <img
-          src="https://res.cloudinary.com/samtufail726/image/upload/v1678470141/kodiak/About/man.png"
+          src="/cloudinary/about/man.png"
           alt="man"
           className="hidden md:block"
         />
