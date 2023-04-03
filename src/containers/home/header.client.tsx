@@ -33,7 +33,7 @@ export const Header = () => {
 
   return (
     <header
-      className="min-h-[70vh] flex flex-col justify-center items-start px-[20px] xl:px-[160px] relative md:justify-end xl:pl-[500px] xl:pb-[174px]"
+      className="min-h-[70vh] flex flex-col justify-center items-start px-[20px] xl:px-[160px] relative md:justify-end xl:pl-[26vw] xl:pb-[9.1vw] 2xl:pb-[12vw]"
       ref={ref}
       style={{
         backgroundImage: `url(/cloudinary/homepage/64.jpg)`,
@@ -67,7 +67,8 @@ export const Header = () => {
           variants={getVariant(0.5)}
           className=""
         >
-          <Link to="/products/kodiak-adventure-box">
+          {/* <Link to="/products/kodiak-adventure-box"> */}
+          <a href="#adventure-box">
             <button
               className={`h-[58px] flex items-center justify-center font-[600] px-[30px] md:px-[60px]
             text-[18px] text-white bg-[#879281] focus:bg-[#6a7365]
@@ -75,7 +76,8 @@ export const Header = () => {
             >
               Shop Now
             </button>
-          </Link>
+          </a>
+          {/* </Link> */}
         </motion.div>
       </div>
     </header>

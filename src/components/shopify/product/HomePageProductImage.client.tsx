@@ -18,7 +18,7 @@ export function HomePageProductImage({
 
   return (
     <div
-      className={`swimlane md:grid-flow-row hiddenScroll overflow-hidden md:p-0 overflow-x-auto ${className}`}
+      className={`grid-flow-row p-2 shadow-xl rounded-[20px] mx-[20px] ${className}`}
     >
       {media.map((med, index) => {
         if (index > 0) {
@@ -74,8 +74,8 @@ export function HomePageProductImage({
           >
             <MediaFile
               tabIndex="0"
-              className={`w-full h-full fadeIn object-cover`}
-              style={{ aspectRatio: "16/9" }}
+              className={` w-full h-full fadeIn object-cover md:object-contain	`}
+              // style={{ aspectRatio: "16/9" }}
               data={data}
               // @ts-ignore
               options={{

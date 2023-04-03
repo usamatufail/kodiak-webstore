@@ -11,18 +11,23 @@ export function Product({
   product,
   description,
   isBackground = false,
+  quote = `“If we were meant to stay in one place, we’d have roots
+  instead of feet.”`,
+  author = `Rachel Wolchin`,
 }: {
   product: any;
   description?: ReactNode;
   isBackground?: boolean;
+  quote?: string;
+  author?: string;
 }) {
-  const { media, title, vendor } = product;
+  const { media, title } = product;
 
   return (
     <>
       <ProductOptionsProvider data={product}>
         <div
-          className="bg-cover bg-no-repeat"
+          className="bg-cover bg-no-repeat mt-[40px]"
           style={{
             background: isBackground
               ? "url(/cloudinary/ma/company.png)"
@@ -30,15 +35,14 @@ export function Product({
             // color: 'white',
           }}
         >
-          <Section padding="none" className="px-0">
-            <div className="grid items-start md:gap-2 lg:gap-2 md:grid-cols-1 lg:grid-cols-1">
+          <Section padding="none">
+            <div className="grid items-start md:gap-2 lg:gap-2 md:grid-cols-1 lg:grid-cols-1 max-w-[1660px] mx-auto">
               <div className="grid md:grid-cols-[1fr_3fr_2fr] gap-[20px] md:gap-[80px]">
-                <div className="md:mt-[52px] px-[30px]">
+                <div className="hidden md:block md:mt-[52px] px-[30px]">
                   <blockquote className="text-[26px] leading-[1.2] font-semibold">
-                    “If we were meant to stay in one place, we’d have roots
-                    instead of feet.”
+                    {quote}
                   </blockquote>
-                  <p>- Rachel Wolchin</p>
+                  <p>-&nbsp;{author}</p>
                 </div>
                 <HomePageProductImage
                   media={media.nodes}
