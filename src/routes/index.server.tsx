@@ -13,96 +13,96 @@ import { Discount } from "~/components/discount.client";
 import { Product } from "~/containers/home/product.client";
 import { MEDIA_FRAGMENT } from "~/lib";
 
-const AdventureBox = (
-  <div>
-    <h2 className="font-bold mb-[10px] text-[#af810e]">BOX INCLUDES</h2>
-    <div className="flex flex-col gap-[10px]">
-      <div className="flex items-start gap-[10px]">
-        <div>
-          <span className="text-[#af810e]">▪</span>
+// a sharp blade ensures that the cutting job is done correctly. A sharp knife will make clean and precise cuts, which is especially important when working with delicate materials such as paper, fabric, or food. A dull knife, on the other hand, can tear and damage the material, ruining the final product. A sharp blade is also essential for tasks that require accuracy, such as carving, whittling, or sharpening pencils. With a sharp knife, you can quickly achieve the desired shape and size without damaging the material or wasting time.
+export default function Home() {
+  const AdventureBox = (
+    <div>
+      <h2 className="font-bold mb-[10px] text-[#af810e]">BOX INCLUDES</h2>
+      <div className="flex flex-col gap-[10px]">
+        <div className="flex items-start gap-[10px]">
+          <div>
+            <span className="text-[#af810e]">▪</span>
+          </div>
+          <div>
+            <b>A Knife of your choice</b>&nbsp;The Tongass, The Kenai, or The
+            LeContee. Each blade is handmade with 100% accuracy and sharpness.
+          </div>
         </div>
-        <div>
-          <b>A Knife of your choice</b>&nbsp;The Tongass, The Kenai, or The
-          LeContee. Each blade is handmade with 100% accuracy and sharpness.
+        <div className="flex items-start gap-[10px]">
+          <div>
+            <span className="text-[#af810e]">▪</span>
+          </div>
+          <div>
+            <b>Sharpening Stone</b>&nbsp;A Sharp blade is safer than dull one.
+          </div>
         </div>
-      </div>
-      <div className="flex items-start gap-[10px]">
-        <div>
-          <span className="text-[#af810e]">▪</span>
+        <div className="flex items-start gap-[10px]">
+          <div>
+            <span className="text-[#af810e]">▪</span>
+          </div>
+          <div>
+            <b>Cleaning Kit</b>&nbsp;The ultimate rust prevention solution.
+          </div>
         </div>
-        <div>
-          <b>Sharpening Stone</b>&nbsp;A Sharp blade is safer than dull one.
-        </div>
-      </div>
-      <div className="flex items-start gap-[10px]">
-        <div>
-          <span className="text-[#af810e]">▪</span>
-        </div>
-        <div>
-          <b>Cleaning Kit</b>&nbsp;The ultimate rust prevention solution.
-        </div>
-      </div>
-      <div className="flex items-start gap-[10px]">
-        <div>
-          <span className="text-[#af810e]">▪</span>
-        </div>
-        <div>
-          <b>A Kodiak Box</b>&nbsp;An elaborate craftsmanship box includes
-          everything you need for a successfull adventure.
+        <div className="flex items-start gap-[10px]">
+          <div>
+            <span className="text-[#af810e]">▪</span>
+          </div>
+          <div>
+            <b>A Kodiak Box</b>&nbsp;An elaborate craftsmanship box includes
+            everything you need for a successfull adventure.
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
 
-const DescCleaning = (
-  <div>
-    <h2 className="font-bold mb-[10px] text-[#af810e] uppercase">
-      Cleaning Kit
-    </h2>
-    <p>
-      Kodiak's Own Blend is not your average rust prevention solution. It is
-      specially formulated to provide maximum protection against rust and
-      corrosion. This unique blend is made from high-quality ingredients that
-      penetrate deep into the surface of your steel possessions.
-    </p>
-  </div>
-);
-const DescKenai = (
-  <div>
-    <h2 className="font-bold mb-[10px] text-[#af810e] uppercase">
-      The Kenai knife{" "}
-    </h2>
-    <p>
-      The Kenai knife is more than just a tool, it's a symbol of the rugged
-      beauty and bountiful resources of the Kenai Peninsula. With its sharp
-      blade and sturdy handle, it's designed to help you navigate through the
-      toughest of terrains and process your catch with ease. Whether you're a
-      seasoned outdoorsman or just starting out, the Kenai knife is the perfect
-      companion for all your adventures.
-    </p>
-  </div>
-);
-const DescStone = (
-  <div>
-    <h2 className="font-bold mb-[10px] text-[#af810e] uppercase">
-      Sharpening stone
-    </h2>
-    <p>
-      A sharp blade ensures that the cutting job is done correctly. A sharp
-      knife will make clean and precise cuts, which is especially important when
-      working with delicate materials such as paper, fabric, or food. A dull
-      knife, on the other hand, can tear and damage the material, ruining the
-      final product. A sharp blade is also essential for tasks that require
-      accuracy, such as carving, whittling, or sharpening pencils. With a sharp
-      knife, you can quickly achieve the desired shape and size without damaging
-      the material or wasting time.
-    </p>
-  </div>
-);
+  const DescCleaning = (
+    <div>
+      <h2 className="font-bold mb-[10px] text-[#af810e] uppercase">
+        Cleaning Kit
+      </h2>
+      <p>
+        Kodiak's Own Blend is not your average rust prevention solution. It is
+        specially formulated to provide maximum protection against rust and
+        corrosion. This unique blend is made from high-quality ingredients that
+        penetrate deep into the surface of your steel possessions.
+      </p>
+    </div>
+  );
+  const DescKenai = (
+    <div>
+      <h2 className="font-bold mb-[10px] text-[#af810e] uppercase">
+        The Kenai knife{" "}
+      </h2>
+      <p>
+        The Kenai knife is more than just a tool, it's a symbol of the rugged
+        beauty and bountiful resources of the Kenai Peninsula. With its sharp
+        blade and sturdy handle, it's designed to help you navigate through the
+        toughest of terrains and process your catch with ease. Whether you're a
+        seasoned outdoorsman or just starting out, the Kenai knife is the
+        perfect companion for all your adventures.
+      </p>
+    </div>
+  );
+  const DescStone = (
+    <div>
+      <h2 className="font-bold mb-[10px] text-[#af810e] uppercase">
+        Sharpening stone
+      </h2>
+      <p>
+        A sharp blade ensures that the cutting job is done correctly. A sharp
+        knife will make clean and precise cuts, which is especially important
+        when working with delicate materials such as paper, fabric, or food. A
+        dull knife, on the other hand, can tear and damage the material, ruining
+        the final product. A sharp blade is also essential for tasks that
+        require accuracy, such as carving, whittling, or sharpening pencils.
+        With a sharp knife, you can quickly achieve the desired shape and size
+        without damaging the material or wasting time.
+      </p>
+    </div>
+  );
 
-// a sharp blade ensures that the cutting job is done correctly. A sharp knife will make clean and precise cuts, which is especially important when working with delicate materials such as paper, fabric, or food. A dull knife, on the other hand, can tear and damage the material, ruining the final product. A sharp blade is also essential for tasks that require accuracy, such as carving, whittling, or sharpening pencils. With a sharp knife, you can quickly achieve the desired shape and size without damaging the material or wasting time.
-export default function Home() {
   const {
     data: { collection },
   } = useShopQuery({
