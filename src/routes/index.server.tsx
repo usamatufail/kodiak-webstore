@@ -157,7 +157,7 @@ export default function Home() {
 
   return (
     <Layout>
-      {/* <Discount /> */}
+      <Discount />
       <Header />
       {product ? (
         <div id="adventure-box">
