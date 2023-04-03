@@ -8,7 +8,6 @@ const links = [
   { name: "Home", handle: "/", variantValue: 0 },
   { name: "Shop All", handle: "/shop/all", variantValue: 0.2 },
   { name: "Shop F.A.S.T", handle: "/shop/fast", variantValue: 0.2 },
-  // { name: "Shop Apparel", handle: "/shop/apparel", variantValue: 0.2 },
   { name: "Shop Equipment", handle: "/shop/equipment", variantValue: 0.2 },
   { name: "Learn More", handle: "/fast", variantValue: 0 },
   { name: "Contact Us", handle: "/contact", variantValue: 0.2 },

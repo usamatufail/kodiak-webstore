@@ -6,6 +6,7 @@ import { Menu } from "./mobile-nav.client";
 import { Icons } from "./nav-icons.client";
 import { Link, useUrl } from "@shopify/hydrogen";
 import { Dropdown } from "antd";
+import { SlSocialDropbox } from "react-icons/sl";
 import { useOutsideClick } from "../hooks";
 
 const getVariant = (duration: number) => ({
@@ -128,108 +129,120 @@ export const Navbar = ({ customerAccessToken = "" }) => {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:px-[60px] 2xl:px-[120px] relative z-10 shadow-lg">
-      {/* Logo */}
-      <Link to="/">
+    <div>
+      <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:px-[60px] 2xl:px-[120px] relative z-10 shadow-lg">
+        {/* Logo */}
+        <Link to="/">
+          <motion.div
+            animate={controls}
+            initial="hidden"
+            variants={getVariant(0.5)}
+            className="w-[150px] md:w-[unset]"
+          >
+            <img
+              src="/images/navbar/logo.png"
+              alt="logo"
+              className="w-[150px] md:w-[175px]"
+            />
+          </motion.div>
+        </Link>
+        {/* Mobile Menu (Links) */}
         <motion.div
           animate={controls}
           initial="hidden"
           variants={getVariant(0.5)}
-          className="w-[150px] md:w-[unset]"
+          className="block 2xl:hidden overflow-hidden"
         >
-          <img
-            src="/images/navbar/logo.png"
-            alt="logo"
-            className="w-[150px] md:w-[175px]"
-          />
+          <Menu customerAccessToken={customerAccessToken} />
         </motion.div>
-      </Link>
-      {/* Mobile Menu (Links) */}
-      <motion.div
-        animate={controls}
-        initial="hidden"
-        variants={getVariant(0.5)}
-        className="block 2xl:hidden overflow-hidden"
-      >
-        <Menu customerAccessToken={customerAccessToken} />
-      </motion.div>
 
-      {/* Links */}
-      <div className="items-center gap-[25px] hidden 2xl:flex">
-        {links?.map((link) => {
-          if (!link?.links) {
-            return (
-              <Link to={link.to} key={link.name}>
-                <motion.div
+        {/* Links */}
+        <div className="items-center gap-[25px] hidden 2xl:flex">
+          {links?.map((link) => {
+            if (!link?.links) {
+              return (
+                <Link to={link.to} key={link.name}>
+                  <motion.div
+                    animate={controls}
+                    initial="hidden"
+                    variants={getVariant(0.5)}
+                    className={`${styles["nav-link"]} ${
+                      url.pathname === link.to ? styles["nav-link-active"] : ""
+                    } cursor-pointer select-none`}
+                  >
+                    {link.name}
+                  </motion.div>
+                </Link>
+              );
+            } else
+              return (
+                <CustomDropdown
+                  key={link.name}
                   animate={controls}
                   initial="hidden"
                   variants={getVariant(0.5)}
-                  className={`${styles["nav-link"]} ${
-                    url.pathname === link.to ? styles["nav-link-active"] : ""
-                  } cursor-pointer select-none`}
-                >
-                  {link.name}
-                </motion.div>
-              </Link>
-            );
-          } else
-            return (
-              <CustomDropdown
-                key={link.name}
-                animate={controls}
-                initial="hidden"
-                variants={getVariant(0.5)}
-                links={link.links}
-              />
-            );
-        })}
-      </div>
-
-      {/* Icons */}
-      <motion.div
-        animate={controls}
-        initial="hidden"
-        variants={{
-          visible: { x: 0, opacity: 1, transition: { duration: 0.4 } },
-          hidden: { x: -50, opacity: 0, transition: { duration: 0.4 } },
-        }}
-        className=" items-center gap-[30px] hidden 2xl:flex"
-      >
-        <div className="flex gap-[30px] text-[18px] font-[600] text-black">
-          {!!customerAccessToken ? (
-            <>
-              <Link to="/account" className=" transition-all">
-                <div className="cursor-pointer px-[20px] py-[13px]">
-                  Account
-                </div>
-              </Link>
-              <div
-                onClick={logout}
-                className=" transition-all rounded-[83px] cursor-pointer"
-              >
-                <div className="cursor-pointer px-[20px] py-[13px] rounded-[83px] border-[1px] border-black  border-solid">
-                  Logout
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              <Link to="/account/login" className=" transition-all">
-                <div className="cursor-pointer px-[20px] py-[13px]">Login</div>
-              </Link>
-              <Link
-                to="/account/register"
-                className=" transition-all  rounded-[83px]"
-              >
-                <div className="cursor-pointer px-[20px] py-[13px] rounded-[83px] border-[1px] border-black  border-solid">
-                  Sign Up
-                </div>
-              </Link>
-            </>
-          )}
+                  links={link.links}
+                />
+              );
+          })}
         </div>
-        <Icons />
-      </motion.div>
-    </nav>
+
+        {/* Icons */}
+        <motion.div
+          animate={controls}
+          initial="hidden"
+          variants={{
+            visible: { x: 0, opacity: 1, transition: { duration: 0.4 } },
+            hidden: { x: -50, opacity: 0, transition: { duration: 0.4 } },
+          }}
+          className=" items-center gap-[30px] hidden 2xl:flex"
+        >
+          <div className="flex gap-[30px] text-[18px] font-[600] text-black">
+            {!!customerAccessToken ? (
+              <>
+                <Link to="/account" className=" transition-all">
+                  <div className="cursor-pointer px-[20px] py-[13px]">
+                    Account
+                  </div>
+                </Link>
+                <div
+                  onClick={logout}
+                  className=" transition-all rounded-[83px] cursor-pointer"
+                >
+                  <div className="cursor-pointer px-[20px] py-[13px] rounded-[83px] border-[1px] border-black  border-solid">
+                    Logout
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <Link to="/account/login" className=" transition-all">
+                  <div className="cursor-pointer px-[20px] py-[13px]">
+                    Login
+                  </div>
+                </Link>
+                <Link
+                  to="/account/register"
+                  className=" transition-all  rounded-[83px]"
+                >
+                  <div className="cursor-pointer px-[20px] py-[13px] rounded-[83px] border-[1px] border-black  border-solid">
+                    Sign Up
+                  </div>
+                </Link>
+              </>
+            )}
+          </div>
+          <Icons />
+        </motion.div>
+      </nav>
+      <div className="min-h-[50px] bg-slate-800 flex items-center justify-center text-white text-[14px] md:text-[16px]">
+        <div className="flex items-center gap-[15px]">
+          <div>
+            <SlSocialDropbox className="w-[16px] md:w-[20px]" />
+          </div>
+          <p className="mb-0">Free ground shipping on orders over $50</p>
+        </div>
+      </div>
+    </div>
   );
 };

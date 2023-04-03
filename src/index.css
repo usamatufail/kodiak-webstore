@@ -209,6 +209,29 @@ body {
   content: url(/svg/left.svg);
 }
 
+.product-slider .slick-list {
+max-height: 803px;
+}
+
+/* .product-slider .slick-dots li button { */
+  /* background: url(path/to/your-image.png); */
+  /* text-indent: -9999px;
+  overflow:hidden; */
+  /* more CSS */
+/* } */
+
+.product-slider .slick-dots li.slick-active button:before {
+  font-size: 14px;
+}
+
+.product-slider .slick-dots li button:before {
+  font-size: 10px;
+}
+
+.product-slider .slick-prev:before, .product-slider .slick-next:before {
+  color: black;
+}
+
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
@@ -242,4 +265,66 @@ shop-pay-button {
 
 .input-border{
   border-bottom: 1px solid black !important;
+}
+
+
+.gradient-text {
+  background: linear-gradient(90deg, #af810e 0%, #dfc073 100%);
+    background-size: cover;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.moneyOnSale::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%) rotate(-15deg);
+  -ms-transform: translate(-50%,-50%) rotate(-15deg);
+  transform: translate(-50%,-50%) rotate(-15deg);
+  width: 110%;
+  height: 2px;
+  background-color: #af810e;
+}
+
+.saveText {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #FFFFFF;
+  background-color: #af810e;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  line-height: 1.1;
+  padding: 0.5rem;
+  padding-right: 0.75rem;
+}
+
+.saveSvg {
+  position: absolute;
+  height: 100%;
+  right: calc(100% - 1px);
+  color: #af810e;
+}
+
+.saveContainer {
+  box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    margin-left: 1.25rem;
+    font-size: 0.625rem;
+    white-space: nowrap;
 }
