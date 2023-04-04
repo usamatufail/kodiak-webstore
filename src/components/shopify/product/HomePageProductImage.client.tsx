@@ -17,9 +17,7 @@ export function HomePageProductImage({
   }
 
   return (
-    <div
-      className={`grid-flow-row p-2 shadow-xl rounded-[20px] mx-[20px] ${className}`}
-    >
+    <div className={`grid-flow-row p-2  rounded-[20px] mx-[20px] ${className}`}>
       {media.map((med, index) => {
         if (index > 0) {
           return <></>;
@@ -74,7 +72,7 @@ export function HomePageProductImage({
           >
             <MediaFile
               tabIndex="0"
-              className={` w-full h-full fadeIn object-cover 2xl:object-contain	`}
+              className={` rounded-[20px] shadow-xl w-full h-full fadeIn object-cover 2xl:object-contain	`}
               // style={{ aspectRatio: "16/9" }}
               data={data}
               // @ts-ignore

@@ -1,8 +1,9 @@
-import { useRef, useState, useEffect } from 'react';
-import mapboxgl from 'mapbox-gl';
+import { useRef, useState, useEffect } from "react";
+import mapboxgl from "mapbox-gl";
 
 export const Location = () => {
-  mapboxgl.accessToken = 'pk.eyJ1Ijoic2FtdHVmYWlsIiwiYSI6ImNrOGhvd2xuOTAyZm0zZHAzNXlrMGF5ZDkifQ.S4s4jAZo8yEmxc1ODsajdA';
+  mapboxgl.accessToken =
+    "pk.eyJ1Ijoic2FtdHVmYWlsIiwiYSI6ImNrOGhvd2xuOTAyZm0zZHAzNXlrMGF5ZDkifQ.S4s4jAZo8yEmxc1ODsajdA";
   const mapContainer: any = useRef(null);
   const map: any = useRef(null);
 
@@ -14,7 +15,7 @@ export const Location = () => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/samtufail/cldrp4xvz006401se0uh5aana',
+      style: "mapbox://styles/samtufail/cldrp4xvz006401se0uh5aana",
       center: [lng, lat],
       zoom: zoom,
     });
@@ -22,11 +23,12 @@ export const Location = () => {
 
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
-    map.current.on('move', () => {
+    map.current.on("move", () => {
       setLng(map.current.getCenter().lng.toFixed(4));
       setLat(map.current.getCenter().lat.toFixed(4));
       setZoom(map.current.getZoom().toFixed(2));
     });
+    map.current.scrollZoom.disable();
   }, []);
 
   return (

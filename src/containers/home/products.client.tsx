@@ -23,34 +23,40 @@ const mainVariant = (duration: number) => ({
 const settings = {
   dots: false,
   infinite: true,
-  speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 1500,
+  // autoplay: true,
+  // speed: 2000,
+  // autoplaySpeed: 2000,
+  // cssEase: "linear",
   responsive: [
-    // {
-    //   breakpoint: 1440,
-    //   settings: {
-    //     slidesToShow: 2,
-    //     slidesToScroll: 2,
-    //     dots: true,
-    //     arrows: false,
-    //     infinite: true,
-    //     autoplay: true,
-    //     autoplaySpeed: 1500,
-    //   },
-    // },
+    {
+      breakpoint: 1680,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: true,
+        infinite: true,
+      },
+    },
     {
       breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true,
+        arrows: false,
+        infinite: true,
+      },
+    },
+    {
+      breakpoint: 600,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
         arrows: false,
         infinite: true,
-        autoplay: true,
-        autoplaySpeed: 1500,
       },
     },
   ],
@@ -112,7 +118,7 @@ export const Products = ({ collection }: any) => {
             animate={controls}
             initial="hidden"
             variants={mainVariant(1)}
-            className="custom-slick max-w-[calc(100vw)] lg:max-w-[1600px] relative"
+            className="custom-slick max-w-[calc(100vw_-_10px)] md:max-w-[calc(100vw_-_200px)] relative"
             style={{ zIndex: 2 }}
           >
             <Slider {...settings}>

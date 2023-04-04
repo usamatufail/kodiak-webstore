@@ -33,7 +33,7 @@ export const Header = () => {
 
   return (
     <header
-      className="min-h-[70vh] flex flex-col justify-center items-start px-[20px] xl:px-[160px] relative 2xl:justify-end xl:pl-[26vw] xl:pb-[9.1vw] 2xl:pb-[12vw]"
+      className="header-content min-h-[70vh]"
       ref={ref}
       style={{
         backgroundImage: `url(/cloudinary/homepage/64.jpg)`,
@@ -47,12 +47,12 @@ export const Header = () => {
           animate={controls}
           initial="hidden"
           variants={getVariant(0.5)}
-          className="text-[42px] font-[700] text-white leading-[1] 2xl:text-[62px] text-left 2xl:max-w-[560px] gradient-text"
+          className="header-heading gradient-text"
         >
           Adventure Essentials
           {/* by Kodiak */}
         </motion.h1>
-        <p className="font-bold text-white text-[18px] mt-[20px] 2xl:text-[24px] flex flex-col gap-[28px] 2xl:max-w-[500px] text-left gradient-text leading-[1.14]">
+        <p className="header-paragraph gradient-text">
           <TypeAnimation
             sequence={["Free Shipping + Knife + 2 Gifts"]}
             speed={85}
@@ -70,8 +70,8 @@ export const Header = () => {
           {/* <Link to="/products/kodiak-adventure-box"> */}
           <a href="#adventure-box">
             <button
-              className={`h-[58px] flex items-center justify-center font-[600] px-[30px] 2xl:px-[60px]
-            text-[18px] text-white bg-[#879281] focus:bg-[#6a7365]
+              className={`h-[42px] 2xl:h-[58px] flex items-center justify-center font-[600] px-[30px] 2xl:px-[60px]
+            text-[16px] 2xl:text-[18px] text-white bg-[#879281] focus:bg-[#6a7365]
             hover:bg-[#6a7365] transition-all rounded-[80px] mt-[20px]`}
             >
               Shop Now

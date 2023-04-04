@@ -37,9 +37,9 @@ export function Product({
         >
           <Section padding="none">
             <div className="grid items-start xl:gap-2 lg:gap-2 xl:grid-cols-1 lg:grid-cols-1 max-w-[1660px] mx-auto">
-              <div className="grid xl:grid-cols-[1fr_3fr_2fr] gap-[20px] xl:gap-[80px]">
-                <div className="hidden xl:block xl:mt-[52px] px-[30px]">
-                  <blockquote className="text-[26px] leading-[1.2] font-semibold">
+              <div className="grid  lg:grid-cols-[1fr_3fr_2fr] gap-[20px] lg:gap-[30px] xl:gap-[60px] 2xl:gap-[80px]">
+                <div className="hidden lg:block lg:mt-[52px] lg:pl-[20px] xl:pr-[0px] 2xl:px-[30px]">
+                  <blockquote className="text-[18px] xl:text-[26px] leading-[1.2] font-semibold">
                     {quote}
                   </blockquote>
                   <p>-&nbsp;{author}</p>
