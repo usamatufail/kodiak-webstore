@@ -6,6 +6,7 @@ import { Menu } from "./mobile-nav.client";
 import { Icons } from "./nav-icons.client";
 import { Link, useUrl } from "@shopify/hydrogen";
 import { Dropdown } from "antd";
+import { SlSocialDropbox } from "react-icons/sl";
 import { useOutsideClick } from "../hooks";
 
 const getVariant = (duration: number) => ({
@@ -15,23 +16,27 @@ const getVariant = (duration: number) => ({
 
 const links = [
   { name: "home", to: "/" },
-  { name: "F.A.S.T", to: "/fast" },
+  // { name: "Shop All", to: "/shop/all" },
+  // { name: "Shop F.A.S.T", to: "/shop/all" },
+  // { name: "Shop Equipment", to: "/shop/all" },
+  // { name: "Shop Gear", to: "/shop/all" },
   {
-    name: "shop",
-    links: [
-      { name: "All", link: "/shop/all" },
-      { name: "F.A.S.T", link: "/shop/all" },
-      { name: "Equipment", link: "/shop/all" },
-      { name: "Gear", link: "/shop/all" },
+    name: "Shop",
+    subLinks: [
+      { name: "All", to: "/shop/all" },
+      { name: "F.A.S.T", to: "/shop/all" },
+      { name: "Equipment", to: "/shop/all" },
+      { name: "Gear", to: "/shop/all" },
     ],
   },
-  { name: "about", to: "/about" },
+  { name: "About F.A.S.T", to: "/fast" },
+  { name: "about us", to: "/about" },
   { name: "Maintenance & Care", to: "/product-care" },
   { name: "Journal", to: "/journal" },
   // { name: "contact", to: "/contact" },
 ];
 
-const CustomDropdown = ({ animate, initial, variants }: any) => {
+const CustomDropdown = ({ links, animate, initial, variants }: any) => {
   const [open, setOpen] = useState(false);
 
   const ref: any = useRef();
@@ -46,53 +51,24 @@ const CustomDropdown = ({ animate, initial, variants }: any) => {
       dropdownRender={() => (
         // Shop Sub Pages
         <div
-          className="flex flex-col w-[170px] mt-[10px] bg-[#dedede]"
+          className="flex flex-col w-[170px] mt-[10px] bg-[#dedede] rounded-[8px]"
           ref={ref}
         >
-          <Link
-            to="/shop/all"
-            className="hover:bg-gray-300 transition-all"
-            onClick={() => setOpen(false)}
-          >
-            <div
-              className={`${styles["nav-link"]} cursor-pointer select-none px-[20px] py-[13px]`}
-            >
-              all
-            </div>
-          </Link>
-          <Link
-            to="/shop/fast"
-            className="hover:bg-gray-300 transition-all"
-            onClick={() => setOpen(false)}
-          >
-            <div
-              className={`${styles["nav-link"]} cursor-pointer select-none px-[20px] py-[13px]`}
-            >
-              F.A.S.T
-            </div>
-          </Link>
-          <Link
-            to="/shop/equipment"
-            className="hover:bg-gray-300 transition-all"
-            onClick={() => setOpen(false)}
-          >
-            <div
-              className={`${styles["nav-link"]} cursor-pointer select-none px-[20px] py-[13px]`}
-            >
-              equipment
-            </div>
-          </Link>
-          {/* <Link
-            to="/shop/apparel"
-            className="hover:bg-gray-300 transition-all"
-            onClick={() => setOpen(false)}
-          >
-            <div
-              className={`${styles["nav-link"]} cursor-pointer select-none px-[20px] py-[13px]`}
-            >
-              apparel
-            </div>
-          </Link> */}
+          {links?.map((link: any) => {
+            return (
+              <Link
+                to={link.to}
+                className="hover:bg-gray-300 transition-all rounded-[8px]"
+                onClick={() => setOpen(false)}
+              >
+                <div
+                  className={`${styles["nav-link"]} cursor-pointer select-none px-[20px] py-[13px] rounded-[8px]`}
+                >
+                  {link?.name}
+                </div>
+              </Link>
+            );
+          })}
         </div>
       )}
     >
@@ -128,108 +104,171 @@ export const Navbar = ({ customerAccessToken = "" }) => {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between overflow-hidden h-nav px-[20px] md:px-[60px] 2xl:px-[120px] relative z-10 shadow-lg">
-      {/* Logo */}
-      <Link to="/">
+    <div>
+      <nav className="flex flex-row-reverse 2xl:flex-row items-center justify-between overflow-hidden h-nav px-[20px] md:px-[60px] 3xl:px-[120px] relative z-10 shadow-lg">
+        {/* Mobile Menu (Links) */}
         <motion.div
           animate={controls}
           initial="hidden"
           variants={getVariant(0.5)}
-          className="w-[150px] md:w-[unset]"
+          className="block 2xl:hidden overflow-hidden"
         >
-          <img
-            src="/images/navbar/logo.png"
-            alt="logo"
-            className="w-[150px] md:w-[175px]"
-          />
+          <Menu customerAccessToken={customerAccessToken} />
         </motion.div>
-      </Link>
-      {/* Mobile Menu (Links) */}
-      <motion.div
-        animate={controls}
-        initial="hidden"
-        variants={getVariant(0.5)}
-        className="block 2xl:hidden overflow-hidden"
-      >
-        <Menu customerAccessToken={customerAccessToken} />
-      </motion.div>
 
-      {/* Links */}
-      <div className="items-center gap-[25px] hidden 2xl:flex">
-        {links?.map((link) => {
-          if (!link?.links) {
-            return (
-              <Link to={link.to} key={link.name}>
+        {/* Links */}
+        <div className="items-center gap-[25px] hidden 2xl:flex">
+          {links?.map((link, index) => {
+            if (index < 4) {
+              if (!link?.to) {
+                return (
+                  <motion.div
+                    animate={controls}
+                    initial="hidden"
+                    variants={getVariant(0.5)}
+                  >
+                    <CustomDropdown
+                      key={link.name}
+                      variants={getVariant(0.5)}
+                      links={link.subLinks}
+                    />
+                  </motion.div>
+                );
+              } else {
+                return (
+                  <Link to={link.to} key={link.name}>
+                    <motion.div
+                      animate={controls}
+                      initial="hidden"
+                      variants={getVariant(0.5)}
+                      className={`${styles["nav-link"]} ${
+                        url.pathname === link.to
+                          ? styles["nav-link-active"]
+                          : ""
+                      } cursor-pointer select-none`}
+                    >
+                      {link.name}
+                    </motion.div>
+                  </Link>
+                );
+              }
+            }
+          })}
+        </div>
+
+        {/* Logo */}
+        <Link to="/">
+          <motion.div
+            animate={controls}
+            initial="hidden"
+            variants={{
+              hidden: { scale: 0, opacity: 0 },
+              visible: { scale: 1, opacity: 1 },
+            }}
+            className="w-[190px] 2xl:w-[275px] 2xl:ml-[40px]"
+          >
+            <img
+              src="/images/navbar/logo.png"
+              alt="logo"
+              className="w-[150px] md:w-[275px]"
+            />
+          </motion.div>
+        </Link>
+
+        {/* Icons */}
+        <motion.div
+          animate={controls}
+          initial="hidden"
+          variants={{
+            visible: { x: 0, opacity: 1, transition: { duration: 0.4 } },
+            hidden: { x: -50, opacity: 0, transition: { duration: 0.4 } },
+          }}
+          className=" items-center gap-[30px] hidden 2xl:flex"
+        >
+          {links?.map((link, index) => {
+            if (index >= 4) {
+              if (!link?.to) {
+                return (
+                  <CustomDropdown
+                    key={link.name}
+                    variants={getVariant(0.5)}
+                    links={link.subLinks}
+                  />
+                );
+              } else {
+                return (
+                  <Link to={link.to} key={link.name}>
+                    <motion.div
+                      animate={controls}
+                      initial="hidden"
+                      variants={getVariant(0.5)}
+                      className={`${styles["nav-link"]} ${
+                        url.pathname === link.to
+                          ? styles["nav-link-active"]
+                          : ""
+                      } cursor-pointer select-none`}
+                    >
+                      {link.name}
+                    </motion.div>
+                  </Link>
+                );
+              }
+            }
+          })}
+          {!!customerAccessToken ? (
+            <>
+              <Link to="/account">
                 <motion.div
                   animate={controls}
                   initial="hidden"
                   variants={getVariant(0.5)}
                   className={`${styles["nav-link"]} ${
-                    url.pathname === link.to ? styles["nav-link-active"] : ""
+                    url.pathname === "/account" ? styles["nav-link-active"] : ""
                   } cursor-pointer select-none`}
                 >
-                  {link.name}
+                  Account
                 </motion.div>
               </Link>
-            );
-          } else
-            return (
-              <CustomDropdown
-                key={link.name}
+
+              <motion.div
                 animate={controls}
                 initial="hidden"
                 variants={getVariant(0.5)}
-                links={link.links}
-              />
-            );
-        })}
-      </div>
-
-      {/* Icons */}
-      <motion.div
-        animate={controls}
-        initial="hidden"
-        variants={{
-          visible: { x: 0, opacity: 1, transition: { duration: 0.4 } },
-          hidden: { x: -50, opacity: 0, transition: { duration: 0.4 } },
-        }}
-        className=" items-center gap-[30px] hidden 2xl:flex"
-      >
-        <div className="flex gap-[30px] text-[18px] font-[600] text-black">
-          {!!customerAccessToken ? (
-            <>
-              <Link to="/account" className=" transition-all">
-                <div className="cursor-pointer px-[20px] py-[13px]">
-                  Account
-                </div>
-              </Link>
-              <div
+                className={`${styles["nav-link"]} ${
+                  url.pathname === "/account" ? styles["nav-link-active"] : ""
+                } cursor-pointer select-none`}
                 onClick={logout}
-                className=" transition-all rounded-[83px] cursor-pointer"
               >
-                <div className="cursor-pointer px-[20px] py-[13px] rounded-[83px] border-[1px] border-black  border-solid">
-                  Logout
-                </div>
-              </div>
+                Logout
+              </motion.div>
             </>
           ) : (
             <>
-              <Link to="/account/login" className=" transition-all">
-                <div className="cursor-pointer px-[20px] py-[13px]">Login</div>
-              </Link>
-              <Link
-                to="/account/register"
-                className=" transition-all  rounded-[83px]"
-              >
-                <div className="cursor-pointer px-[20px] py-[13px] rounded-[83px] border-[1px] border-black  border-solid">
-                  Sign Up
-                </div>
+              <Link to="/account/login">
+                <motion.div
+                  animate={controls}
+                  initial="hidden"
+                  variants={getVariant(0.5)}
+                  className={`${styles["nav-link"]} ${
+                    url.pathname === "/account" ? styles["nav-link-active"] : ""
+                  } cursor-pointer select-none`}
+                >
+                  Login
+                </motion.div>
               </Link>
             </>
           )}
+          <Icons />
+        </motion.div>
+      </nav>
+      <div className="min-h-[50px] bg-slate-800 flex items-center justify-center text-white text-[14px] md:text-[16px]">
+        <div className="flex items-center gap-[15px]">
+          <div>
+            <SlSocialDropbox className="w-[16px] md:w-[20px]" />
+          </div>
+          <p className="mb-0">Free ground shipping on orders over $150</p>
         </div>
-        <Icons />
-      </motion.div>
-    </nav>
+      </div>
+    </div>
   );
 };
