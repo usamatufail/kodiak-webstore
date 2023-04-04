@@ -36,9 +36,9 @@ export function Product({
           }}
         >
           <Section padding="none">
-            <div className="grid items-start md:gap-2 lg:gap-2 md:grid-cols-1 lg:grid-cols-1 max-w-[1660px] mx-auto">
-              <div className="grid md:grid-cols-[1fr_3fr_2fr] gap-[20px] md:gap-[80px]">
-                <div className="hidden md:block md:mt-[52px] px-[30px]">
+            <div className="grid items-start xl:gap-2 lg:gap-2 xl:grid-cols-1 lg:grid-cols-1 max-w-[1660px] mx-auto">
+              <div className="grid xl:grid-cols-[1fr_3fr_2fr] gap-[20px] xl:gap-[80px]">
+                <div className="hidden xl:block xl:mt-[52px] px-[30px]">
                   <blockquote className="text-[26px] leading-[1.2] font-semibold">
                     {quote}
                   </blockquote>
@@ -46,11 +46,11 @@ export function Product({
                 </div>
                 <HomePageProductImage
                   media={media.nodes}
-                  // className="w-screen md:w-full"
+                  // className="w-screen xl:w-full"
                 />
                 <div className="flex items-start justify-center">
-                  <div className="max-w-[1200px] px-[20px] md:mt-[20px]">
-                    <div className="grid gap-1 md:gap-2">
+                  <div className="max-w-[1200px] px-[20px] xl:mt-[20px]">
+                    <div className="grid gap-1 xl:gap-2">
                       <Heading
                         as="h1"
                         format

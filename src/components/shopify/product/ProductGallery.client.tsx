@@ -18,7 +18,7 @@ export function ProductGallery({
 
   return (
     <div
-      className={`swimlane md:grid-flow-row hiddenScroll overflow-hidden md:p-0 overflow-x-auto md:grid-cols-2 ${className}`}
+      className={`swimlane pb-[30px] md:grid-flow-row hiddenScroll overflow-hidden md:p-0 overflow-x-auto md:grid-cols-2 ${className}`}
     >
       {media.map((med, i) => {
         let mediaProps: Record<string, any> = {};

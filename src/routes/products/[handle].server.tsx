@@ -83,10 +83,12 @@ export default function Product() {
       <ProductOptionsProvider data={product}>
         <div
           className="bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: "url(/cloudinary/ma/product.jpeg)",
-            // color: 'white',
-          }}
+          style={
+            {
+              // backgroundImage: "url(/cloudinary/ma/product.jpeg)",
+              // color: 'white',
+            }
+          }
         >
           <Section padding="none" className="px-0">
             <div className="grid items-start md:gap-2 lg:gap-2 md:grid-cols-1 lg:grid-cols-1">
@@ -104,15 +106,15 @@ export default function Product() {
                       <Heading
                         as="h1"
                         format
-                        className="whitespace-normal mt-[2rem]"
+                        className="whitespace-normal mt-[0rem]"
                       >
                         {title}
                       </Heading>
-                      {vendor && (
+                      {/* {vendor && (
                         <Text className={"opacity-50 font-medium"}>
                           {"Kodiak F.A.S.T Company"}
                         </Text>
-                      )}
+                      )} */}
                       {/* <img
                         src="https://res.cloudinary.com/samtufail726/image/upload/v1678696771/kodiak/stars.png"
                         alt="stars"
@@ -120,7 +122,7 @@ export default function Product() {
                       /> */}
                     </div>
                     <ProductForm />
-                    <div className="grid gap-4 py-4 mt-[2.4rem]">
+                    <div className="grid gap-4 py-4 mt-0">
                       {descriptionHtml && (
                         <ProductDetail
                           title="Product Details"

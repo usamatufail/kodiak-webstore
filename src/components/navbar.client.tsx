@@ -105,7 +105,7 @@ export const Navbar = ({ customerAccessToken = "" }) => {
 
   return (
     <div>
-      <nav className="flex flex-row-reverse md:flex-row items-center justify-between overflow-hidden h-nav px-[20px] md:px-[60px] 3xl:px-[120px] relative z-10 shadow-lg">
+      <nav className="flex flex-row-reverse 2xl:flex-row items-center justify-between overflow-hidden h-nav px-[20px] md:px-[60px] 3xl:px-[120px] relative z-10 shadow-lg">
         {/* Mobile Menu (Links) */}
         <motion.div
           animate={controls}
@@ -122,11 +122,17 @@ export const Navbar = ({ customerAccessToken = "" }) => {
             if (index < 4) {
               if (!link?.to) {
                 return (
-                  <CustomDropdown
-                    key={link.name}
+                  <motion.div
+                    animate={controls}
+                    initial="hidden"
                     variants={getVariant(0.5)}
-                    links={link.subLinks}
-                  />
+                  >
+                    <CustomDropdown
+                      key={link.name}
+                      variants={getVariant(0.5)}
+                      links={link.subLinks}
+                    />
+                  </motion.div>
                 );
               } else {
                 return (
@@ -159,7 +165,7 @@ export const Navbar = ({ customerAccessToken = "" }) => {
               hidden: { scale: 0, opacity: 0 },
               visible: { scale: 1, opacity: 1 },
             }}
-            className="w-[190px] md:w-[275px] md:ml-[40px]"
+            className="w-[190px] 2xl:w-[275px] 2xl:ml-[40px]"
           >
             <img
               src="/images/navbar/logo.png"

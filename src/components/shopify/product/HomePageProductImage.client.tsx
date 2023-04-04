@@ -74,7 +74,7 @@ export function HomePageProductImage({
           >
             <MediaFile
               tabIndex="0"
-              className={` w-full h-full fadeIn object-cover md:object-contain	`}
+              className={` w-full h-full fadeIn object-cover 2xl:object-contain	`}
               // style={{ aspectRatio: "16/9" }}
               data={data}
               // @ts-ignore
