@@ -47,8 +47,8 @@ function App({ request }: HydrogenRouteProps) {
         <Seo
           type="defaultSeo"
           data={{
-            title: "Kodiak F.A.S.T Company",
-            description: `At Kodiak F.A.S.T Company, we aim to craft handmade Alaskan F.A.S.T that inspire adventure and exceed expectations. As outdoor enthusiasts, we understand the importance of having a durable, reliable, and functional F.A.S.T.`,
+            title: "Kodiak Knife Company",
+            description: `At Kodiak Knife Company, we aim to craft handmade Alaskan Knife that inspire adventure and exceed expectations. As outdoor enthusiasts, we understand the importance of having a durable, reliable, and functional Knife.`,
             titleTemplate: `%s`,
           }}
         />
