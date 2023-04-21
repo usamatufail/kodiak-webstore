@@ -18,9 +18,8 @@ import {
   NewsLetter,
   ProductDetail,
   ProductForm,
-  ProductGallery,
+  ProductGalleryImages,
   Section,
-  Text,
 } from "~/components";
 
 export default function Product() {
@@ -83,15 +82,17 @@ export default function Product() {
       <ProductOptionsProvider data={product}>
         <div
           className="bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: "url(/cloudinary/ma/product.jpeg)",
-            // color: 'white',
-          }}
+          style={
+            {
+              // backgroundImage: "url(/cloudinary/ma/product.jpeg)",
+              // color: 'white',
+            }
+          }
         >
           <Section padding="none" className="px-0">
             <div className="grid items-start md:gap-2 lg:gap-2 md:grid-cols-1 lg:grid-cols-1">
               <div className="grid md:grid-cols-2 gap-[20px] md:gap-[80px]">
-                <ProductGallery
+                <ProductGalleryImages
                   media={media.nodes}
                   // className="w-screen md:w-full"
                 />
@@ -101,18 +102,13 @@ export default function Product() {
                       <Heading
                         as="h1"
                         format
-                        className="whitespace-normal mt-[2rem]"
+                        className="whitespace-normal mt-[0rem]"
                       >
                         {title}
                       </Heading>
-                      {vendor && (
-                        <Text className={"opacity-50 font-medium"}>
-                          {"Kodiak F.A.S.T Company"}
-                        </Text>
-                      )}
                     </div>
                     <ProductForm />
-                    <div className="grid gap-4 py-4 mt-[2.4rem]">
+                    <div className="grid gap-4 py-4 mt-0">
                       {descriptionHtml && (
                         <ProductDetail
                           title="Product Details"
@@ -120,7 +116,6 @@ export default function Product() {
                           defaultOpen
                         />
                       )}
-
                       {shippingPolicy?.body && (
                         <>
                           <hr />
@@ -170,7 +165,7 @@ const PRODUCT_QUERY = gql`
       title
       vendor
       descriptionHtml
-      media(first: 10) {
+      media(first: 7) {
         nodes {
           ...Media
         }

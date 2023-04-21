@@ -2,23 +2,12 @@ import { MediaFile } from "@shopify/hydrogen/client";
 import type { MediaEdge } from "@shopify/hydrogen/storefront-api-types";
 import { ATTR_LOADING_EAGER } from "~/lib/const";
 import Slider from "@ant-design/react-slick";
-
-const settings = {
-  dots: true,
-  infinite: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  cssEase: "linear",
-  // fade: true,
-  autoplay: true,
-  speed: 500,
-  autoplaySpeed: 1500,
-};
+import { LegacyRef, useRef, useState } from "react";
 
 /**
  * A client component that defines a media gallery for hosting images, 3D models, and videos of products
  */
-export function ProductGallery({
+export function ProductGalleryImages({
   media,
 }: // className,
 {
@@ -29,11 +18,28 @@ export function ProductGallery({
     return null;
   }
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    cssEase: "linear",
+    // fade: true,
+    // autoplay: true,
+    speed: 500,
+    arrows: false,
+    autoplaySpeed: 1500,
+    swipeToSlide: true,
+    className: "max-w-[360px] md:max-w-[unset]",
+  };
   return (
     <div
       // className={`swimlane md:grid-flow-row hiddenScroll overflow-hidden md:p-0 overflow-x-auto md:grid-cols-2 ${className}`}
-      className="product-slider p-[40px]"
+      className="product-slider md:p-[40px]"
     >
+      {/* <button onClick={() => sliderRef?.Goto(5)}>
+        go to slide 6
+      </button> */}
       <Slider {...settings}>
         {media.map((med) => {
           let mediaProps: Record<string, any> = {};
@@ -99,7 +105,7 @@ export function ProductGallery({
             >
               <MediaFile
                 tabIndex="0"
-                className={`w-full h-full fadeIn aspect-square object-cover bg-white shadow-md`}
+                className={`w-full h-full fadeIn aspect-square object-cover bg-white border border-black rounded-sm`}
                 // style={{ aspectRatio: "16/9" }}
                 data={data}
                 // sizes={

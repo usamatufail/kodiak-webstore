@@ -19,6 +19,7 @@ import {
   ProductDetail,
   ProductForm,
   ProductGallery,
+  ProductGalleryImages,
   Section,
   Text,
 } from "~/components";
@@ -92,67 +93,62 @@ export default function Product() {
         >
           <Section padding="none" className="px-0">
             <div className="grid items-start md:gap-2 lg:gap-2 md:grid-cols-1 lg:grid-cols-1">
-              {/* <div className="">
-                <section className="flex flex-col items-center gap-8 p-6 mt-[34px] md:mx-[30px] md:px-0"></section>
-              </div> */}
-              <div className="grid md:grid-cols-2 gap-[20px] md:gap-[80px]">
-                <ProductGallery
-                  media={media.nodes}
-                  className="w-screen md:w-full"
-                />
-                <div className="flex items-start justify-center">
-                  <div className="max-w-[1200px] px-[20px] md:mt-[20px]">
-                    <div className="grid gap-1 md:gap-2">
-                      <Heading
-                        as="h1"
-                        format
-                        className="whitespace-normal mt-[0rem]"
-                      >
-                        {title}
-                      </Heading>
-                      {/* {vendor && (
-                        <Text className={"opacity-50 font-medium"}>
-                          {"Kodiak F.A.S.T Company"}
-                        </Text>
-                      )} */}
-                      {/* <img
-                        src="https://res.cloudinary.com/samtufail726/image/upload/v1678696771/kodiak/stars.png"
-                        alt="stars"
-                        className="pt-[2px] pr-[5px]"
-                      /> */}
-                    </div>
-                    <ProductForm />
-                    <div className="grid gap-4 py-4 mt-0">
-                      {descriptionHtml && (
-                        <ProductDetail
-                          title="Product Details"
-                          content={descriptionHtml}
-                          defaultOpen
-                        />
-                      )}
+              <div className="bg-[#f5f5f5] px-[25px] md:px-[75px]">
+                <div className="grid max-w-[1300px] md:grid-cols-[750px_1fr] gap-[20px] md:gap-[80px]">
+                  <ProductGalleryImages media={media.nodes} />
 
-                      {shippingPolicy?.body && (
-                        <>
-                          <hr />
-                          <ProductDetail
-                            title="Shipping"
-                            content={getExcerpt(shippingPolicy.body)}
-                            learnMore={`/policies`}
-                          />
-                          <hr />
-                        </>
-                      )}
-                      {refundPolicy?.body && (
-                        <>
-                          <ProductDetail
-                            title="Returns"
-                            content={getExcerpt(refundPolicy.body)}
-                            learnMore={`/policies`}
-                          />
-                          <hr />
-                        </>
-                      )}
+                  <div className="flex items-start justify-center">
+                    <div className="max-w-[1200px] px-[20px] md:mt-[20px]">
+                      <div className="grid gap-1 md:gap-2">
+                        <Heading
+                          as="h1"
+                          format
+                          className="whitespace-normal mt-[2rem]"
+                        >
+                          {title}
+                        </Heading>
+                        {vendor && (
+                          <Text className={"opacity-50 font-medium"}>
+                            {"Kodiak F.A.S.T Company"}
+                          </Text>
+                        )}
+                      </div>
+                      <ProductForm />
                     </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full">
+                <div className="grid gap-4 py-4 mt-[2.4rem] max-w-[1300px] m-auto ">
+                  {descriptionHtml && (
+                    <ProductDetail
+                      title=""
+                      content={descriptionHtml}
+                      defaultOpen
+                    />
+                  )}
+                  <div className="px-[20px] md:px-[0px]">
+                    {shippingPolicy?.body && (
+                      <>
+                        <hr />
+                        <ProductDetail
+                          title="Shipping"
+                          content={getExcerpt(shippingPolicy.body)}
+                          learnMore={`/policies`}
+                        />
+                        <hr />
+                      </>
+                    )}
+                    {refundPolicy?.body && (
+                      <>
+                        <ProductDetail
+                          title="Returns"
+                          content={getExcerpt(refundPolicy.body)}
+                          learnMore={`/policies`}
+                        />
+                        <hr />
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -180,7 +176,7 @@ const PRODUCT_QUERY = gql`
       title
       vendor
       descriptionHtml
-      media(first: 7) {
+      media(first: 10) {
         nodes {
           ...Media
         }

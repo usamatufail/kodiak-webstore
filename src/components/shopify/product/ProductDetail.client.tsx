@@ -25,22 +25,26 @@ export function ProductDetail({
       {/* @ts-expect-error @headlessui/react incompatibility with node16 resolution */}
       {({ open }) => (
         <>
-          <Disclosure.Button className="text-left">
-            <div className="flex justify-between  items-center">
-              <Text
-                size="lead"
-                as="h4"
-                className="text-[1.6rem] md:text-[2rem]"
-              >
-                {title}
-              </Text>
-              <IconClose
-                className={`${
-                  open ? "" : "rotate-[45deg]"
-                } transition-transform transform-gpu duration-200`}
-              />
-            </div>
-          </Disclosure.Button>
+          {title ? (
+            <Disclosure.Button className="text-left">
+              <div className="flex justify-between  items-center">
+                <Text
+                  size="lead"
+                  as="h4"
+                  className="text-[1.6rem] md:text-[2rem]"
+                >
+                  {title}
+                </Text>
+                <IconClose
+                  className={`${
+                    open ? "" : "rotate-[45deg]"
+                  } transition-transform transform-gpu duration-200`}
+                />
+              </div>
+            </Disclosure.Button>
+          ) : (
+            <></>
+          )}
 
           <Disclosure.Panel className={"pb-4 pt-2 grid gap-2"}>
             <div

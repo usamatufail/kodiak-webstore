@@ -175,7 +175,7 @@ export function ProductForm() {
               disabled={isOutOfStock}
               onClick={handleCustomOnClick as any}
               buttonRef={buttonRef}
-              className="text-white bg-black py-[1rem] rounded-[80px] w-full"
+              className="text-white bg-black py-[1rem] rounded-[8px] w-full"
               type="button"
             >
               {isOutOfStock ? (
@@ -201,7 +201,7 @@ export function ProductForm() {
               <BuyNowButton
                 variantId={selectedVariant.id}
                 quantity={1}
-                className="text-white bg-[#6514cf] py-[1rem] rounded-[80px] w-full"
+                className="text-white bg-[#6514cf] py-[1rem] rounded-[8px] w-full"
               >
                 <Text
                   as="span"
