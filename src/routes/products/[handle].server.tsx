@@ -94,7 +94,7 @@ export default function Product() {
           <Section padding="none" className="px-0">
             <div className="grid items-start md:gap-2 lg:gap-2 md:grid-cols-1 lg:grid-cols-1">
               <div className="bg-[#f5f5f5] px-[25px] md:px-[75px]">
-                <div className="grid max-w-[1300px] md:grid-cols-[750px_1fr] gap-[20px] md:gap-[80px]">
+                <div className="grid max-w-[1300px] m-auto md:grid-cols-[750px_1fr] gap-[20px] md:gap-[80px]">
                   <ProductGalleryImages media={media.nodes} />
 
                   <div className="flex items-start justify-center">

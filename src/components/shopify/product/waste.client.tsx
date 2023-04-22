@@ -30,12 +30,11 @@ export function ProductGalleryImages({
     arrows: false,
     autoplaySpeed: 1500,
     swipeToSlide: true,
-    className: "max-w-[340px] md:max-w-[unset]",
   };
   return (
     <div
       // className={`swimlane md:grid-flow-row hiddenScroll overflow-hidden md:p-0 overflow-x-auto md:grid-cols-2 ${className}`}
-      className="product-slider m-auto md:p-[40px]"
+      className="product-slider m-auto md:p-[40px] max-w-[340px] md:max-w-[750px]"
     >
       {/* <button onClick={() => sliderRef?.Goto(5)}>
         go to slide 6

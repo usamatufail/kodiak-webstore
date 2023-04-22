@@ -36,7 +36,7 @@ export const Header = () => {
       className="header-content min-h-[70vh]"
       ref={ref}
       style={{
-        backgroundImage: `url(/cloudinary/homepage/64.jpg)`,
+        backgroundImage: `url(/cloudinary/homepage/og-header.png)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
